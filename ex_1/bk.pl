@@ -1,4 +1,3 @@
-
 % BK of circuit graphs
 % Circuit gates (AND gates with one input) labelled with numbers
 gate(1).

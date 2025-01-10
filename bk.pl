@@ -12,7 +12,7 @@ partition(F, (P1, P2)) :- findall(Y, (gate(X), out(X, Y), flow(Y, F)), P1),
 min_size((P1, P2), N) :- length(P1, N1), length(P2, N2), N is min(N1, N2).
 min_partition_size(F, N) :- partition(F, Ps), min_size(Ps, N).
 
-% If a number is greater than / less or than another number in a triplet
+% If a number is greater than / less than or equal to another number in a triplet
 gt(A, (_, B, _)) :- A > B.
 leq(A, (_, B, _)) :- A =< B.
 
@@ -44,5 +44,3 @@ eq(A, A).
 dnc(In, Out) :- fst(In, L), empty(L), eq(In, Out). 
 dnc(In, Out) :- fault(In, F), min_partition_size(F, K), gt(K, In), faults(In, Fs), out(F, O), update_all(In, Fs, K, O, In1), dnc(In1, Out).
 dnc(In, Out) :- fault(In, F), min_partition_size(F, K), leq(K, In), faults(In, Fs), update_fst(In, Fs, In1), dnc(In1, Out).
-
-

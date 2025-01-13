@@ -19,3 +19,9 @@ flow(b, X) :- current(a, b, X).
 flow(c, X) :- current(a, c, X).
 flow(d, X) :- current(b, d, X).
 on(light, X) :- current(c, light, X), current(d, light, X).
+
+% flow(a) :- current(src, a).
+% flow(b) :- current(a, b).
+% flow(c) :- current(a, c).
+% flow(d) :- current(b, d).
+% on(light) :- current(c, light), current(d, light).

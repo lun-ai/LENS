@@ -1,12 +1,21 @@
 % General BK for all circuits
-% Current flow from X to Y when gate Z is faulty
+Current flow from X to Y when gate Z is faulty
 current(src, Y, Z) :- out(X, Y), X \== Z.
 current(X, Y, Z) :- flow(X, Z), out(U, Y), U \== Z.
+% current(src, Y) :- out(X, Y).
+% current(X, Y) :- flow(X).
 
 % A faulty gate partitions the circuit: electric-flowing and non-electric-flowing gate outputs
 partition(F, (P1, P2)) :- findall(Y, (gate(X), out(X, Y), flow(Y, F)), P1), 
                           findall(Y, (gate(X), out(X, Y), \+ flow(Y, F)), P2).
-% partition_(F, (P1, P2)) :- findall(X, (gate(X), on(light, X)), P1), findall(X, (gate(X), \+ on(light, X)), P2).
+
+% % Which gates' outputs only affect the current gate's output?
+% has_branches(X) :- current(X, Y, _), current(X, Z, _), Y \== Z.
+% % Is X on the same branch as Y where X is an upstream gate?
+% on_same_branch(X, Y) :- current(X, Y, _), \+ has_branches(X).
+
+% partition(F, (P1, P2)) :- findall(X, (gate(X), on(light, X)), P1), findall(X, (gate(X), \+ on(light, X)), P2).
+
 
 % Minimum size of partitions
 min_size((P1, P2), N) :- length(P1, N1), length(P2, N2), N is min(N1, N2).

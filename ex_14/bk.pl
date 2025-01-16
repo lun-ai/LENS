@@ -22,13 +22,15 @@ out(7, g).
 out(8, h).
 out(9, light).
 
-% Is current flow detectable at an output when gate X is faulty?
-flow(a, X) :- current(src, a, X).
-flow(b, X) :- current(src, b, X).
-flow(c, X) :- current(a, c, X).
-flow(d, X) :- current(c, d, X).
-flow(e, X) :- current(b, e, X).
-flow(f, X) :- current(d, f, X).
-flow(g, X) :- current(e, g, X).
-flow(h, X) :- current(f, h, X).
-on(light, X) :- current(h, light, X), current(g, light, X).
+% is_connected(Gate1?, Gate2?).
+% Is Gate2 connected to gate Gate1?
+is_connected(0, 1).
+is_connected(0, 2).
+is_connected(1, 3).
+is_connected(3, 4).
+is_connected(2, 5).
+is_connected(4, 6).
+is_connected(5, 7).
+is_connected(6, 8).
+is_connected(8, 9).
+is_connected(7, 9).

@@ -24,8 +24,7 @@ min_size(P1, P2, N) :- length(P1, N1), length(P2, N2), min(N1, N2, N).
 max_size(P1, P2, N) :- length(P1, N1), length(P2, N2), max(N1, N2, N).
 
 % Given a fault, compute the minimum and maximum partition sizes
-partition_sizes(F, [Min, Max]) :- partition(F, P1, P2), min_size(P1, P2, Min), 
-                                  min_size(P1, P2, Max).
+partition_sizes(F, [Min, Max]) :- partition(F, P1, P2), min_size(P1, P2, Min), max_size(P1, P2, Max).
 min_partition_size(F, N) :- partition_sizes(F, [N, _]).
 
 % Return the partitions with a larger min partition size

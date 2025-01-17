@@ -144,7 +144,6 @@ is_connected(1203,1204).
 is_connected(1204,1205).
 is_connected(1205,1206).
 is_connected(1301,1302).
-is_connected(1301,1303).
 is_connected(1302,1304).
 is_connected(1304,1305).
 is_connected(1303,1306).

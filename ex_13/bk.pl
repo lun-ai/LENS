@@ -24,7 +24,7 @@ out(8, light).
 % Is Gate2 connected to gate Gate1?
 is_connected(0, 1).
 is_connected(1, 2).
-is_connected(1, 3).
+is_connected(0, 3).
 is_connected(2, 4).
 is_connected(4, 5).
 is_connected(3, 6).

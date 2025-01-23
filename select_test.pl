@@ -32,4 +32,9 @@ select_test(Faults, PartitionSizes) :- map(partition_sizes, Faults, Partitions),
                                         fold(max_min_size, V, Partitions, PartitionSizes).
 
 % Learned hypotheses
-% select_test(A,B):- empty_partitions(C),map(partition_sizes,A,D),fold(max_min_size,C,D,B).                                    
+% partition(F, P1, P2) :- all(share_subpath, F, P1), 
+%                         all(n_subpath, F, P2).
+% partition_sizes(F, S) :- partition(F, P1, P2), pair(P1, P2, S).
+% select_test(Faults, PartitionSizes) :- map(partition_sizes, Faults, Partitions), 
+%                                         empty_partitions(V),
+%                                         fold(max_min_size, V, Partitions, PartitionSizes).

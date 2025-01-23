@@ -163,4 +163,4 @@ test_acc :-
     length(Ps, PN),
     length(Ns, NN),
     Acc is (PN + NN) / EN,
-    format("Number of tests: ~d\nNumber of passed tests: ~d/~d\nAccuracy: ~3f", [EN, PN, NN, Acc]).
+    format("Number of tests: ~d\nNumber of passed pos/neg tests: ~d/~d\nAccuracy: ~3f", [EN, PN, NN, Acc]).

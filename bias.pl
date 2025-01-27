@@ -39,11 +39,19 @@ direction(map,((in,out),in,out)).
 direction(fold,((in,in,out),in,in,out)).
 direction(all,((in,in),in,out)).
 
-only_once(map).
-only_once(fold).
-only_once(empty_partitions).
+% only_once(empty_partitions).
+% only_once(max_min_size).
+% only_once(partition).
+% only_once(pair).
+
+% :- 
+    % body_literal(_,empty_partitions,_,Vars1), 
+    % body_literal(_,empty_partitions,_,Vars2), 
+    % Vars1 != Vars2.
+
+:-  not body_literal(_,partition,3,_).
+:-  not body_literal(_,pair,3,_).
 
 % :-
 %     only_once(P),
-%     clause(C),
-%     #count{Vars : body_literal(C,P,A,Vars)} > 1.
+%     #count{Vars: body_literal(C,P,A,Vars)} > 1.

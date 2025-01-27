@@ -89,6 +89,8 @@ class Tester():
 
     def test_prog(self, prog):
         with self.using(prog):
+            print(format_prog(order_prog(prog)))
+            print()
             pos_covered = frozenset(self.query('pos_covered(Xs)', 'Xs'))
             pos_covered = frozenset(self.pos_index[i] for i in pos_covered)
             inconsistent = False

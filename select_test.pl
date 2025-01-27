@@ -23,13 +23,13 @@
 % select_test(Faults, Partition_sizes) :- head(Faults, Test), tail(Faults, Fs), 
 %                                         select_test(Fs, P1),
 %                                         partition_sizes(Test, P2),
-%                                         max_min_size(P1, P2, Partition_sizes).
+%
 
 % V4 with abstractions
 % select_test(+Faults, ?Partition_sizes)
 select_test(Faults, PartitionSizes) :- map(partition_sizes, Faults, Partitions), 
-                                        empty_partitions(V),
-                                        fold(max_min_size, V, Partitions, PartitionSizes).
+                                       empty_partitions(V),
+                                       fold(max_min_size, V, Partitions, PartitionSizes).
 
 % Learned hypotheses
 % partition(F, P1, P2) :- all(share_subpath, F, P1), 

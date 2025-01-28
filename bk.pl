@@ -1,2 +1,4 @@
-:- ['all_bk.pl'].
-:- ['ex_bk.pl'].
+:- ['circuit_bk.pl'].
+:- ['partition/target.pl'].
+:- ['partition_sizes/target.pl'].
+:- ['prim.pl'].

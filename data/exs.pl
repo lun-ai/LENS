@@ -1,3 +1,4 @@
+% Every correct and incorrect partition permutation
 pos(select_test([101,102,103,104],[2,2])).
 pos(select_test([201,202,203,204,205],[2,3])).
 pos(select_test([301,302,303,304,305,306],[3,3])).

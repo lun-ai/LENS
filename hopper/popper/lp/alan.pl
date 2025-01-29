@@ -95,6 +95,9 @@ direction_(@negative_name(P),A,D) :- enable_negation, body_pred(P,_), direction_
 from clingo.symbol import Function
 def negative_name(name):
     return Function(f'not_{name}')
+from clingo.symbol import *
+def nameparse(t):
+    return Function(name=t.name.split("___")[0])
 #end.
 
 make_name(P,P,A) :- body_aux(P,A).

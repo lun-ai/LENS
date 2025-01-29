@@ -25,31 +25,10 @@ direction(max_min_size,(in,in,out)).
 direction(map,((in,out),in,out)).
 direction(fold,((in,in,out),in,in,out)).
 
-% :- 
-%     body_literal(C1,partition,_,_),
-%     body_literal(C2,pair,_,_),
-%     C1 != C2.
-
-% :- 
-%     body_literal(C1,max,_,_),
-%     body_literal(C2,min,_,_),
-%     C1 != C2.
-
-% % The number of occurences of map is limited to 0.  
-
-% #script (python)
-% from clingo.symbol import *
-% def nameparse(t):
-%     return Function(name=t.name.split("___")[0])
-% #end.
-
+% The number of occurences of map is limited to 0. 
 % #defined body_literal/4.
 % occurHO(map,1).
-% occurHO(fold,1).
-% occurFO(empty_partitions,1).
-% occurFO(max_min_size,1).
-% occurFO(partition,1).
-% occurFO(pair,1).
+% occurHO(fold,0).
 
 % :-
 %     body_pred(X,_),

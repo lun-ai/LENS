@@ -1,5 +1,5 @@
 % Learn to compute sizes of partitions
-% python hopper/popper.py --kbpath partition --max-ho 3 --max-rules 3
+% python hopper/popper.py --kbpath partition_sizes --max-rules 3
 
 % Predicate declarations
 head_pred(partition_sizes,2). 

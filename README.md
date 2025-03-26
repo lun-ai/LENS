@@ -1,4 +1,4 @@
-# Project Title
+# Teaching humans transferable strategy by inducing and explaining logic programs
 
 Simple overview of use/purpose.
 
@@ -13,24 +13,22 @@ An in-depth paragraph about your project and overview of use.
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10
 
-### Installing
+### Learning how to partition, compute partition sizes and select test
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders
 
-### Executing program
 
-* How to run the program
-* Step-by-step bullets
 ```
-code blocks for commands
+python hopper/popper.py --kbpath partition --max-ho 3 --max-rules 3
 ```
 
-## Help
-
-Any advise for common problems or issues.
 ```
-command to run if program contains helper info
+python hopper/popper.py --kbpath partition_sizes --max-rules 3
+```
+
+```
+python hopper/popper.py --kbpath select_test --max-ho 3 --max-rules 3
 ```
 
 ## Authors

@@ -1,0 +1,13 @@
+name: popper
+channels:
+  - defaults
+dependencies:
+  - python
+  - pip
+  - numpy
+  - scipy
+  - pip:
+      - bitarray
+      - janus-swi
+      - pyswip
+      - scipy

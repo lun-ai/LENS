@@ -1,13 +1,21 @@
-name: popper
+name: usml
 channels:
-  - defaults
+  - conda-forge
 dependencies:
   - python
   - pip
   - numpy
   - scipy
+  - matplotlib
+  - ipykernel
+  - langchain
   - pip:
       - bitarray
       - janus-swi
       - pyswip
-      - scipy
+      - langchain
+      - pyswip
+      - langchain_community
+      # - langchain_openai
+      - python-dotenv
+      - huggingface_hub

@@ -12,7 +12,6 @@ out(2, b).
 out(3, c).
 out(4, light).
 
-% is_connected(Gate1?, Gate2?).
 % Is Gate2 connected to gate Gate1?
 is_connected(0, 1).
 is_connected(1, 2).

@@ -14,8 +14,9 @@ dependencies:
       - janus-swi
       - pyswip
       - langchain
+      - python-dotenv
       - pyswip
       - langchain_community
+      - langchain_ollama
       # - langchain_openai
-      - python-dotenv
-      - huggingface_hub
+      # - huggingface_hub

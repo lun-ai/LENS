@@ -167,7 +167,7 @@ test_acc :-
     consult('data/exs.pl'),
     findall(A, (pos(A); neg(A)), Es),
     findall(A, (pos(A), test_ex(A)), Ps_),
-    findall(A, (neg(A), \+ test_ex(A)), Ns_),
+    findall(A, (neg(A), not(test_ex(A))), Ns_),
     sort(Ps_, Ps),
     sort(Ns_, Ns),
     length(Es, EN),

@@ -15,8 +15,10 @@ dependencies:
       - pyswip
       - langchain
       - python-dotenv
-      - pyswip
+      - setuptools
       - langchain_community
       - langchain_ollama
+      - clingo
+      - pysat
       # - langchain_openai
       # - huggingface_hub

@@ -1,4 +1,4 @@
-:- ['target.pl'].
+:- ['select_test/target.pl'].
 :- use_module(library(csv)).
 
 % Id for each circuit example
@@ -163,7 +163,8 @@ test_ex(A) :-
 
 
 % Test the accuracy of the learned program on test examples
-test_acc :-
+:-
+    consult('circuit_bk.pl'),
     consult('data/exs.pl'),
     findall(A, (pos(A); neg(A)), Es),
     findall(A, (pos(A), test_ex(A)), Ps_),

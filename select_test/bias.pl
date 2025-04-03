@@ -1,5 +1,5 @@
 % Learn a divide and conquer strategy to partition each input graph
-% python hopper/popper.py --kbpath . --max-ho 3 --max-body 10 --max-rules 3
+% python hopper/popper.py --kbpath select_test --max-ho 3 --max-rules 3
 
 % Predicate declarations
 head_pred(select_test,2). 

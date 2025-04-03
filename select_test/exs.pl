@@ -1,4 +1,6 @@
-pos(select_test([101,102,103,104],[2,2])).
+% From circuit example No.1 ex_1/bk.pl
+pos(select_test([1,2,3,4],[2,2])).
+% pos(select_test([101,102,103,104],[2,2])).
 % pos(select_test([201,202,203,204,205],[2,3])).
 % pos(select_test([301,302,303,304,305,306],[3,3])).
 % pos(select_test([401,402,403,404,405,406,407],[3,4])).

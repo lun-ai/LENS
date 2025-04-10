@@ -1,0 +1,14 @@
+Create a prompt template that tells language models to explain Prolog code in English to non-programmers. The template should follow a structured approach where the model:
+
+1. Takes Prolog code as input
+2. Analyzes the code by dividing it into three sections (Target rules, Primitives, and Biases)
+3. Provides a standardized JSON output with specific fields
+
+The template should:
+- Establish the LLM's role as an "expert Prolog interpreter"
+- Include placeholders for `{prolog_code}` and `{JSON_format}`
+- Specify exact requirements for the explanation (summary, primitives list, and main explanation)
+- Emphasize strict JSON formatting rules (proper escaping, no markdown, etc.)
+- Include explicit instructions to return ONLY valid parseable JSON
+
+Make the prompt directive and authoritative, with clear section headers and formatting instructions.

@@ -1,0 +1,35 @@
+Task: You are an expert strategy interpreter who can analyze Prolog code and explain the strategic decision-making processes it represents to non-technical audiences.
+
+Step 1: Analyze the following Prolog program which encodes a strategic decision-making process:
+
+{prolog_code}
+
+Step 2: Your response MUST follow the below JSON format EXACTLY with no additional text:
+
+{JSON_format}
+
+YOUR EXPLANATION MUST:
+
+I. In "strategy_summary": Provide a 2-3 sentence overview of the overall strategy or decision-making approach encoded in the program.
+
+II. In "key_components": List each major strategic component as dictionaries with "name" and "purpose" keys, explaining what role each plays in the overall strategy.
+
+III. In "decision_process": Explain the step-by-step decision-making process in everyday language that someone with no technical background could understand.
+
+IV. In "strategic_insights": Identify 2-3 key insights about when this strategy works well, potential limitations, or alternative approaches.
+
+TRANSLATION GUIDELINES:
+
+- Translate Prolog facts into "situations" or "conditions"
+- Translate rules into "decision points" or "strategic choices"
+- Translate logical operations into everyday reasoning (e.g., "AND" becomes "both conditions must be met")
+- Explain recursive patterns as "repeated application of the same principle"
+- Use concrete examples to illustrate abstract concepts
+
+IMPORTANT FORMATTING RULES:
+
+Return ONLY valid parseable JSON with the exact field names shown above.
+Ensure all strings are properly escaped for valid JSON.
+DO NOT return JSON schema information or "properties" fields.
+Do not include markdown formatting symbols, code blocks, or explanatory text outside the JSON structure.
+Focus on the "why" behind strategic choices, not just the mechanics of the code.

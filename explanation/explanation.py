@@ -1,13 +1,9 @@
 # Import necessary libraries
 from langchain.prompts import PromptTemplate
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Dict
 from langchain.output_parsers import PydanticOutputParser
 from langchain.schema import StrOutputParser
-from langchain_ollama import OllamaLLM
-import shutil
-import re
-import json
 
 # Install Ollama (if not already installed)
 # curl -fsSL https://ollama.com/install.sh | sh
@@ -18,11 +14,13 @@ import json
 
 # Define the output structure with a Pydantic model
 class PrologExplanation(BaseModel):
-    summary: str = Field(
-        description="A brief summary of what the Prolog program does")
-    primitive: List[dict] = Field(
-        description="List of dependent primitives and their descriptions")
-    explanation: str = Field(description="How the program logic works")
+    summary: str = Field()
+    primitives: List[Dict[str, str]] = Field(
+        default_factory=list,
+        description="List of primitives with their descriptions",
+        example=[{"name": "odd", "description": "Checks if a number is odd"},]
+    )
+    explanation: str = Field()
 
     def get_explanation(self) -> str:
         """Return a formatted string of the explanation.
@@ -163,7 +161,9 @@ def prompt_llm(llm, task_names, template_path, explanation_path, sample_size=10)
     """
 
     explanations = []
-    for i in range(sample_size):
+    success = 0
+    i = 0
+    while i < sample_size:
         try:
             prolog_input = compose_prolog_input(task_names, comments=False)
             with open(template_path, 'r') as file:
@@ -172,17 +172,27 @@ def prompt_llm(llm, task_names, template_path, explanation_path, sample_size=10)
 
             if isinstance(result, PrologExplanation):
                 explanation_text = result.get_explanation()
+                explanations.append(
+                    f'%%%%%%%%%%%%%%%%%%%% Sample {i+1} %%%%%%%%%%%%%%%%%%%%')
                 explanations.append(explanation_text)
-                print(f"Sample {i+1} complete")
+                print(f"------> Sample {i+1} complete")
+                success += 1
             else:
-                print(f"Sample {i+1} failed to parse")
+                print(f"------> Sample {i+1} failed to parse")
+
         except Exception as e:
             print(f"Error in sample {i+1}: {e}")
+
+        # Ensure we always have the same number of successful samples
+        i += 1
 
     # Write all explanations to the output file
     if explanations and explanation_path:
         with open(explanation_path, 'w') as file:
+            file.write(
+                "%%%%%%%%%%%%%%%%%%%% Successful Samples %%%%%%%%%%%%%%%%%%%%\n")
             file.write("\n\n".join(explanations))
 
-    print(f"All samples written to {explanation_path}")
-    print(f"Total samples: {len(explanations)}")
+    print(f"\n------> All samples written to {explanation_path}")
+    print(f"------> Total samples: {sample_size}")
+    print(f"------> Successful samples: {success}")

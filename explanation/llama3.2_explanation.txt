@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%% Successful Samples %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Sample 2 %%%%%%%%%%%%%%%%%%%%
+
+Summary: The program represents a decision-making process for determining whether to take a linear path or an alternative route in a network. It uses rules and logical operations to analyze connections and branches between nodes.
+
+Primitives:
+- linearpath: None
+- branches: None
+- same_gate: None
+
+Explanation: The program starts by checking for a linear path (direct connection) between two points. If no direct connection is found, it checks for branches (non-linear connections) or if the points are identical. The program then uses direction rules to determine the likely next step in the decision-making process.
+
+
+%%%%%%%%%%%%%%%%%%%% Sample 3 %%%%%%%%%%%%%%%%%%%%
+
+Summary: The Prolog program implements a decision-making process for determining the most efficient path between two nodes in a graph network.
+
+Primitives:
+- linearpath: None
+- branches: None
+
+Explanation: The program starts by checking if there is a direct connection (same_gate) or a linear path (linearpath) between two nodes. If not, it checks for branches (branches). The direction of the decision is based on the presence of these conditions and the connectivity of the graph.
+
+
+%%%%%%%%%%%%%%%%%%%% Sample 6 %%%%%%%%%%%%%%%%%%%%
+
+Summary: The Prolog program represents a strategic decision-making process for navigating through a network by identifying connected paths.
+
+Primitives:
+- same_gate: None
+- branches: None
+- is_connected: None
+- not_branches: None
+
+Explanation: The program logic works by first identifying linear paths (straight lines) and non-linear paths (branches) through the network. It then determines the direction of movement along these paths based on connections between nodes. The program uses recursive application to traverse the network, repeatedly applying the same principle of connection until all possible paths are explored.
+
+
+%%%%%%%%%%%%%%%%%%%% Sample 7 %%%%%%%%%%%%%%%%%%%%
+
+Summary: This Prolog program implements a decision-making strategy for navigating through a network with multiple gates and branches.
+
+Primitives:
+- linearpath: None
+- branches: None
+- not_branches: None
+- same_gate: None
+- is_connected: None
+
+Explanation: The program works by first identifying linear paths and branches between points. It then uses these findings to determine if there are any connections or gaps in the network, helping the decision-maker navigate effectively.
+
+
+%%%%%%%%%%%%%%%%%%%% Sample 8 %%%%%%%%%%%%%%%%%%%%
+
+Summary: The Prolog program encodes a decision-making process for determining whether to take a linear path or branch off in a network.
+
+Primitives:
+- direction: None
+
+Explanation: The program starts by determining if there is a same gate condition (i.e., equal conditions for the same node). If this condition is met, it moves to an is_connected check. If both are true, it determines if there are branches (i.e., different connections between two connected nodes). Based on these conditions, the program decides whether to take a linear path or branch off. It then recursively applies the same checks for each new node in the branching path.

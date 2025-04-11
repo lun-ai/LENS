@@ -15,7 +15,7 @@ from langchain.schema import StrOutputParser
 # Define the output structure with a Pydantic model
 class PrologExplanation(BaseModel):
     summary: str = Field()
-    primitives: List[Dict[str, str]] = Field(
+    primitive: List[Dict[str, str]] = Field(
         default_factory=list,
         description="List of primitives with their descriptions",
         example=[{"name": "odd", "description": "Checks if a number is odd"},]
@@ -148,7 +148,7 @@ def compose_prolog_input(task_names: list[str], comments=True):
     return prolog_code
 
 
-def prompt_llm(llm, task_names, template_path, explanation_path, sample_size=10):
+def structured_prompt(llm, task_names, template_path, explanation_path, sample_size=10):
     """Prompt the LLM to explain the Prolog program.
     Args:
         llm: The language model to use
@@ -196,3 +196,69 @@ def prompt_llm(llm, task_names, template_path, explanation_path, sample_size=10)
     print(f"\n------> All samples written to {explanation_path}")
     print(f"------> Total samples: {sample_size}")
     print(f"------> Successful samples: {success}")
+
+
+def unstructured_prompt(llm, task_names, template_path, explanation_path, sample_size=10):
+    """Prompt the LLM to explain the Prolog program with an unstructured, natural language response.
+
+    Args:
+        llm: The language model to use
+        task_names (list): List of task names
+        template_path (str): Path to the explanation template
+        explanation_path (str): Path to save the explanation
+        sample_size (int): Number of samples to generate
+
+    Returns:
+        list: List of generated explanations
+    """
+    explanations = []
+    success = 0
+    i = 0
+
+    while i < sample_size:
+        try:
+            # Get the Prolog code
+            prolog_input = compose_prolog_input(task_names, comments=False)
+
+            # Read the template file
+            with open(template_path, 'r') as file:
+                explanation_template = file.read()
+
+            # Replace the [PROLOG CODE] placeholder with actual code
+            prompt_template = explanation_template.replace(
+                "[PROLOG CODE]", prolog_input)
+
+            # Create a simple chain for unstructured output
+            chain = PromptTemplate(
+                template=prompt_template, input_variables=[]) | llm | StrOutputParser()
+
+            # Generate the explanation
+            raw_explanation = chain.invoke({})
+
+            print(
+                f"===== Generated Explanation {i+1} =====\n{raw_explanation}\n")
+
+            # Add to explanations list
+            explanations.append(
+                f'%%%%%%%%%%%%%%%%%%%% Sample {i+1} %%%%%%%%%%%%%%%%%%%%')
+            explanations.append(raw_explanation)
+            print(f"------> Sample {i+1} complete")
+            success += 1
+
+        except Exception as e:
+            print(f"Error in sample {i+1}: {e}")
+
+        i += 1
+
+    # Write all explanations to the output file
+    if explanations and explanation_path:
+        with open(explanation_path, 'w') as file:
+            file.write(
+                "%%%%%%%%%%%%%%%%%%%% Unstructured Explanations %%%%%%%%%%%%%%%%%%%%\n")
+            file.write("\n\n".join(explanations))
+
+    print(f"\n------> All explanations written to {explanation_path}")
+    print(f"------> Total samples: {sample_size}")
+    print(f"------> Successful samples: {success}")
+
+    return explanations

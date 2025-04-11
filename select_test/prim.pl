@@ -1,6 +1,6 @@
-% Return the partitions with a larger min partition size
-max_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).
-max_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).
+% Compare two partitions, return the partitions with a larger min partition size
+larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).
+larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).
 
 % Find the smaller and larger number of two numbers
 min(A, B, C) :- min_list([A,B],C).

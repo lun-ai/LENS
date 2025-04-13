@@ -1,7 +1,3 @@
-Explain the following Prolog code to someone with no programming background:
-
-[PROLOG CODE]
-
-In your explanation:
-- Describe what the code does in plain English
-- Translate technical Prolog concepts (predicates, facts, rules) into everyday language
+Instruction: [INSTRUCTION]
+Input: [PROLOG CODE]
+Response:

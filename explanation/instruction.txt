@@ -1,0 +1,6 @@
+You are tasked with explaining Prolog code to a person with no programming background. 
+Follow these steps carefully to create a clear, accessible explanation.
+
+Step 1: Examine the Prolog program components (invented programs have the 'inv' prefix and higher-order programs have the 'ho' identifier)
+Step 2: Translate the components into plain English sentences
+Step 3: Explain the code as a whole and what this program is designed to accomplish

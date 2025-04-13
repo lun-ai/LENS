@@ -1,0 +1,312 @@
+%%%%%%%%%%%%%%%%%%%% Unstructured Explanations %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Sample 1 %%%%%%%%%%%%%%%%%%%%
+
+Certainly! Let's break down this Prolog code step by step to explain it in simple terms.
+
+### Step 1: Examine the Program Components
+
+#### Main Program
+
+- `linearpath(A,B)`: This rule defines a linear path between two elements A and B.
+- `not_linearpath(A,B)`: This rule checks if there is no linear path between two elements A and B.
+- `inv_ho_0(A,B)` and `inv_ho_1(A,B)`: These rules define specific conditions related to circuits.
+- `partition(A,B,C)`: This rule tries to split a list into two parts based on certain criteria.
+- `partition_sizes(A,B)`: This rule calculates sizes of partitions.
+- `optimal_partition_sizes(A,B)`: This rule finds the optimal partition sizes by comparing different possibilities.
+
+#### Primitives
+
+- `branches(A)`: Checks if an element A has multiple connections (not a simple linear path).
+- `same_gate(A, A)`: Ensures that an element is connected to itself.
+- `all(P, A, L)`: Applies a predicate P to all elements in list L and collects results.
+- `same_circuit(A, B)`: Checks if two elements belong to the same circuit.
+- `size(L, S)`: Calculates the size of a list L.
+- `pair(A,B,[A,B])`: Creates a pair from A and B.
+- `larger_min_size([A,B], [C,D], [A,B])` or `[C,D]`: Compares two pairs and returns the larger minimum size.
+- `min(A, B, C)` and `max(A, B, C)`: Finds the minimum and maximum of A and B, respectively.
+- `not_list(A)`: Checks if A is not a list.
+- `fold(_P,Acc,[],Acc)`: Fold operation with an accumulator for empty lists.
+- `map(_P,[],[])`: Map operation for empty lists.
+- `empty_partition_sizes([0, 0])`: Initializes the partition sizes as zero.
+
+### Step 2: Translate Components into Plain English Sentences
+
+- **linearpath(A,B)**: A and B are connected in a straight line without branching out to other elements.
+- **not_linearpath(A,B)**: There is no direct linear connection between A and B.
+- **inv_ho_0(A,B)**: Elements A and B belong to the same circuit and there's a linear path from B back to A.
+- **inv_ho_1(A,B)**: Elements A and B belong to the same circuit but there's no linear path from B back to A.
+- **partition(A,B,C)**: The list A is divided into two groups (B and C) based on certain conditions.
+- **partition_sizes(A,B)**: It calculates the sizes of these partitions and stores them in B.
+- **optimal_partition_sizes(A,B)**: It finds the best way to split the list A such that it minimizes or maximizes a specific criterion, stored in B.
+
+### Step 3: Explain the Code as a Whole
+
+This Prolog program is designed to handle connections between elements in circuits. The main goal is to determine how these elements can be grouped (partitioned) based on certain criteria. Here's a simplified explanation:
+
+1. **Linear Paths**: First, it checks if there are direct linear paths between elements.
+2. **Circuit Conditions**: It verifies if two elements belong to the same circuit and then checks for specific conditions related to connectivity.
+3. **Partitioning**: Based on these conditions, it attempts to split the list of elements into different groups (partitions).
+4. **Size Calculation**: For each partition, it calculates the sizes.
+5. **Optimal Partitioning**: Finally, it determines which partitioning strategy provides the best result according to a specific criterion.
+
+In essence, this program helps in understanding and organizing the connections between elements in circuits by grouping them in optimal ways based on connectivity and circuit membership.
+
+%%%%%%%%%%%%%%%%%%%% Sample 2 %%%%%%%%%%%%%%%%%%%%
+
+Certainly! Let's break down the Prolog code step-by-step to make it accessible and understandable for someone with no programming background.
+
+### Step 1: Examine the Components
+
+Let's look at the main components of the program:
+
+- `linearpath(A,B)`: This predicate checks if there is a direct connection or a linear path between two nodes A and B.
+- `not_linearpath(A,B)`: This predicate checks if there is no linear path between two nodes A and B.
+- `inv_ho_0(A,B)` and `inv_ho_1(A,B)`: These predicates check specific conditions related to the circuit and connectivity of nodes A and B.
+- `partition(A,B,C)`: This predicate partitions a set into two subsets based on certain conditions.
+- `partition_sizes(A,B)`: This predicate calculates the sizes of the partitions.
+- `optimal_partition_sizes(A,B)`: This predicate finds the optimal partition sizes.
+
+### Step 2: Translate Components into Plain English Sentences
+
+Let's translate each component:
+
+- `linearpath(A,B)`: There is a direct path from node A to node B without any branches in between.
+- `not_linearpath(A,B)`: There is no direct or linear path from node A to node B.
+- `inv_ho_0(A,B)`: Nodes A and B belong to the same circuit, and there is a linear path from B back to A.
+- `inv_ho_1(A,B)`: Nodes A and B belong to the same circuit, but there is no linear path from B back to A.
+- `partition(A,B,C)`: Divide set A into two subsets B and C based on certain conditions (`inv_ho_0` for one subset and `inv_ho_1` for the other).
+- `partition_sizes(A,B)`: Calculate the sizes of the partitions B and C derived from partitioning set A.
+- `optimal_partition_sizes(A,B)`: Find the best way to calculate the sizes of partitions by comparing different possibilities.
+
+### Step 3: Explain the Code as a Whole
+
+This program is designed to work with circuits made up of nodes. It checks how these nodes are connected and categorizes them into different groups based on their connectivity. Here's what each part does:
+
+- **Linear Path Check**: The `linearpath` predicate verifies if there's a straightforward path between two nodes without any branches.
+- **Partitioning**: The `partition` predicate divides the set of nodes into two subsets, B and C, based on whether they meet specific conditions related to connectivity (`inv_ho_0` for subset B and `inv_ho_1` for subset C).
+- **Size Calculation**: The `size` predicate calculates how many elements are in a particular subset.
+- **Optimal Partitioning**: The `optimal_partition_sizes` predicate tries different ways of partitioning the nodes and selects the best partition sizes based on certain criteria.
+
+### What This Program Accomplishes
+
+The main goal of this program is to efficiently organize nodes in a circuit into partitions based on their connectivity, then determine the optimal way to divide these nodes. It helps in understanding how different parts of a circuit are interconnected and can be used for further analysis or optimization tasks related to electronic circuits.
+
+In simpler terms, it's like organizing your toys into different boxes based on how they connect with each other and finding the best way to arrange those boxes!
+
+%%%%%%%%%%%%%%%%%%%% Sample 3 %%%%%%%%%%%%%%%%%%%%
+
+### Step 1: Examine the Prolog Program Components
+
+Let's break down the Prolog code into its components and understand what each part does. The code is divided into two main sections: the main program and primitives.
+
+#### Main Program
+
+- `linearpath(A,B):- same_gate(A,B).`
+- `linearpath(A,B):- not(branches(A)),is_connected(A,C),linearpath(C,B).`
+- `not_linearpath(A,B) :- not(linearpath(A,B)).`
+- `inv_ho_0(A,B):- same_circuit(A,B),linearpath(B,A).`
+- `inv_ho_1(A,B):- same_circuit(A,B),not(linearpath(B,A)).`
+- `partition(A,B,C):- all(inv_ho_0,A,B),all(inv_ho_1,A,C).`
+- `partition_sizes(A,B):- partition(A,E,C),size(C,F),size(E,D),pair(D,F,B).`
+- `partition_sizes(A,B):- partition(A,E,C),size(C,F),size(E,D),pair(F,D,B).`
+- `optimal_partition_sizes(A,B):- empty_partition_sizes(D),map(partition_sizes,A,C),fold(larger_min_size,D,C,B).`
+
+#### Primitives
+
+- `branches(A) :- is_connected(A, B), is_connected(A, C), B \== C.`
+- `not_branches(A) :- not(branches(A)).`
+- `same_gate(A, A).`
+- `all(P, A, L):- findall(H, call(P, A, H), L).`
+- `same_circuit(A, B) :- gate(A), gate(B), N is A // 100, M is B // 100, N == M.`
+- `size(L, S) :- is_list(L), length(L, S).`
+- `pair(A,B,[A,B]) :- not_list(A), not_list(B).`
+- `larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).`
+- `larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).`
+- `min(A, B, C) :- min_list([A,B],C).`
+- `max(A, B, C) :- max_list([A,B],C).`
+- `not_list(A) :- not(is_list(A)).`
+- `fold(_P,Acc,[],Acc).`
+- `fold(P,Acc,[H|T],Out) :- call(P,Acc,H,Inter), fold(P,Inter,T,Out).`
+- `map(_P,[],[]).`
+- `map(P,[H|T],[H1|T1]) :- call(P,H,H1), map(P,T,T1).`
+- `empty_partition_sizes([0, 0]).`
+
+### Step 2: Translate the Components into Plain English Sentences
+
+Let's translate these components into plain English sentences to make them easier to understand.
+
+#### Main Program
+
+- **`linearpath(A,B):- same_gate(A,B).`**: If point A and point B are the same gate, then there is a linear path between them.
+- **`linearpath(A,B):- not(branches(A)),is_connected(A,C),linearpath(C,B).`**: If point A does not branch (i.e., it is connected to only one other point) and is connected to point C, then the existence of a linear path from C to B implies there is also a linear path from A to B.
+- **`not_linearpath(A,B) :- not(linearpath(A,B)).`**: If there is no linear path between point A and point B, then there is no linear path between them.
+- **`inv_ho_0(A,B):- same_circuit(A,B),linearpath(B,A).`**: If points A and B are in the same circuit and there is a linear path from B to A, then this condition holds true.
+- **`inv_ho_1(A,B):- same_circuit(A,B),not(linearpath(B,A)).`**: If points A and B are in the same circuit but there is no linear path from B to A, then this condition holds true.
+- **`partition(A,B,C):- all(inv_ho_0,A,B),all(inv_ho_1,A,C).`**: Points B and C represent two groups. All points in group B satisfy `inv_ho_0` with point A, and all points in group C satisfy `inv_ho_1` with point A.
+- **`partition_sizes(A,B):- partition(A,E,C),size(C,F),size(E,D),pair(D,F,B).`**: Given a partition of points around point A into groups E and C, calculate the sizes of these groups (D and F) and pair them together to form B.
+- **`optimal_partition_sizes(A,B):- empty_partition_sizes(D),map(partition_sizes,A,C),fold(larger_min_size,D,C,B).`**: Start with an empty partition size D, apply `partition_sizes` to each element in A to get a list of sizes C, and then use the `larger_min_size` function to find the optimal sizes that maximize the minimum size of the partitions.
+
+#### Primitives
+
+- **`branches(A) :- is_connected(A, B), is_connected(A, C), B \== C.`**: Point A branches if it is connected to points B and C, where B and C are not the same point.
+- **`not_branches(A) :- not(branches(A)).`**: Point A does not branch if it does not satisfy the branching condition.
+- **`same_gate(A, A).`**: Any point A is considered to be connected to itself as a gate.
+- **`all(P, A, L):- findall(H, call(P, A, H), L).`**: Find all points H that satisfy the predicate P with point A and store them in list L.
+- **`same_circuit(A, B) :- gate(A), gate(B), N is A // 100, M is B // 100, N == M.`**: Points A and B are in the same circuit if they belong to the same circuit identifier (obtained by integer division of their values by 100).
+- **`size(L, S) :- is_list(L), length(L, S).`**: The size S of list L is determined by its length.
+- **`pair(A,B,[A,B]) :- not_list(A), not_list(B).`**: Pair A and B together into a new list [A,B] if neither A nor B are lists.
+- **`larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).`**: If the maximum of A and C is A, then return [A,B].
+- **`larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).`**: Otherwise, if the maximum of A and C is C, return [C,D].
+- **`min(A, B, C) :- min_list([A,B],C).`**: The minimum value between A and B is determined by finding the minimum in a list containing these values.
+- **`max(A, B, C) :- max_list([A,B],C).`**: The maximum value between A and B is determined by finding the maximum in a list containing these values.
+- **`not_list(A) :- not(is_list(A)).`**: Point A is not considered to be a list if it does not satisfy the list condition.
+- **`fold(_P,Acc,[],Acc).`**: If there are no elements left to process in the list, return the accumulated result Acc.
+- **`fold(P,Acc,[H|T],Out) :- call(P,Acc,H,Inter), fold(P,Inter,T,Out).`**: Process each element H of the list [H|T] by applying predicate P with accumulator Acc and intermediate result Inter; then continue processing the rest of the list T.
+- **`map(_P,[],[]).`**: If there are no elements left to process in the list, return an empty list.
+- **`map(P,[H|T],[H1|T1]) :- call(P,H,H1), map(P,T,T1).`**: Apply predicate P to each element H of the list [H|T] to transform it into H1 and continue processing the rest of the list T.
+- **`empty_partition_sizes([0, 0]).`**: Initialize an empty partition size as [0, 0].
+
+### Step 3: Explain the Program
+
+The program is designed to handle points in a circuit, where each point can be connected to other points either linearly or with branching. The main goal of the program is to find optimal partitions around a given point A based on certain conditions (like being in the same circuit and having linear paths).
+
+#### Key Steps:
+
+1. **Linear Path Detection**: 
+   - `linearpath(A,B)` checks if there is a direct path from A to B, considering branching points.
+   
+2. **Partitioning**:
+   - `partition(A,B,C)` groups points into two categories based on specific conditions (`inv_ho_0` and `inv_ho_1`).
+   
+3. **Size Calculation**:
+   - `size(L,S)` calculates the number of elements in a list L.
+   
+4. **Optimization**:
+   - `optimal_partition_sizes(A,B)` finds the best partition sizes that maximize the minimum size of the partitions using `larger_min_size`.
+
+5. **Helper Predicates**:
+   - `same_gate(A,A)`, `branches(A)`, and `same_circuit(A,B)` help in determining specific relationships between points.
+   
+6. **List Manipulation**:
+   - `fold(P,Acc,List,Out)` processes elements of a list using an accumulator and a predicate P.
+   - `map(P,List1,List2)` transforms one list into another by applying predicate P to each element.
+
+### Conclusion
+
+The program is essentially about managing and optimizing point relationships in circuits, particularly focusing on linear paths, branching points, and partitioning. It uses logical rules and predicates to determine these relationships and optimize the results accordingly.
+
+%%%%%%%%%%%%%%%%%%%% Sample 4 %%%%%%%%%%%%%%%%%%%%
+
+### Step 1: Examine the Prolog Program Components
+
+Let's break down the Prolog code into smaller components and understand what each part does.
+
+#### Main Program Components:
+- `linearpath(A,B)`: This rule determines if there is a linear path between nodes A and B.
+- `not_linearpath(A,B)`: This rule checks if there is no linear path between nodes A and B.
+- `inv_ho_0(A,B)` and `inv_ho_1(A,B)`: These rules are used to check specific conditions related to circuits and paths.
+- `partition(A,B,C)`: This rule partitions a set of nodes into two sets based on certain criteria.
+- `partition_sizes(A,B)`: This rule calculates the sizes of the partitions created by `partition`.
+- `optimal_partition_sizes(A,B)`: This rule finds the optimal partition sizes from multiple possible partitions.
+
+#### Primitives:
+- `branches(A)`: Checks if a node A has branches (is connected to more than one other node).
+- `same_gate(A, A)`: Checks if two nodes are the same.
+- `all(P, A, L)`: Finds all elements H that satisfy the predicate P with respect to A and stores them in list L.
+- `same_circuit(A, B)`: Checks if two nodes belong to the same circuit.
+- `size(L, S)`: Calculates the size of a list L.
+- `pair(A,B,[A,B])`: Creates a pair from elements A and B.
+- `larger_min_size([A,B], [C,D], [A,B])` and `larger_min_size([A,B], [C,D], [C,D])`: Determines which pair of numbers is larger based on the first element.
+- `min(A, B, C)` and `max(A, B, C)`: Finds the minimum or maximum value between A and B.
+- `not_list(A)`: Checks if A is not a list.
+- `fold(P,Acc,[],Acc)`: Folds a list into an accumulator using predicate P.
+- `map(P,[H|T],[H1|T1])`: Maps elements from one list to another using predicate P.
+- `empty_partition_sizes([0, 0])`: Initializes empty partition sizes.
+
+### Step 2: Translate the Components into Plain English Sentences
+
+#### Main Program:
+- **linearpath(A,B)**: There is a linear path between nodes A and B if they are in the same gate or if there's no branching from node A to other nodes and there's another connection leading further towards node B.
+- **not_linearpath(A,B)**: There is no linear path between nodes A and B if `linearpath(A,B)` does not hold true.
+- **inv_ho_0(A,B)**: Nodes A and B are in the same circuit, and there's a linear path from B to A.
+- **inv_ho_1(A,B)**: Nodes A and B are in the same circuit, but there's no linear path from B to A.
+- **partition(A,B,C)**: Partition set A into two sets B and C based on specific conditions (related to inv_ho_0 and inv_ho_1).
+- **partition_sizes(A,B)**: Calculate sizes of partitions B created by partitioning A, where B contains the sizes of the two partitions.
+- **optimal_partition_sizes(A,B)**: Find the optimal pair of partition sizes from multiple possible partitions.
+
+#### Primitives:
+- **branches(A)**: Node A has branches if it is connected to more than one other node.
+- **same_gate(A, A)**: Nodes A and B are considered the same if they are identical (in this context).
+- **all(P, A, L)**: Collect all elements H that satisfy the condition P with respect to A into a list L.
+- **same_circuit(A, B)**: Nodes A and B belong to the same circuit if both have the same identifier after integer division by 100.
+- **size(L, S)**: The size of the list L is S.
+- **pair(A,B,[A,B])**: Create a pair consisting of elements A and B.
+- **larger_min_size([A,B], [C,D], [A,B])** and **larger_min_size([A,B], [C,D], [C,D])**: Choose the larger pair based on the first element.
+- **min(A, B, C)** and **max(A, B, C)**: Determine the minimum or maximum value between A and B.
+- **not_list(A)**: Check if A is not a list.
+- **fold(P,Acc,[],Acc)**: Fold an empty list into an accumulator using predicate P.
+- **map(P,[H|T],[H1|T1])**: Transform elements from one list to another using predicate P.
+- **empty_partition_sizes([0, 0])**: Initialize partition sizes as [0, 0].
+
+### Step 3: Explain the Code as a Whole
+
+This Prolog program is designed to analyze and partition circuits based on connectivity rules. It starts by defining what constitutes a linear path between two nodes (`linearpath`). It then checks for non-linear paths (`not_linearpath`).
+
+The `inv_ho_0` and `inv_ho_1` predicates are used to categorize connections within the same circuit, specifically checking if there's a linear path from B back to A.
+
+The `partition` predicate divides nodes into two groups based on these conditions. The `partition_sizes` predicate then calculates how many nodes are in each partition.
+
+Finally, the `optimal_partition_sizes` predicate identifies which pair of partitions is optimal (larger first) out of multiple possible configurations. This could be useful for optimizing circuit design or analysis by ensuring that certain connections are properly grouped and evaluated.
+
+In summary, this program takes a set of nodes representing circuits, analyzes their connectivity, partitions them based on specific rules, and then determines the optimal partition sizes to ensure efficient and effective analysis of circuit structures.
+
+%%%%%%%%%%%%%%%%%%%% Sample 5 %%%%%%%%%%%%%%%%%%%%
+
+### Step 1: Examine the Prolog Program Components
+
+Let's break down the main components of this Prolog program:
+
+- **linearpath(A,B):** This rule defines when there is a linear path between two points A and B.
+- **not_linearpath(A,B):** This rule defines when there is no linear path between two points A and B.
+- **inv_ho_0(A,B) & inv_ho_1(A,B):** These rules are higher-order components that check if points A and B belong to the same circuit and whether they have a specific type of connection.
+- **partition(A,B,C):** This rule partitions elements based on certain conditions.
+- **partition_sizes(A,B):** This rule calculates sizes of partitions.
+- **optimal_partition_sizes(A,B):** This rule finds optimal partition sizes using higher-order functions.
+
+### Step 2: Translate the Components into Plain English Sentences
+
+Let's translate each component into simple sentences:
+
+1. **linearpath(A, B):**
+   - "There is a linear path between point A and point B if they are on the same gate."
+   - "There is also a linear path between point A and point B if point A does not branch out to multiple connections and there exists some point C such that there is a connection from A to C, and from C to B."
+
+2. **not_linearpath(A, B):**
+   - "There is no linear path between points A and B if the previous condition for a linear path is not true."
+
+3. **inv_ho_0(A, B) & inv_ho_1(A, B):**
+   - "Points A and B belong to the same circuit and there is a linear path from B to A."
+   - "Points A and B belong to the same circuit but there is no linear path from B to A."
+
+4. **partition(A, B, C):**
+   - "Partition elements into two groups based on the condition that all elements in group A satisfy the inv_ho_0 condition with respect to group B and all elements in group A satisfy the inv_ho_1 condition with respect to group C."
+
+5. **partition_sizes(A, B):**
+   - "Calculate the sizes of partitions formed by dividing elements into two groups based on certain conditions and pair the sizes together."
+   - "Alternatively, perform a similar partitioning but swap the order of paired sizes."
+
+6. **optimal_partition_sizes(A, B):**
+   - "Find the optimal partition sizes starting with an initial empty size list, map each element to its partition sizes using the partition_sizes function, and fold these results together based on finding the larger minimum size."
+
+### Step 3: Explain the Code as a Whole
+
+The Prolog program is designed to analyze connections between points (likely representing components in an electronic circuit or similar system). It defines several rules to determine linear paths, identify circuits, and partition elements into groups based on specific conditions. The main goal of this program is to find optimal partition sizes for these elements.
+
+Here's a high-level explanation:
+
+- **Linear Path Check:** The program first checks if there's a direct path between two points or an indirect path through another point without branching.
+- **Circuit and Connection Checks:** It verifies whether points are in the same circuit and how they connect to each other.
+- **Partitioning:** Based on these checks, it partitions elements into groups where certain conditions hold true for elements within those groups.
+- **Optimization:** Finally, it optimizes the partition sizes by comparing them and finding the best configuration.
+
+In essence, this program is like organizing a bunch of electronic components into groups based on how they are connected and ensuring that each group meets specific criteria. The goal is to find the optimal way to organize these components based on their connections.

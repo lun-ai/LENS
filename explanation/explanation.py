@@ -1,4 +1,6 @@
 # Import necessary libraries
+from langchain.schema.messages import HumanMessage
+from langchain.prompts import ChatPromptTemplate
 from langchain.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 from typing import List, Dict
@@ -89,16 +91,35 @@ def explain_prolog(llm, prompt_template, prolog_code, variables=['prolog_code'])
         return raw_result
 
 
-def compose_prolog_input(task_names: list[str], comments=True):
+def compose_prolog_input(task_names: list[str], comments=True, biases=True) -> str:
+
+    #     prolog_prompt_template = """
+
+    # %%%%%%%%%%%%%%%%%%%% Target rules %%%%%%%%%%%%%%%%%%%%
+    # {target_rules}
+
+    # %%%%%%%%%%%%%%%%%%%% Primitives %%%%%%%%%%%%%%%%%%%%
+    # {primitives}
+
+    # """
+    #     if biases:
+    #         prolog_prompt_template += """
+    # %%%%%%%%%%%%%%%%%%%% Biases %%%%%%%%%%%%%%%%%%%%
+    # {biases}
+
+    # """
 
     prolog_prompt_template = """
 
-%%%%%%%%%%%%%%%%%%%% Target rules %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Main program %%%%%%%%%%%%%%%%%%%%
 {target_rules}
 
 %%%%%%%%%%%%%%%%%%%% Primitives %%%%%%%%%%%%%%%%%%%%
 {primitives}
 
+"""
+    if biases:
+        prolog_prompt_template += """
 %%%%%%%%%%%%%%%%%%%% Biases %%%%%%%%%%%%%%%%%%%%
 {biases}
 
@@ -143,12 +164,12 @@ def compose_prolog_input(task_names: list[str], comments=True):
         biases=biases
     )
 
-    print(prolog_code)
+    # print(prolog_code)
 
     return prolog_code
 
 
-def structured_prompt(llm, task_names, template_path, explanation_path, sample_size=10):
+def prompt_structured_output(llm, task_names, template_path, explanation_path, sample_size=10):
     """Prompt the LLM to explain the Prolog program.
     Args:
         llm: The language model to use
@@ -198,7 +219,7 @@ def structured_prompt(llm, task_names, template_path, explanation_path, sample_s
     print(f"------> Successful samples: {success}")
 
 
-def unstructured_prompt(llm, task_names, template_path, explanation_path, sample_size=10):
+def prompt_unstructured_output(llm, task_names, template_path, explanation_path, sample_size=10):
     """Prompt the LLM to explain the Prolog program with an unstructured, natural language response.
 
     Args:
@@ -215,33 +236,131 @@ def unstructured_prompt(llm, task_names, template_path, explanation_path, sample
     success = 0
     i = 0
 
+    # Read the template once
+    with open(template_path, 'r') as file:
+        explanation_template = file.read()
+
+    # Check if the template has an [INSTRUCTION] placeholder
+    if "[INSTRUCTION]" not in explanation_template:
+        print(
+            f"Warning: Template at {template_path} doesn't contain [INSTRUCTION] placeholder.")
+        return []
+
     while i < sample_size:
         try:
             # Get the Prolog code
-            prolog_input = compose_prolog_input(task_names, comments=False)
+            prolog_input = compose_prolog_input(
+                task_names, comments=False, biases=False)
 
-            # Read the template file
-            with open(template_path, 'r') as file:
-                explanation_template = file.read()
+            # Read the instruction content
+            with open('explanation/instruction.txt', 'r') as file:
+                instruction = file.read()
 
-            # Replace the [PROLOG CODE] placeholder with actual code
+            # Insert the instruction into the template
+            # Replace [PROLOG CODE] in the instruction with the actual code
             prompt_template = explanation_template.replace(
-                "[PROLOG CODE]", prolog_input)
+                "[INSTRUCTION]", instruction).replace("[PROLOG CODE]", prolog_input)
+
+            print(f"===== Prompt {i+1} =====\n{prompt_template}\n")
 
             # Create a simple chain for unstructured output
             chain = PromptTemplate(
                 template=prompt_template, input_variables=[]) | llm | StrOutputParser()
 
             # Generate the explanation
-            raw_explanation = chain.invoke({})
+            explanation = chain.invoke({})
+
+            # Extract content after "Response:" if present
+            # if "Response:" in raw_explanation:
+            #     explanation_part = raw_explanation.split("Response:")[
+            #         1].strip()
+            # else:
+            #     explanation_part = raw_explanation
 
             print(
-                f"===== Generated Explanation {i+1} =====\n{raw_explanation}\n")
+                f"===== Generated Explanation {i+1} =====\n{explanation}\n")
 
             # Add to explanations list
             explanations.append(
                 f'%%%%%%%%%%%%%%%%%%%% Sample {i+1} %%%%%%%%%%%%%%%%%%%%')
-            explanations.append(raw_explanation)
+            explanations.append(explanation)
+            print(f"------> Sample {i+1} complete")
+            success += 1
+
+        except Exception as e:
+            print(f"Error in sample {i+1}: {e}")
+            print(f"Error details: {str(e)}")
+
+        i += 1
+
+    # Write all explanations to the output file
+    if explanations and explanation_path:
+        with open(explanation_path, 'w') as file:
+            file.write(
+                "%%%%%%%%%%%%%%%%%%%% Unstructured Explanations %%%%%%%%%%%%%%%%%%%%\n")
+            file.write("\n\n".join(explanations))
+
+    print(f"\n------> All explanations written to {explanation_path}")
+    print(f"------> Total samples: {sample_size}")
+    print(f"------> Successful samples: {success}")
+
+    return explanations
+
+
+def prompt_v3_output(llm, task_names, template_path, explanation_path, sample_size=10):
+    """Prompt the LLM using the v3 template format designed for chat models like Starcoder2.
+
+    Args:
+        llm: The language model to use
+        task_names (list): List of task names
+        template_path (str): Path to the v3 explanation template
+        explanation_path (str): Path to save the explanation
+        sample_size (int): Number of samples to generate
+
+    Returns:
+        list: List of generated explanations
+    """
+    explanations = []
+    success = 0
+    i = 0
+
+    while i < sample_size:
+        try:
+            # Get the Prolog code
+            prolog_input = compose_prolog_input(
+                task_names, comments=False, biases=False)
+
+            # Create instruction with Prolog code
+            with open('explanation/instruction.txt', 'r') as file:
+                instruction = file.read()
+            instruction = instruction + "\nInput:" + prolog_input
+
+            # Format for starcoder2 using message-based approach
+            # For v3 template, we need to use chat messages instead of a simple template
+            chat_messages = [HumanMessage(role='user', content=instruction)]
+
+            # Create a chat template that handles the special formatting
+            chat_prompt = ChatPromptTemplate.from_messages(chat_messages)
+
+            print(f"===== Prompt {i+1} =====\n{instruction}")
+
+            # Create chain for output
+            chain = chat_prompt | llm | StrOutputParser()
+
+            # Generate the explanation
+            explanation = chain.invoke({})
+
+            # Clean up response if needed - some models might include "### Response" markers
+            # if "### Response" in explanation:
+            #     explanation = explanation.split("### Response")[1].strip()
+
+            print(
+                f"===== Generated Explanation {i+1} =====\n{explanation}\n")
+
+            # Add to explanations list
+            explanations.append(
+                f'%%%%%%%%%%%%%%%%%%%% Sample {i+1} %%%%%%%%%%%%%%%%%%%%')
+            explanations.append(explanation)
             print(f"------> Sample {i+1} complete")
             success += 1
 
@@ -254,7 +373,7 @@ def unstructured_prompt(llm, task_names, template_path, explanation_path, sample
     if explanations and explanation_path:
         with open(explanation_path, 'w') as file:
             file.write(
-                "%%%%%%%%%%%%%%%%%%%% Unstructured Explanations %%%%%%%%%%%%%%%%%%%%\n")
+                "%%%%%%%%%%%%%%%%%%%% Chat Template Explanations %%%%%%%%%%%%%%%%%%%%\n")
             file.write("\n\n".join(explanations))
 
     print(f"\n------> All explanations written to {explanation_path}")

@@ -1,4 +1,4 @@
-:- ['select_test/target.pl'].
+:- ['optimal_partition_sizes/target.pl'].
 :- use_module(library(csv)).
 
 % Id for each circuit example
@@ -86,7 +86,7 @@ write_test_pos(CircuitNum, Src) :-
     opt_gates(Src, OptGates),
     maplist(partition_sizes, OptGates, OptPs),
     sort(OptPs,OptPsSorted),
-    forall(member(Pos, OptPsSorted), format("pos(select_test(~w,~w)).\n", [Gates, Pos])).
+    forall(member(Pos, OptPsSorted), format("pos(optimal_partition_sizes(~w,~w)).\n", [Gates, Pos])).
 write_test_neg(CircuitNum, Src) :-
     findall(G, (gate(G), CircuitNum is G // 100), Gates),
     maplist(partition_sizes, Gates, Ps),
@@ -94,18 +94,18 @@ write_test_neg(CircuitNum, Src) :-
     opt_gates(Src, OptGates),
     maplist(partition_sizes, OptGates, OptPs),
     subtract(PsSorted, OptPs, Diffs),
-    forall(member(Neg, Diffs), format("neg(select_test(~w,~w)).\n", [Gates, Neg])).
+    forall(member(Neg, Diffs), format("neg(optimal_partition_sizes(~w,~w)).\n", [Gates, Neg])).
 
 
 % Check the partition selected by the learned program
 test(CircuitNum, Src, Cnt) :- 
     opt_gates(Src, Gs),
     findall(G, (gate(G), CircuitNum is G // 100), Gates),
-    select_test(Gates, [N, N1]),
+    optimal_partition_sizes(Gates, [N, N1]),
     maplist(partition_sizes, Gs, Ps),
     (member([N, N1], Ps) -> Cnt = 1; Cnt = 0),
     format("Circuit No. ~w, split: ~w/~w, Optimal: ~w\n", [Src, N, N1, Cnt]),
-    format("\tResult: ~w\n", [select_test(Gates, (N, N1))]),!.
+    format("\tResult: ~w\n", [optimal_partition_sizes(Gates, (N, N1))]),!.
 test_selection :-
     ex_ids(Ids),
     findall(Cnt,    
@@ -164,6 +164,7 @@ test_ex(A) :-
 
 % Test the accuracy of the learned program on test examples
 :-
+    unload_file('ex_1/bk.pl'),
     consult('circuit_bk.pl'),
     consult('data/exs.pl'),
     findall(A, (pos(A); neg(A)), Es),

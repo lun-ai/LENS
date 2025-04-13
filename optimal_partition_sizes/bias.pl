@@ -1,26 +1,26 @@
 % Learn a divide and conquer strategy to partition each input graph
-% python hopper/popper.py --kbpath select_test --max-ho 3 --max-rules 3
+% python hopper/popper.py --kbpath optimal_partition_sizes --max-ho 3 --max-rules 3
 
 % Predicate declarations
-head_pred(select_test,2). 
+head_pred(optimal_partition_sizes,2). 
 body_pred(partition_sizes,2). 
-body_pred(empty_partitions,1).
+body_pred(empty_partition_sizes,1).
 body_pred(larger_min_size,3).
 body_pred(map,3,ho).
 body_pred(fold,4,ho).
 
 % Types
-type(select_test,(list,list)). 
+type(optimal_partition_sizes,(list,list)). 
 type(partition_sizes,(element,list)). 
-type(empty_partitions,(list,)).
+type(empty_partition_sizes,(list,)).
 type(larger_min_size,(list,list,list)).
 type(map,((element,list),list,list)).
 type(fold,((list,list,list),list,list,list)).
 
 % Input-output signatures
-direction(select_test,(in,out)). 
+direction(optimal_partition_sizes,(in,out)). 
 direction(partition_sizes,(in,out)). 
-direction(empty_partitions,(out,)).
+direction(empty_partition_sizes,(out,)).
 direction(larger_min_size,(in,in,out)).
 direction(map,((in,out),in,out)).
 direction(fold,((in,in,out),in,in,out)).

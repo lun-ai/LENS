@@ -28,7 +28,7 @@ python hopper/popper.py --kbpath partition_sizes --max-rules 3
 ```
 
 ```
-python hopper/popper.py --kbpath select_test --max-ho 3 --max-rules 3
+python hopper/popper.py --kbpath optimal_partition_sizes --max-ho 3 --max-rules 3
 ```
 
 ## Authors

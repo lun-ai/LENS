@@ -23,4 +23,4 @@ map(P,[H|T],[H1|T1]) :-
     map(P,T,T1).
 
 % The smallest partition base case
-empty_partitions([0, 0]).
+empty_partition_sizes([0, 0]).

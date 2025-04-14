@@ -1,4 +1,4 @@
-Instruction: Summarise 'linear_path', 'partition', 'partition_sizes', and 'optimal_partition_sizes' predicates in a Prolog program, given the sample explanations of this program. 
-Use relevant natural language for non-programmers to understand.
-Samples: [Attached text file]
+Instruction: Summarise [TARGETS] predicates in a Prolog program, given the sample explanations of this program. 
+Use relevant natural language for non-programmers to understand. Do not mention additional analogies.
+Samples: [SAMPLES]
 Summary:

@@ -1,0 +1,19 @@
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
+**Summary of Key Concepts (For Non-Programmers):**
+
+1. **Linear Path (`linearpath`):**  
+   Checks if two points (like nodes in a circuit) are connected in a straight line without splits or branches. For example, if you can draw a direct line from point A to point B without any detours, they have a linear path.
+
+2. **Partition (`partition`):**  
+   Splits a group of points into two smaller groups based on specific rules:  
+   - **Group 1:** Points that are in the same circuit as a reference point *and* have a backward linear path to it.  
+   - **Group 2:** Points that are in the same circuit as the reference point *but lack* a backward linear path to it.  
+
+3. **Partition Sizes (`partition_sizes`):**  
+   Counts how many points are in each of the two groups created by the `partition` step. For example, if Group 1 has 5 points and Group 2 has 3, the sizes would be [5, 3].
+
+4. **Optimal Partition Sizes (`optimal_partition_sizes`):**  
+   Compares different ways to split the points into groups and selects the "best" split. The goal is to maximize the smaller group’s size, ensuring a balanced division. Imagine trying to divide a set of toys into two boxes so neither box ends up too empty—this rule picks the fairest split.
+
+**In Simple Terms:**  
+This program analyzes connections in a system (like circuits) to group elements based on their relationships. It checks for direct paths (`linear_path`), divides elements into categories (`partition`), counts the items in each category (`partition_sizes`), and finally chooses the most balanced or efficient way to split them (`optimal_partition_sizes`).

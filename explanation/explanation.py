@@ -1,4 +1,6 @@
 # Import necessary libraries
+import anthropic
+from openai import OpenAI
 from langchain.schema.messages import HumanMessage
 from langchain.prompts import ChatPromptTemplate
 from langchain.prompts import PromptTemplate
@@ -219,13 +221,12 @@ def prompt_structured_output(llm, task_names, template_path, explanation_path, s
     print(f"------> Successful samples: {success}")
 
 
-def prompt_unstructured_output(llm, task_names, template_path, explanation_path, sample_size=10):
+def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
     """Prompt the LLM to explain the Prolog program with an unstructured, natural language response.
 
     Args:
         llm: The language model to use
         task_names (list): List of task names
-        template_path (str): Path to the explanation template
         explanation_path (str): Path to save the explanation
         sample_size (int): Number of samples to generate
 
@@ -237,6 +238,7 @@ def prompt_unstructured_output(llm, task_names, template_path, explanation_path,
     i = 0
 
     # Read the template once
+    template_path = 'explanation/explanation_template_instruct.txt'
     with open(template_path, 'r') as file:
         explanation_template = file.read()
 
@@ -307,13 +309,12 @@ def prompt_unstructured_output(llm, task_names, template_path, explanation_path,
     return explanations
 
 
-def prompt_v3_output(llm, task_names, template_path, explanation_path, sample_size=10):
+def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
     """Prompt the LLM using the v3 template format designed for chat models like Starcoder2.
 
     Args:
         llm: The language model to use
         task_names (list): List of task names
-        template_path (str): Path to the v3 explanation template
         explanation_path (str): Path to save the explanation
         sample_size (int): Number of samples to generate
 
@@ -333,16 +334,26 @@ def prompt_v3_output(llm, task_names, template_path, explanation_path, sample_si
             # Create instruction with Prolog code
             with open('explanation/instruction.txt', 'r') as file:
                 instruction = file.read()
-            instruction = instruction + "\nInput:" + prolog_input
+
+            # Remove the Instruction and response key word
+            instruction = instruction.replace(
+                "Instruction: ", "").replace("Response:", "")
+
+            with open('explanation/explanation_template_instruct.txt', 'r') as file:
+                explanation_template = file.read()
+
+            explanation_template = explanation_template.replace(
+                "[INSTRUCTION]", instruction).replace("[PROLOG CODE]", prolog_input)
 
             # Format for starcoder2 using message-based approach
             # For v3 template, we need to use chat messages instead of a simple template
-            chat_messages = [HumanMessage(role='user', content=instruction)]
+            chat_messages = [HumanMessage(
+                role='user', content=explanation_template)]
 
             # Create a chat template that handles the special formatting
             chat_prompt = ChatPromptTemplate.from_messages(chat_messages)
 
-            print(f"===== Prompt {i+1} =====\n{instruction}")
+            print(f"===== Prompt {i+1} =====\n{explanation_template}")
 
             # Create chain for output
             chain = chat_prompt | llm | StrOutputParser()
@@ -381,3 +392,47 @@ def prompt_v3_output(llm, task_names, template_path, explanation_path, sample_si
     print(f"------> Successful samples: {success}")
 
     return explanations
+
+
+def summary_prompt_output(samples, summary_path, api, max_tokens=4096, temperature=0, targets=['linear_path', 'partition', 'partition_sizes', 'optimal_partition_sizes']):
+
+    with open('explanation/summary_template.txt', 'r') as file:
+        template = file.read()
+
+    with open(samples, 'r') as file:
+        samples = file.read()
+
+    prompt = template.replace("[SAMPLES]", samples).replace(
+        "[TARGETS]", "\"" + "\", \"".join(targets) + "\"")
+
+    if "claude" in api['model']:
+        client = anthropic.Anthropic(api_key=api['api_key'])
+        response = client.messages.create(
+            model=api['model'],
+            max_tokens=max_tokens,
+            temperature=temperature,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
+        summary = response.content
+    else:
+        client = OpenAI(
+            api_key=api['api_key'],
+            base_url=api['api_url']
+        )
+        response = client.chat.completions.create(
+            model=api['model'],
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens
+        )
+        summary = response.choices[0].message.content
+
+    print(f"===== Summary =====\n{summary}")
+    with open(summary_path, 'w') as file:
+        file.write(
+            "%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%\n")
+        file.write(summary)

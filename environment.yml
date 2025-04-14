@@ -20,5 +20,8 @@ dependencies:
       - langchain_ollama
       - clingo
       - pysat
-      # - langchain_openai
+      - pydantic
+      - openai
+      # - anthropic
       # - huggingface_hub
+      # - llama_cpp_python

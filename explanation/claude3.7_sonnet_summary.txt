@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
+# Summary of Prolog Predicates
+
+## linear_path(A, B)
+This predicate determines if there is a direct linear path between two points A and B. A linear path exists when:
+- The points are the same, or
+- Point A doesn't branch out to multiple connections and there's a connection from A to another point that has a linear path to B
+
+## partition(A, B, C)
+This predicate divides a set of elements A into two groups (B and C) based on specific connectivity conditions:
+- Group B contains elements that are in the same circuit as A and have a linear path back to A
+- Group C contains elements that are in the same circuit as A but don't have a linear path back to A
+
+## partition_sizes(A, B)
+This predicate calculates the sizes of the two groups created when partitioning around point A:
+- It divides the elements into two groups using the partition predicate
+- It counts how many elements are in each group
+- It returns these two numbers as a pair in B
+
+## optimal_partition_sizes(A, B)
+This predicate finds the best way to partition elements by comparing different possibilities:
+- It starts with empty partition sizes [0, 0]
+- It calculates partition sizes for each possible configuration
+- It compares these sizes to find the optimal arrangement
+- The optimal arrangement maximizes the minimum size of the partitions
+
+These predicates help analyze how elements in a circuit are connected and find the most balanced way to group them.

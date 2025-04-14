@@ -394,13 +394,17 @@ def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
     return explanations
 
 
-def summary_prompt_output(samples, summary_path, api, max_tokens=4096, temperature=0, targets=['linear_path', 'partition', 'partition_sizes', 'optimal_partition_sizes']):
+def summary_prompt_output(sample_files, summary_path, api, max_tokens=4096, temperature=0, targets=['linear_path', 'partition', 'partition_sizes', 'optimal_partition_sizes']):
 
     with open('explanation/summary_template.txt', 'r') as file:
         template = file.read()
 
-    with open(samples, 'r') as file:
-        samples = file.read()
+    # Read the samples across different files
+    samples = []
+    for fname in sample_files:
+        with open(fname, 'r') as file:
+            samples.append(file.read())
+    samples = "\n\n".join(samples)
 
     prompt = template.replace("[SAMPLES]", samples).replace(
         "[TARGETS]", "\"" + "\", \"".join(targets) + "\"")
@@ -415,7 +419,7 @@ def summary_prompt_output(samples, summary_path, api, max_tokens=4096, temperatu
                 {"role": "user", "content": prompt}
             ]
         )
-        summary = response.content
+        summary = response.content[0].text
     else:
         client = OpenAI(
             api_key=api['api_key'],

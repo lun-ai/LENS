@@ -1,31 +1,14 @@
-Based on the samples provided, here's a summary of the key Prolog predicates:
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
+# Summary of Key Predicates in the Prolog Program
 
-## linearpath(A, B)
-This predicate determines if there is a linear path between two gates A and B. A linear path exists if:
-- A and B are the same gate (same_gate(A, B)), or
-- A is not a branching point (not(branches(A))), is connected to another gate C (is_connected(A, C)), and there's a linear path from C to B (linearpath(C, B))
+## linear_path
+This predicate determines if there is a linear path between two gates. A linear path exists when gates are connected in sequence without branching. For example, if gate A connects only to gate B, which connects only to gate C, then there is a linear path from A to C.
 
-## not_linearpath(A, B)
-This predicate checks if there is no linear path between gates A and B by negating the linearpath predicate.
+## partition
+This predicate divides a list of gates into two separate groups based on specific criteria. The first group contains gates that have linear paths between them, while the second group contains gates that don't have linear paths between them. This helps organize gates based on their connectivity patterns.
 
-## partition(A, B, C)
-This predicate separates a list of gates (A) into two groups:
-- B: gates that satisfy inv_ho_0 (gates in the same circuit with a linear path)
-- C: gates that satisfy inv_ho_1 (gates in the same circuit with no linear path)
+## partition_sizes
+This predicate calculates how many gates are in each of the two partitions created by the partition predicate. It returns a pair of numbers representing the size of each group. For example, if the first partition has 3 gates and the second has 2 gates, partition_sizes would return [3, 2].
 
-It uses all/3 to collect gates that meet each condition.
-
-## partition_sizes(A, B)
-This predicate calculates the sizes of the two partitions created by partition/3 and returns them as a pair [Size0, Size1]. It:
-1. Applies partition/3 to the gate list A
-2. Counts the number of gates in each resulting partition
-3. Returns these counts as a pair B
-
-## optimal_partition_sizes(A, B)
-This predicate finds the optimal partitioning of gates from a list of gate lists A. It:
-1. Starts with an empty partition (empty_partition_sizes/1)
-2. Applies partition_sizes/2 to each gate list
-3. Uses fold/4 with larger_min_size/3 to find the partition with the largest minimum size (or smallest maximum size if the minimum sizes are equal)
-4. Returns the optimal partition sizes as B
-
-These predicates work together to analyze circuit connectivity patterns and find optimal ways to partition gates based on their linear path relationships.
+## optimal_partition_sizes
+This predicate finds the best way to partition the gates to minimize the size of one of the partitions. It examines all possible partitioning options and selects the one that results in the smallest possible second partition. This is useful for finding the most efficient organization of gates.

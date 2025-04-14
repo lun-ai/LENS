@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
+**Summary of Key Components:**  
+
+1. **linear_path (Checks for Direct Paths):**  
+   - Determines if there's a straight, unbranching path between two gates. If a gate connects to another without splitting into multiple paths, they form a "linear path."  
+
+2. **partition (Divides Gates into Groups):**  
+   - Splits a list of gates into two groups:  
+     - **Group 1:** Gates connected by a linear path.  
+     - **Group 2:** Gates that branch into multiple paths or lack a direct connection.  
+
+3. **partition_sizes (Counts Group Sizes):**  
+   - Calculates how many gates are in each of the two groups created by `partition`. For example, if Group 1 has 5 gates and Group 2 has 3, it returns the pair [5, 3].  
+
+4. **optimal_partition_sizes (Finds the Best Grouping):**  
+   - Identifies the most efficient way to split the gates by prioritizing groupings where the second group (non-linear paths) is as small as possible. This helps minimize complexity in the system.  
+
+**How They Work Together:**  
+- The program first checks for direct paths (`linear_path`), then divides gates into connected and non-connected groups (`partition`).  
+- It counts the gates in each group (`partition_sizes`), and finally selects the split that keeps the non-linear group smallest (`optimal_partition_sizes`).  
+
+This process helps organize gates in a way that simplifies understanding their connections.

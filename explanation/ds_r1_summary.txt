@@ -1,0 +1,19 @@
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
+**Summary of Predicates:**
+
+1. **linear_path(A, B)**  
+   Determines if there is a direct, unbranched connection between elements A and B. If they are the same element or linked through a simple chain without splits, a linear path exists.
+
+2. **partition(A, B, C)**  
+   Splits a list (A) into two groups (B and C) based on connectivity rules:  
+   - Group B contains elements connected to A with a reverse linear path.  
+   - Group C contains elements connected to A but without a reverse linear path.  
+
+3. **partition_sizes(A, B)**  
+   Calculates the number of elements in each group created by partitioning. Returns a pair of values (B) representing the sizes of the two groups. For example, if group B has 3 elements and group C has 5, it returns `[3,5]`.
+
+4. **optimal_partition_sizes(A, B)**  
+   Finds the best way to split the list (A) by comparing all possible partitions. It selects the split where the smaller group is as large as possible, ensuring a balanced division. The result (B) is the pair of sizes for this optimal split.  
+
+**Key Purpose of the Program:**  
+This program analyzes connections between elements (like circuit components) to group them logically. It identifies direct links, splits elements into categories, and determines the most balanced way to divide them for efficient organization or analysis.

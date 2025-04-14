@@ -1,33 +1,26 @@
+%%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
 # Summary of Prolog Predicates
 
-Based on the explanation samples, here's a summary of the key logical predicates in the Prolog program:
+## linear_path(A, B)
+This predicate determines if there is a direct connection between two points A and B without any branches in between. It's true when:
+- A and B are the same point
+- A connects to another point C without branching, and there's a linear path from C to B
 
-## linearpath(A,B)
-- Determines if there is a direct linear path between two nodes A and B
-- True when A and B are the same gate (`same_gate(A,B)`)
-- True when A has no branches (`not(branches(A))`), A connects to C (`is_connected(A,C)`), and there's a linear path from C to B (`linearpath(C,B)`)
-- Represents a direct connection or path without branching points in between
+## partition(A, B, C)
+This predicate divides a set of elements A into two groups (B and C) based on specific connectivity conditions:
+- Group B contains all elements that are in the same circuit as A and have a linear path back to A
+- Group C contains all elements that are in the same circuit as A but don't have a linear path back to A
 
-## partition(A,B,C)
-- Divides a set of nodes into two partitions B and C based on specific criteria
-- Uses `all(inv_ho_0,A,B)` to collect all nodes that satisfy the condition where:
-  - Nodes are in the same circuit
-  - There is a linear path back from the node to A
-- Uses `all(inv_ho_1,A,C)` to collect all nodes that satisfy the condition where:
-  - Nodes are in the same circuit
-  - There is no linear path back from the node to A
+## partition_sizes(A, B)
+This predicate calculates the sizes of the two groups created when partitioning elements around point A:
+- It divides the elements into two groups using the partition predicate
+- It counts how many elements are in each group
+- It returns these two numbers as a pair in B
 
-## partition_sizes(A,B)
-- Calculates the sizes of the partitions created by the `partition` predicate
-- Takes a set A, creates partitions E and C using `partition(A,E,C)`
-- Calculates sizes D and F of the partitions using `size(E,D)` and `size(C,F)`
-- Creates a pair B containing the sizes using `pair(D,F,B)` or `pair(F,D,B)`
-
-## optimal_partition_sizes(A,B)
-- Finds the optimal partition sizes from multiple possibilities
-- Starts with an empty partition size [0,0] using `empty_partition_sizes(D)`
-- Applies `partition_sizes` to each element in A to get a list of sizes C using `map(partition_sizes,A,C)`
-- Uses `fold(larger_min_size,D,C,B)` to find the partition with the largest minimum size
-- Effectively identifies the most balanced or optimal way to partition the circuit nodes
-
-These predicates work together to analyze circuit connectivity, group nodes based on their connectivity patterns, and determine the optimal partitioning strategy.
+## optimal_partition_sizes(A, B)
+This predicate finds the best possible partition sizes by:
+- Starting with an empty partition [0,0]
+- Calculating partition sizes for each element in A
+- Comparing different partition size pairs
+- Selecting the partition that maximizes the minimum size of the two groups
+- Storing this optimal partition size pair in B

@@ -242,7 +242,25 @@ def popper(settings):
 
                 # TEST A PROGRAM
                 with settings.stats.duration('test'):
-                    pos_covered, inconsistent = tester.test_prog(test_program)
+                    try:
+                        # pos_covered, inconsistent = timeout(
+                        #     settings, tester.test_prog, args=(test_program,), kwargs={}, timeout_duration=1)
+                        pos_covered, inconsistent = tester.test_prog(
+                            test_program)
+                    except TimeoutError:
+                        settings.logger.error(
+                            "Testing program timed out.")
+                        settings.stats.register_error()
+                        pos_covered = frozenset()
+                        inconsistent = True
+                        continue
+                    except Exception as e:
+                        settings.logger.error(
+                            f"Error testing program: {e}")
+                        settings.stats.register_error()
+                        pos_covered = frozenset()
+                        inconsistent = True
+                        continue
                     num_pos_covered = len(pos_covered)
 
                 # EXPLAIN A FAILURE

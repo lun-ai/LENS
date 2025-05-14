@@ -1,5 +1,5 @@
 % Learn a divide and conquer strategy to partition each input graph
-% python hopper/popper.py --kbpath optimal_partition_sizes --max-ho 3 --max-rules 3
+% python hopper/popper.py --kbpath optimal_partition_sizes --max-ho 3
 
 % Predicate declarations
 head_pred(optimal_partition_sizes,2). 
@@ -25,7 +25,7 @@ direction(larger_min_size,(in,in,out)).
 direction(map,((in,out),in,out)).
 direction(fold,((in,in,out),in,in,out)).
 
-% The number of occurences of map is limited to 0. 
+% The number of occurrence of map is limited to N. 
 % #defined body_literal/4.
 % occurHO(map,1).
 % occurHO(fold,0).

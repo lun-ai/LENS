@@ -96,8 +96,10 @@ from clingo.symbol import Function
 def negative_name(name):
     return Function(f'not_{name}')
 from clingo.symbol import *
-def nameparse(t):
+def honameparse(t):
     return Function(name=t.name.split("___")[0])
+def hopiparse(t):
+    return Function(name=''.join(filter(str.isalpha, t.name.split("___")[-1])))
 #end.
 
 make_name(P,P,A) :- body_aux(P,A).
@@ -728,13 +730,13 @@ var_type(C2,Var2,Type):-
     not multiclause(P,A).
 
 %% ALLOW SINGLE CLAUSE/LITERAL IF THE ORDER OF VARIABLES IS DIFFERENT OR IF IT IS ANOTHER HO PREDICATE
-:-
-    invented_ho_used(P,A),
-    head_literal(C,P,A,Vars),
-    body_size(C,1),
-    body_literal(C,P1,_,Vars),
-    not body_pred_lgrounding(_,_,P1,_,_),
-    not multiclause(P,A).
+% :-
+%     invented_ho_used(P,A),
+%     head_literal(C,P,A,Vars),
+%     body_size(C,1),
+%     body_literal(C,P1,_,Vars),
+%     not body_pred_lgrounding(_,_,P1,_,_),
+%     not multiclause(P,A).
 
 
 %% PREVENTS SINGLE CLAUSE/LITERAL CALLS

@@ -1,3 +1,5 @@
+% Circuit representation in Prolog
+% Circuit gates (AND gates with one input) labelled with numbers
 gate(101).
 gate(102).
 gate(103).
@@ -84,6 +86,63 @@ gate(1405).
 gate(1406).
 gate(1407).
 gate(1408).
+
+% All terminals (light bulbs)
+% gate(105).
+% gate(206).
+% gate(307).
+% gate(408).
+% gate(508).
+% gate(609).
+% gate(711).
+% gate(804).
+% gate(905).
+% gate(1006).
+% gate(1107).
+% gate(1207).
+% gate(1308).
+% gate(1409).
+terminal(105).
+terminal(206).
+terminal(307).
+terminal(408).
+terminal(508).
+terminal(609).
+terminal(711).
+terminal(804).
+terminal(905).
+terminal(1006).
+terminal(1107).
+terminal(1207).
+terminal(1308).
+terminal(1409).
+
+% Connections between gate and terminal
+is_connected(103,105).
+is_connected(104,105).
+is_connected(205,206).
+is_connected(305,307).
+is_connected(407,408).
+is_connected(406,408).
+is_connected(506,508).
+is_connected(507,508).
+is_connected(608,609).
+is_connected(607,609).
+is_connected(605,609).
+is_connected(706,711).
+is_connected(710,711).
+is_connected(708,711).
+is_connected(803,804).
+is_connected(904,905).
+is_connected(1004,1006).
+is_connected(1005,1006).
+is_connected(1106,1107).
+is_connected(1206,1207).
+is_connected(1307,1308).
+is_connected(1408,1409).
+is_connected(1407,1409).
+
+% Connections between gates
 is_connected(101,102).
 is_connected(101,103).
 is_connected(102,104).

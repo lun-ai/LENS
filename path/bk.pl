@@ -1,3 +1,2 @@
 :- ['../ex_1/bk.pl'].
-:- ['../isolated/target.pl'].
 :- ['prim.pl'].

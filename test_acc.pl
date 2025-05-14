@@ -5,7 +5,7 @@
 ex_ids([1,2,3,4,5,6,7,8,9,10,11,12,13,14]).
 
 % Optimal tests for each circuit example
-opt_tests(ex_0, ['c','d']).
+opt_tests(ex_intro_0, ['c','d']).
 opt_tests(ex_1, ['d']).
 opt_tests(ex_2, ['c', 'd']).
 opt_tests(ex_3, ['c']).
@@ -21,7 +21,7 @@ opt_tests(ex_12, ['c', 'd']).
 opt_tests(ex_13, ['d', 'e']).
 opt_tests(ex_14, ['f']).
 
-opt_tests(ex_0,[3,4]).
+opt_gates(ex_intro_0,[3,4]).
 opt_gates(ex_1,[104]).
 opt_gates(ex_2,[203,204]).
 opt_gates(ex_3,[303]).
@@ -167,13 +167,19 @@ test_ex(A) :-
     unload_file('ex_1/bk.pl'),
     consult('circuit_bk.pl'),
     consult('data/exs.pl'),
+    % consult('ex_5/bk.pl'),
+    % consult('isolated/exs.pl'),
     findall(A, (pos(A); neg(A)), Es),
     findall(A, (pos(A), test_ex(A)), Ps_),
     findall(A, (neg(A), not(test_ex(A))), Ns_),
+    findall(A, (pos(A), not(test_ex(A))), FN_),
+    findall(A, (neg(A), test_ex(A)), FP_),
     sort(Ps_, Ps),
     sort(Ns_, Ns),
     length(Es, EN),
     length(Ps, PN),
     length(Ns, NN),
+    sort(FP_,FP),
+    sort(FN_,FN),
     Acc is (PN + NN) / EN,
-    format("Number of tests: ~d\nNumber of passed pos/neg tests: ~d/~d\nAccuracy: ~3f", [EN, PN, NN, Acc]).
+    format("Number of tests: ~d\nNumber of passed pos/neg tests: ~d/~d\nAccuracy: ~3f\nFP: ~w\nFN: ~w", [EN, PN, NN, Acc, FP, FN]).

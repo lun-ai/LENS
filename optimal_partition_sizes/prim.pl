@@ -1,6 +1,14 @@
 % Compare two partitions, return the partitions with a larger min partition size
-larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).
-larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).
+% larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).
+% larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).
+larger_min_size(A, B, A) :-
+    min_list(A,M1),
+    min_list(B,M2),
+    max(M1, M2, M1).
+larger_min_size(A, B, B) :-
+    min_list(A,M1),
+    min_list(B,M2),
+    max(M1, M2, M2).
 
 % Find the smaller and larger number of two numbers
 min(A, B, C) :- min_list([A,B],C).
@@ -11,16 +19,16 @@ not_list(A) :- not(is_list(A)).
 
 % Higher order primitive
 % List manipulation predicates
-fold(_P,Acc,[],Acc).
 fold(P,Acc,[H|T],Out) :- 
-    call(P,Acc,H,Inter),
+    call(P,Acc,H,Inter),!,
     fold(P,Inter,T,Out).
+fold(_P,Acc,[],Acc).
 
 % Map a predicate over a list
-map(_P,[],[]).
 map(P,[H|T],[H1|T1]) :- 
-    call(P,H,H1),
+    call(P,H,H1),!,
     map(P,T,T1).
+map(_P,[],[]).
 
 % The smallest partition base case
 empty_partition_sizes([0, 0]).

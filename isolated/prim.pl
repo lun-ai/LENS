@@ -8,8 +8,9 @@ all(P, [H|T], C) :-
     all(P, T, C).
 all(_, [], _).
 
-% Does gate A share a linear path with gate B (B precedes A if A \== B)?
-% same_circuit(A, B) :- gate(A), gate(B), N is A // 100, M is B // 100, N == M.
-
 empty([]).
 not_empty(L) :- not(empty(L)), forall(member(E, L), nonvar(E)).
+
+% Two gates are the same
+equal(A, A).
+not_equal(A, B) :- gate(A), gate(B), not(equal(A, B)).

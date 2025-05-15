@@ -1,5 +1,4 @@
 :- ['../ex_3/bk.pl'].
-:- ['../path/target.pl'].
 :- ['prim.pl'].
 
 

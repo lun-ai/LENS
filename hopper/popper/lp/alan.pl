@@ -49,7 +49,7 @@ pi_or_rec_enabled:-
     ho.
 
 pi_or_rec_or_ho :- pi_or_rec.
-pi_or_rec_or_ho :- invented_ho_used(_,_).
+% pi_or_rec_or_ho :- invented_ho_used(_,_).
 pi_or_rec_or_ho :- ho.
 
 :-

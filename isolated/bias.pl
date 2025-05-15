@@ -33,17 +33,11 @@ occurFO(not_empty, 1).
 occurFO(is_connected, 1).
 occurHO(find_all,1).
 occurHO(all, 1).
-
 :-
     body_pred(X,_),
     #count{C,X,V: body_literal(C,X,_,V)} > Z, occurFO(X,Z).
-
 :- 
     body_pred(X,_,ho), #count{C,Y,V:  body_literal(C,Y,_,V), X=@honameparse(Y)} >Z, occurHO(X,Z).
 
+% Turn off invented predicates in HO
 :- invented_ho_used(_,_).
-% :- not body_literal(0,equal,_,(0,1)).
-% :- not body_literal(_,same_circuit,_,(0,1)).
-% :- not body_literal(_,find_all___0is_connected,_,(0,2)).
-% :- not body_literal(_,all___0isolated,_,(2,1)).
-% :- not body_literal(_,not_empty,_,(2,)).

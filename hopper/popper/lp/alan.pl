@@ -50,6 +50,8 @@ pi_or_rec_enabled:-
 
 pi_or_rec_or_ho :- pi_or_rec.
 pi_or_rec_or_ho :- invented_ho_used(_,_).
+pi_or_rec_or_ho :- ho.
+
 :-
     clause(1),
     not pi_or_rec_or_ho.

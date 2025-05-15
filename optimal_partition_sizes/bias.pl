@@ -25,13 +25,4 @@ direction(larger_min_size,(in,in,out)).
 direction(map,((in,out),in,out)).
 direction(fold,((in,in,out),in,in,out)).
 
-% The number of occurrence of map is limited to N. 
-% #defined body_literal/4.
-% occurHO(map,1).
-% occurHO(fold,0).
-
-% :-
-%     body_pred(X,_),
-%     #count{C,V: body_literal(C,X,_,V)} > Z, occurFO(X,Z).
-
-% :- body_pred(X,_,ho), #count{C,V:  body_literal(C,Y,_,V), X=@nameparse(Y)} >Z, occurHO(X,Z).
+:- invented_ho_used(_,_).

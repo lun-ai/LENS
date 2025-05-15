@@ -1,11 +1,17 @@
 % Compare two partitions, return the partitions with a larger min partition size
-% larger_min_size([A,B], [C,D], [A,B]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, A).
-% larger_min_size([A,B], [C,D], [C,D]) :- not_list(A), not_list(B), not_list(C), not_list(D), max(A, C, C).
 larger_min_size(A, B, A) :-
+    is_list(A),
+    is_list(B),
+    length(A, 2),
+    length(B, 2),
     min_list(A,M1),
     min_list(B,M2),
     max(M1, M2, M1).
 larger_min_size(A, B, B) :-
+    is_list(A),
+    is_list(B),
+    length(A, 2),
+    length(B, 2),
     min_list(A,M1),
     min_list(B,M2),
     max(M1, M2, M2).
@@ -13,9 +19,6 @@ larger_min_size(A, B, B) :-
 % Find the smaller and larger number of two numbers
 min(A, B, C) :- min_list([A,B],C).
 max(A, B, C) :- max_list([A,B],C).
-
-% Not a list
-not_list(A) :- not(is_list(A)).
 
 % Higher order primitive
 % List manipulation predicates

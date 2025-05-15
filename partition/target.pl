@@ -1,4 +1,5 @@
 :- ['prim.pl'].
+:- ['../isolated/target.pl'].
 
 % Given Gate A, find gates on the same linear path as A
 inv_ho_0(A,B):- same_circuit(A,B), isolated(B,A).

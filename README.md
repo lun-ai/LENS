@@ -1,44 +1,35 @@
 # Teaching humans transferable strategy by inducing and explaining logic programs
 
-Simple overview of use/purpose.
+Repository for "Teaching humans transferable strategy by inducing and explaining logic programs."
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+We propose a hybrid neuro-symbolic framework using curriculum-trained ILP and LLMs to generate human-interpretable representations for improving human generalisation on unseen tasks. This is a concrete demonstration of Ultra-Strong Machine Learning, where the AI system teaches knowledge to humans, thereby enabling better human performance than without the AI teacher.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+See environment.yml for details.
 
-### Learning how to partition, compute partition sizes and select test
+### Learning how to partition a circuit
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+We use [Hopper](hopper), a popper variant that can use second-order programs. Hopper is supplied with both first-order programs (is_connected/1, size/2, pair/3, equal/2, etc) and second-order programs (find_all/3, all/3, fold/4, map/3). 
 
+Hopper uses language bias to declare body and head predicates, types and input-output directions. Hopper requires very few training examples (uses only 1 circuit example per task).
 
 ```
+python hopper/popper.py --kbpath isolated_behind --max-ho 3 --max-rules 3
 python hopper/popper.py --kbpath partition --max-ho 3 --max-rules 3
-```
-
-```
 python hopper/popper.py --kbpath partition_sizes --max-rules 3
-```
-
-```
 python hopper/popper.py --kbpath optimal_partition_sizes --max-ho 3 --max-rules 3
 ```
 
-## Authors
+### Explaining the learned programs with large language models
 
-Contributors names and contact info
+We used open-source instruction-tuned coder models to sample explanations of code components and their overall function. We follow an instruction prompt template for Qwen2.5-coder-instruct and StarCoderv2-15b-instruct to generate responses. 
 
-## Version History
+We prompt larger reasoning models (DeepSeek R1 and Claude-3.7-sonnet) to summarise explanation samples into one coherent descriptions.
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
+## Contact
+lun.ai.public@gmail.com

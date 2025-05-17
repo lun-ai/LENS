@@ -167,8 +167,6 @@ test_ex(A) :-
     unload_file('ex_1/bk.pl'),
     consult('circuit_bk.pl'),
     consult('data/exs.pl'),
-    % consult('ex_5/bk.pl'),
-    % consult('isolated/exs.pl'),
     findall(A, (pos(A); neg(A)), Es),
     findall(A, (pos(A), test_ex(A)), Ps_),
     findall(A, (neg(A), not(test_ex(A))), Ns_),

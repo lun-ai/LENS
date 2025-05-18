@@ -95,22 +95,6 @@ def explain_prolog(llm, prompt_template, prolog_code, variables=['prolog_code'])
 
 def compose_prolog_input(task_names: list[str], comments=True, biases=True) -> str:
 
-    #     prolog_prompt_template = """
-
-    # %%%%%%%%%%%%%%%%%%%% Target rules %%%%%%%%%%%%%%%%%%%%
-    # {target_rules}
-
-    # %%%%%%%%%%%%%%%%%%%% Primitives %%%%%%%%%%%%%%%%%%%%
-    # {primitives}
-
-    # """
-    #     if biases:
-    #         prolog_prompt_template += """
-    # %%%%%%%%%%%%%%%%%%%% Biases %%%%%%%%%%%%%%%%%%%%
-    # {biases}
-
-    # """
-
     prolog_prompt_template = """
 
 %%%%%%%%%%%%%%%%%%%% Main program %%%%%%%%%%%%%%%%%%%%
@@ -221,7 +205,12 @@ def prompt_structured_output(llm, task_names, template_path, explanation_path, s
     print(f"------> Successful samples: {success}")
 
 
-def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
+def instruct_prompt_output(llm,
+                           task_names,
+                           template_path,
+                           explanation_path,
+                           instruction_template_base='explanation/instruction.txt',
+                           sample_size=10):
     """Prompt the LLM to explain the Prolog program with an unstructured, natural language response.
 
     Args:
@@ -238,7 +227,6 @@ def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
     i = 0
 
     # Read the template once
-    template_path = 'explanation/explanation_template_instruct.txt'
     with open(template_path, 'r') as file:
         explanation_template = file.read()
 
@@ -255,7 +243,7 @@ def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
                 task_names, comments=False, biases=False)
 
             # Read the instruction content
-            with open('explanation/instruction.txt', 'r') as file:
+            with open(instruction_template_base, 'r') as file:
                 instruction = file.read()
 
             # Insert the instruction into the template
@@ -271,16 +259,6 @@ def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
 
             # Generate the explanation
             explanation = chain.invoke({})
-
-            # Extract content after "Response:" if present
-            # if "Response:" in raw_explanation:
-            #     explanation_part = raw_explanation.split("Response:")[
-            #         1].strip()
-            # else:
-            #     explanation_part = raw_explanation
-
-            print(
-                f"===== Generated Explanation {i+1} =====\n{explanation}\n")
 
             # Add to explanations list
             explanations.append(
@@ -309,7 +287,12 @@ def instruct_prompt_output(llm, task_names, explanation_path, sample_size=10):
     return explanations
 
 
-def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
+def user_prompt_output(llm,
+                       task_names,
+                       template_path,
+                       explanation_path,
+                       instruction_template_base='explanation/instruction.txt',
+                       sample_size=10):
     """Prompt the LLM using the v3 template format designed for chat models like Starcoder2.
 
     Args:
@@ -332,21 +315,18 @@ def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
                 task_names, comments=False, biases=False)
 
             # Create instruction with Prolog code
-            with open('explanation/instruction.txt', 'r') as file:
+            with open(instruction_template_base, 'r') as file:
                 instruction = file.read()
 
-            # Remove the Instruction and response key word
-            instruction = instruction.replace(
-                "Instruction: ", "").replace("Response:", "")
-
-            with open('explanation/explanation_template_instruct.txt', 'r') as file:
+            with open(template_path, 'r') as file:
                 explanation_template = file.read()
 
             explanation_template = explanation_template.replace(
+                "Instruction: ", "").replace("Response:", "").replace(
                 "[INSTRUCTION]", instruction).replace("[PROLOG CODE]", prolog_input)
 
             # Format for starcoder2 using message-based approach
-            # For v3 template, we need to use chat messages instead of a simple template
+            # We need to use chat messages, this automatically creates a chat message with user template
             chat_messages = [HumanMessage(
                 role='user', content=explanation_template)]
 
@@ -360,13 +340,6 @@ def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
 
             # Generate the explanation
             explanation = chain.invoke({})
-
-            # Clean up response if needed - some models might include "### Response" markers
-            # if "### Response" in explanation:
-            #     explanation = explanation.split("### Response")[1].strip()
-
-            print(
-                f"===== Generated Explanation {i+1} =====\n{explanation}\n")
 
             # Add to explanations list
             explanations.append(
@@ -394,9 +367,9 @@ def user_prompt_output(llm, task_names, explanation_path, sample_size=10):
     return explanations
 
 
-def summary_prompt_output(sample_files, summary_path, api, max_tokens=4096, temperature=0, targets=['linear_path', 'partition', 'partition_sizes', 'optimal_partition_sizes']):
+def summary_prompt_output(sample_files, summary_path, api, targets, max_tokens=4096, temperature=0, template_path='explanation/summary_template.txt'):
 
-    with open('explanation/summary_template.txt', 'r') as file:
+    with open(template_path, 'r') as file:
         template = file.read()
 
     # Read the samples across different files

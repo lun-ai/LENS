@@ -1,22 +1,17 @@
 %%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
-**Summary of Key Components:**  
+Here’s a simplified explanation of the four predicates for non-programmers:
 
-1. **linear_path (Checks for Direct Paths):**  
-   - Determines if there's a straight, unbranching path between two gates. If a gate connects to another without splitting into multiple paths, they form a "linear path."  
+1. **`isolated_behind`**:  
+   Determines if one gate is "isolated behind" another. This is true if the gates are directly connected or if there’s a chain of connected gates between them, all marked as isolated. For example, if Gate A connects to Gate B, and both are isolated, then A is isolated behind B.
 
-2. **partition (Divides Gates into Groups):**  
-   - Splits a list of gates into two groups:  
-     - **Group 1:** Gates connected by a linear path.  
-     - **Group 2:** Gates that branch into multiple paths or lack a direct connection.  
+2. **`partition`**:  
+   Splits a list of gates into two groups:  
+   - The first group contains gates that are isolated behind a specific gate (and in the same circuit).  
+   - The second group contains gates in the same circuit that are *not* isolated behind that gate.  
+   This separation helps organize gates based on their isolation status.
 
-3. **partition_sizes (Counts Group Sizes):**  
-   - Calculates how many gates are in each of the two groups created by `partition`. For example, if Group 1 has 5 gates and Group 2 has 3, it returns the pair [5, 3].  
+3. **`partition_sizes`**:  
+   Calculates the number of gates in each of the two groups created by `partition`. For instance, if the first group has 5 gates and the second has 3, it returns these counts as `[5, 3]`.
 
-4. **optimal_partition_sizes (Finds the Best Grouping):**  
-   - Identifies the most efficient way to split the gates by prioritizing groupings where the second group (non-linear paths) is as small as possible. This helps minimize complexity in the system.  
-
-**How They Work Together:**  
-- The program first checks for direct paths (`linear_path`), then divides gates into connected and non-connected groups (`partition`).  
-- It counts the gates in each group (`partition_sizes`), and finally selects the split that keeps the non-linear group smallest (`optimal_partition_sizes`).  
-
-This process helps organize gates in a way that simplifies understanding their connections.
+4. **`optimal_partition_sizes`**:  
+   Evaluates all possible ways to split the gates using `partition_sizes` and selects the *most balanced* split. For example, between splits like `[5,3]` and `[4,4]`, it would choose `[4,4]` because the smaller group (4) is larger than in the first split (3), making it the better-balanced option.

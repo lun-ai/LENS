@@ -1,27 +1,34 @@
 %%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
-# Summary of Prolog Predicates
+# Understanding Key Predicates in the Prolog Program
 
-## linear_path(A, B)
-This predicate determines if there is a direct linear path between two points A and B. A linear path exists when:
-- The points are the same, or
-- Point A doesn't branch out to multiple connections and there's a connection from A to another point that has a linear path to B
+## isolated_behind(A,B)
+This predicate determines if element A is isolated behind element B. This happens in two cases:
+- When A and B are the same element
+- When all elements connected to A are also isolated behind B
 
-## partition(A, B, C)
-This predicate divides a set of elements A into two groups (B and C) based on specific connectivity conditions:
-- Group B contains elements that are in the same circuit as A and have a linear path back to A
-- Group C contains elements that are in the same circuit as A but don't have a linear path back to A
+In simpler terms, this checks if A can only be reached through B or if A is B itself.
 
-## partition_sizes(A, B)
-This predicate calculates the sizes of the two groups created when partitioning around point A:
-- It divides the elements into two groups using the partition predicate
-- It counts how many elements are in each group
-- It returns these two numbers as a pair in B
+## partition(A,B,C)
+This predicate divides a list of elements (A) into two separate lists (B and C) based on specific isolation criteria:
+- List B contains elements where the relationship "same circuit and isolated behind" is true
+- List C contains elements where the relationship "same circuit but not isolated behind" is true
 
-## optimal_partition_sizes(A, B)
-This predicate finds the best way to partition elements by comparing different possibilities:
-- It starts with empty partition sizes [0, 0]
-- It calculates partition sizes for each possible configuration
-- It compares these sizes to find the optimal arrangement
-- The optimal arrangement maximizes the minimum size of the partitions
+Think of this as sorting elements into two groups based on their connectivity relationships.
 
-These predicates help analyze how elements in a circuit are connected and find the most balanced way to group them.
+## partition_sizes(A,B)
+This predicate calculates how many elements end up in each group after partitioning:
+1. It partitions the list A into two groups
+2. It counts how many elements are in each group
+3. It returns these two numbers as a pair [size1, size2]
+
+For example, if partitioning creates groups of 3 and 5 elements, this would return [3, 5].
+
+## optimal_partition_sizes(A,B)
+This predicate finds the best way to partition elements by comparing different possible partitions:
+1. It tries different ways to partition the elements
+2. For each partition, it looks at the sizes of the two groups
+3. It selects the partition where the smaller group is as large as possible
+
+This is useful for finding balanced partitions where both groups have a significant number of elements.
+
+These predicates work together to analyze how elements are connected and find optimal ways to group them based on their isolation relationships.

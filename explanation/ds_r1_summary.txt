@@ -1,19 +1,24 @@
 %%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
-**Summary of Predicates:**
+Here's a concise explanation of the Prolog predicates based on the samples provided:
 
-1. **linear_path(A, B)**  
-   Determines if there is a direct, unbranched connection between elements A and B. If they are the same element or linked through a simple chain without splits, a linear path exists.
+**isolated_behind/2**:  
+Determines if gate A is isolated behind gate B. This is true if A and B are the same gate, or if all gates connected to A are also isolated behind B. This checks connectivity and isolation recursively.
 
-2. **partition(A, B, C)**  
-   Splits a list (A) into two groups (B and C) based on connectivity rules:  
-   - Group B contains elements connected to A with a reverse linear path.  
-   - Group C contains elements connected to A but without a reverse linear path.  
+**partition/3**:  
+Divides a list of gates into two groups:  
+- One group where gates are in the same circuit and isolated behind others (`inv_ho_0` relationship).  
+- Another group where gates are in the same circuit but not isolated (`inv_ho_1` relationship).  
 
-3. **partition_sizes(A, B)**  
-   Calculates the number of elements in each group created by partitioning. Returns a pair of values (B) representing the sizes of the two groups. For example, if group B has 3 elements and group C has 5, it returns `[3,5]`.
+**partition_sizes/2**:  
+Calculates the sizes of the two partitioned groups created by `partition/3`, returning them as a pair (e.g., `[Size1, Size2]`).  
 
-4. **optimal_partition_sizes(A, B)**  
-   Finds the best way to split the list (A) by comparing all possible partitions. It selects the split where the smaller group is as large as possible, ensuring a balanced division. The result (B) is the pair of sizes for this optimal split.  
+**optimal_partition_sizes/2**:  
+Finds the best partition arrangement by comparing all possible partitions. It selects the partition where the smaller group size is as large as possible to balance groupings effectively.  
 
-**Key Purpose of the Program:**  
-This program analyzes connections between elements (like circuit components) to group them logically. It identifies direct links, splits elements into categories, and determines the most balanced way to divide them for efficient organization or analysis.
+**Key Flow**:  
+1. Check isolation relationships between gates.  
+2. Split gates into two categories based on isolation.  
+3. Measure group sizes.  
+4. Choose the partition that optimizes group balance.  
+
+This program helps analyze circuit gate relationships to identify optimal groupings based on isolation properties.

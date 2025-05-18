@@ -1,14 +1,27 @@
 %%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
-# Summary of Key Predicates in the Prolog Program
+# Summary of Prolog Predicates
 
-## linear_path
-This predicate determines if there is a linear path between two gates. A linear path exists when gates are connected in sequence without branching. For example, if gate A connects only to gate B, which connects only to gate C, then there is a linear path from A to C.
+## isolated_behind(A, B)
+This predicate determines if one gate is isolated behind another. It returns true if:
+- Gates A and B are the same, or
+- There is a path of connected gates between them where all gates in the path are isolated behind gate B.
 
-## partition
-This predicate divides a list of gates into two separate groups based on specific criteria. The first group contains gates that have linear paths between them, while the second group contains gates that don't have linear paths between them. This helps organize gates based on their connectivity patterns.
+## partition(List, Group1, Group2)
+This predicate divides a list of gates into two groups based on isolation relationships:
+- Group1 contains gates that are isolated behind a reference gate
+- Group2 contains gates that are not isolated behind the reference gate
+The predicate ensures that gates are properly categorized based on their circuit connections and isolation status.
 
-## partition_sizes
-This predicate calculates how many gates are in each of the two partitions created by the partition predicate. It returns a pair of numbers representing the size of each group. For example, if the first partition has 3 gates and the second has 2 gates, partition_sizes would return [3, 2].
+## partition_sizes(List, Sizes)
+This predicate calculates the sizes of the two groups created by the partition predicate:
+- It first partitions the list into two groups
+- Then it counts how many gates are in each group
+- Returns these counts as a pair of numbers
 
-## optimal_partition_sizes
-This predicate finds the best way to partition the gates to minimize the size of one of the partitions. It examines all possible partitioning options and selects the one that results in the smallest possible second partition. This is useful for finding the most efficient organization of gates.
+## optimal_partition_sizes(List, OptimalSizes)
+This predicate finds the best way to partition gates to achieve the most balanced groups:
+- It tries different partition arrangements
+- Compares the sizes of the resulting groups
+- Returns the partition sizes where the smaller group is as large as possible
+
+These predicates work together to analyze how gates in a circuit are connected and isolated from each other, and to find optimal ways to divide them into groups.

@@ -1,19 +1,28 @@
 %%%%%%%%%%%%%%%%%%%% Summary %%%%%%%%%%%%%%%%%%%%
-**Summary of Key Concepts (For Non-Programmers):**
+**Summary of Key Components in the Prolog Program**  
 
-1. **Linear Path (`linearpath`):**  
-   Checks if two points (like nodes in a circuit) are connected in a straight line without splits or branches. For example, if you can draw a direct line from point A to point B without any detours, they have a linear path.
+This program analyzes electrical circuits by evaluating how gates (components) are connected and isolated. Here’s what the main parts do:  
 
-2. **Partition (`partition`):**  
-   Splits a group of points into two smaller groups based on specific rules:  
-   - **Group 1:** Points that are in the same circuit as a reference point *and* have a backward linear path to it.  
-   - **Group 2:** Points that are in the same circuit as the reference point *but lack* a backward linear path to it.  
+1. **`isolated_behind(A, B)`**  
+   Determines if gate **A** is "isolated behind" gate **B**. This is true if:  
+   - **A** and **B** are the same gate, or  
+   - All gates directly connected to **A** are *also* isolated behind **B**.  
+   This helps identify dependencies where **A** cannot function independently of **B** in the circuit.  
 
-3. **Partition Sizes (`partition_sizes`):**  
-   Counts how many points are in each of the two groups created by the `partition` step. For example, if Group 1 has 5 points and Group 2 has 3, the sizes would be [5, 3].
+2. **`partition(A, B, C)`**  
+   Splits a group of gates (**A**) into two subgroups:  
+   - **B**: Gates in the same circuit as **A** that *are* isolated behind others.  
+   - **C**: Gates in the same circuit as **A** that *are not* isolated behind others.  
+   This categorizes gates based on their isolation relationships.  
 
-4. **Optimal Partition Sizes (`optimal_partition_sizes`):**  
-   Compares different ways to split the points into groups and selects the "best" split. The goal is to maximize the smaller group’s size, ensuring a balanced division. Imagine trying to divide a set of toys into two boxes so neither box ends up too empty—this rule picks the fairest split.
+3. **`partition_sizes(A, B)`**  
+   Calculates the number of gates in each subgroup created by `partition`.  
+   - For example, if a group of 10 gates is split into subgroups of 4 and 6, the result is the pair `[4, 6]`.  
 
-**In Simple Terms:**  
-This program analyzes connections in a system (like circuits) to group elements based on their relationships. It checks for direct paths (`linear_path`), divides elements into categories (`partition`), counts the items in each category (`partition_sizes`), and finally chooses the most balanced or efficient way to split them (`optimal_partition_sizes`).
+4. **`optimal_partition_sizes(A, B)`**  
+   Compares different ways to split groups of gates and selects the **best split** based on a specific goal:  
+   - It prioritizes splits where the *smaller subgroup* is as large as possible.  
+   For instance, between splits `[4, 6]` and `[5, 5]`, it picks `[5, 5]` because the smaller subgroup (5) is larger than 4.  
+
+**Purpose**  
+The program helps optimize circuit design by identifying isolation patterns and selecting the most balanced way to divide components, ensuring efficiency or reliability in the circuit layout.

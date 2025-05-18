@@ -4,7 +4,7 @@ Repository for "Teaching humans transferable strategy by inducing and explaining
 
 ## Description
 
-We propose a hybrid neuro-symbolic framework using curriculum-trained ILP and LLMs to generate human-interpretable representations for improving human generalisation on unseen tasks. This is a concrete demonstration of Ultra-Strong Machine Learning, where the AI system teaches knowledge to humans, thereby enabling better human performance than without the AI teacher.
+We propose a hybrid neuro-symbolic framework to generate human-interpretable explanations for improving human generalisation on unseen tasks. Our framework combines curriculum-trained ILP and LLMs. This is a concrete demonstration of Ultra-Strong Machine Learning, where the AI system teaches knowledge to humans, thereby enabling better human performance than without the AI teacher.
 
 ## Getting Started
 

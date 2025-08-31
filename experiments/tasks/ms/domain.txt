@@ -1,0 +1,13 @@
+Today, you will learn how to help our robot friends ALICE & BOB to package fruits for shipment. You will visit two warehouses "rooms", learn and perform the BLUE STAR operator and the PURPLE DIAMOND operator. ALICE and BOB will first help you learn these operators and then test your knowledge afterwards.
+
+What ALICE teaches you about the BLUE STAR might help you better learn and work through BOB's PURPLE DIAMOND.
+
+ALICE: BIZZ ... Thank you for coming to help! We have fruits in some boxes to be put on a conveyor.
+1. The fruits in EACH ORANGE box INCREASE in weight from LEFT to RIGHT
+2. The BLUE STAR puts fruits from two ORANGE boxes on the CONVEYOR BELT in INCREASING weights from LEFT to RIGHT 
+LEARN the BLUE STAR operation in steps and master it.
+
+BOB: CLIKKKK ... SOOO GOOooD to see you!
+1. You need to arrange a PILE of fruits that is most likely UNORDERED
+2. The PURPLE DIAMOND arranges fruits from the PILE into the SHIPPING CRATE in INCREASING weights from LEFT to RIGHT
+LEARN the PURPLE DIAMOND with BOB and use the information provided by BOB as a reference.

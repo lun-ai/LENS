@@ -1,0 +1,11 @@
+The game is played on the board below. There are three islands: Island 1, Island 2, Island 3. Each island consists of three territories (white cells). Each territory can contain one, two or three different resources. 
+
+Resources are: Forest, Castle, Cornfield, Water, Fish. Resources are drawn on the board:
+Island 1: 
+    Territory 1 (Castle, Water), Territory 2 (Forest), Territory 3 (Corn, Fish)
+Island 2
+    Territory 1 (Castle), Territory 2 (Forest, Water, Fish), Territory 3 (Corn)
+Island 3
+    Territory 1 (Castle, Fish), Territory 2 (Forest), Territory 3 (Corn, Water)
+
+First, here are some basics of the game. The Island game is a two-player game. The two players, Blue and Orange, take turns conquering territories. Any untaken territory can be conquered until the game terminates. You will play Blue. Conquering a territory provides one or several resources. Below is the initial world. Select one territory to get some resources. The player who first succeeds in obtaining three resources of the same category (triplet) wins the game. 

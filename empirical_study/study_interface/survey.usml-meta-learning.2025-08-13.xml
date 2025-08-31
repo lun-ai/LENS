@@ -1,0 +1,5357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE surveyProject SYSTEM "doctype.survey.dtd">
+<surveyProject version="2.4" timestamp="2025-08-13 15:22:32" program="oFb" progversion="3.7.06 1391">
+<title>USML Meta Learning</title>
+<description>Demo and Main Questionnaire</description>
+<attributes.specific program="ofb">
+<attr id="language">eng</attr>
+</attributes.specific>
+<section>
+<title>
+<![CDATA[Seriousness & Consent]]>
+</title>
+<attributes.specific program="ofb">
+<attr id="id">SC</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<question>
+<description>Consent</description>
+<class>select</class>
+<title>You are being invited to participate in a research study titled "Strategy Learning".  This study is being done by [anonymised].</title>
+<explanation>
+<![CDATA[<!-- Instructions based on a template from the University of Massachusetts -->
+
+<p>The purpose of this research study is to test how well humans can learn strategies in specific problem solving scenarios. If you agree to take part in this study, you will be asked to complete an online survey/questionnaire.</p>
+
+<p>This survey/questionnaire will take you approximately 45 minutes to complete. At some point there is a hint that you may take a short break if needed. However, please ensure that you still complete the questionnaire in one sitting, that is do not interrupt the study for more than around 10 minutes.</p>
+
+<p>You may not directly benefit from this research; however, we hope that your participation in the study may give us insight into human strategy learning on the basis of which we aim to build better systems for supporting problem solving in human-AI teams based on tailored explanations.
+</p>
+
+<p>We believe there are no known risks associated with this research study; however, as with any online related activity the risk of a breach of confidentiality is always possible.  To the best of our ability your answers in this study will remain confidential.  We will minimize any risks by never storing any data with regards to your person in the first place.</p>
+
+<p>Your participation in this study is completely voluntary and you can withdraw at any time.</p>
+
+<p style="margin-top: 2em"><b>The tasks presented in this study are really complex and require concentration. We recommend to be alone in the room and facilitate a quiet atmosphere.</b></p>
+
+<p style="margin-top: 2em">By clicking “I agree” below you are indicating that you are at least 18 years old, have read and understood this consent form and agree to participate in this research study. Please print a copy of this page for your records.</p>]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="number">no</attr>
+<attr id="shading">none</attr>
+</attributes.specific>
+<filter>
+<condition type="any">
+<value id="vOpt">1</value>
+</condition>
+<effect type="so">
+<value id="qIS">SC07</value>
+</effect>
+</filter>
+<item>
+<text>No, I do not agree (do not participate in this study)</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Yes, I agree</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Overall</description>
+<class>select</class>
+<title>You have answered all questions, thank you for your time! Can we use your data in anonymous form for scientific purposes?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<item>
+<text>Yes, I have correctly answered all questions. My data can be used for the analyses.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No, I wanted to "just look", take part repeatedly, or do not want my data to be used for analyses.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Relunctance</description>
+<class>select</class>
+<title>Please be honest: Did you like participating this study? Please answer truely - your answer has no consequences for you!</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>no</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>rather not</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>rather yes</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>yes</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Meaningless Responses</description>
+<class>select</class>
+<title>Have you carried out all the tasks as described in the respective instructions? Please reply also honestly - this answer has no consequences for you!</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>I have completed all the tasks as requested in the instructions.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I __sometimes__ clicked something because I was unmotivated or simply did not know.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I have __often__ clicked something, so I am quickly done.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Distraction</description>
+<class>select</class>
+<title>Could you complete the questionnaire in one without being distracted? Please reply honestly.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>Yes, I have given the study full attention and gone through it in one.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I was distracted by my environment (people, noises, etc.) __once__.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I was distracted by my environment (people, noises, etc.) __several times__.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>DQ Research Question</description>
+<class>text</class>
+<title>Do you have a guess as to what the investigation was about?</title>
+<explanation>You can write down your thoughts briefly in the text field. If you have no idea, just leave the field blank.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="number">no</attr>
+<attr id="alignment">center</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">100</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Questionnaire Canceled</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<headerText>Questionnaire Canceled</headerText>
+<inputPosition>right</inputPosition>
+<lead>Thank you for considering participating in our study! You may close the browser window now.</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Soziodemografie</title>
+<attributes.specific program="ofb">
+<attr id="id">SD</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<question>
+<description>Geschlecht</description>
+<class>select</class>
+<title>Gender</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">prefer to not say</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<item>
+<text>female</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>male</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>other</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter (direkt)</description>
+<class>text</class>
+<title>Age</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<item>
+<text>Your Age:</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="width">2</attr>
+<attr id="restrictions.charset">number</attr>
+<attr id="restrictions.min">1</attr>
+<attr id="restrictions.max">99</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter (Kategorien, 5 Jahre)</description>
+<class>dropdown</class>
+<title>How old are you?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+<item>
+<text>younger than 15 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>15 to 19 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>20 to 24 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>25 to 29 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>30 to 34 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>35 to 39 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>40 to 44 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>45 to 49 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>50 to 54 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>55 to 59 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+<item>
+<text>60 to 64 years old</text>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+</attributes.specific>
+</item>
+<item>
+<text>65 years or older</text>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter (Geburtsjahr)</description>
+<class>text</class>
+<title>What is your year of birth?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+<item>
+<text>Year of birth:</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="width">4</attr>
+<attr id="restrictions.charset">year</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Geschlecht (zum kombinieren)</description>
+<class>dropdown</class>
+<title>Finally, we'd like to ask you for some details about yourself.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>Your are:</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<item>
+<text>female</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>male</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>other</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Alter (zum kombinieren)</description>
+<class>text</class>
+<title>This question is intended to be attached to the question "Gender (to be combined)". Please also see the example questionnaire.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="number">no</attr>
+</attributes.specific>
+<item>
+<text>Your age:</text>
+<suffix>years old</suffix>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="width">2</attr>
+<attr id="restrictions.charset">number</attr>
+<attr id="restrictions.min">1</attr>
+<attr id="restrictions.max">99</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Land (D/A/CH)</description>
+<class>select</class>
+<title>Which country are you currently living in?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+<item>
+<text>Germany</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Austria</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Switzerland</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other country:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="width">200</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Land (weltweit, in de+en)</description>
+<class>suggest</class>
+<title>Which is the country, you're currently living?</title>
+<explanation>
+<![CDATA[<!--
+Based in subsequent country lists (state 06/2013)
+http://en.wikipedia.org/wiki/ISO_3166-1_numeric
+http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages
+-->]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">No answer</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="alignment">left</attr>
+<attr id="texts">
+<li i="0">Country:</li>
+</attr>
+<attr id="settings">
+<li i="0">0</li>
+<li i="1">0</li>
+</attr>
+<attr id="metrics.width_texted">200</attr>
+<attr id="metrics.width_label">80</attr>
+<attr id="data">
+<![CDATA[1001|Apsny;Abchasien;Аҧсны;Abkhaziya;Абхазия
+4|Afghanestan;Afghanistan;افغانستان
+8|Albania;Shqipëria
+10|Antarctic
+12|Algeria;Dzayer;ⴷⵣⴰⵢⴻⵔ;Al-Jazā'ir;الجزائر
+16|American Samoa;Amerika Sāmoa;American Samoa
+20|Andorra;Andorra
+24|Angola;Angola
+660|Anguilla;Anguilla
+28|Antigua and Barbuda
+32|Argentina
+51|Armenia;Hayastán;Հայաստան
+533|Aruba;Aruba;Aruba
+36|Australia
+40|Austria;Österreich
+31|Azerbaijan;Azərbaycan
+44|Bahamas;The Bahamas
+48|Bahrain;Al-Baḥrayn;البحرين
+50|Bangladesch;Bangladesh;বাংলাদেশ
+52|Barbados
+112|Belarus;Belarus’;Беларусь;Biełaruś;Belorussiya or Belorussiâ;Белоруссия
+56|Belgium;België;Belgique;Belgien
+248|Åland Islands;Åland;Ahvenanmaa
+84|Belize
+204|Benin;Bénin
+60|Bermuda
+64|Bhutan;Druk Yul;འབྲུག་ཡུལ
+68|Bolivia;Bolivia;Buliwya;Wuliwya;Volívia
+535|Caribbean Netherlands;Caribisch Nederland;Bonaire, Sint Eustatius and Saba
+70|Bosnia and Herzegovina;Bosna i Hercegovina;Босна и Херцеговина
+72|Botswana
+76|Brasil
+74|Bouvet Islands;Bouvetøya
+92|British Virgin Islands
+96|Brunei;Brunei;بروني
+86|British Indian Ocean Territory;Chagos Islands;फेहंद्वीप;Phehandweep;பேயிகான தீவுகள்;Paeikaana Theevukal;ފޭހަންދީބު;Feyhandheebu
+100|Bulgaria;Bulgariya or Bălgarija;България
+854|Burkina Faso
+104|Burma;Myanmar;မြန်မာ
+108|Burundi
+116|Cambodia;Kampuchea;កម្ពុជា
+120|Cameroons;Cameroun;Cameroon
+124|Canada
+132|Cape Verde;Cabo Verde
+136|Cayman Islands
+140|Central African Republic;République Centrafricaine;Ködörösêse tî Bêafrîka
+148|Chad;Tchad;Tšād;تشاد
+152|Chile
+156|China (People's Republic of China);Zhōngguó (Zhōnghuá Rénmín Gònghéguó);中国 (中华人民共和国)
+162|Christmas Island
+166|Cocos Islands;Cocos Keeling Islands
+170|Colombia
+174|Comoros;Komori;Juzur al-Qamar;جزر القمر;Comores
+178|Republic of the Congo;Congo;République du Congo;Congo-Brazzaville
+180|Democratic Republic of the Congo;République démocratique du Congo
+184|Cook Islands
+188|Costa Rica
+384|Côte d'Ivoire
+191|Croatia;Hrvatska
+192|Cuba
+531|Curaçao;Curaçao;Kòrsou
+196|Cyprus;Kypros;Κύπρος;Kıbrıs
+203|Czech Republic;Česká republika;Česko
+208|Denmark;Danmark
+262|Djibouti;Jībūtī;جيبوتي;Djibouti
+212|Dominica
+214|Dominican Republic;República Dominicana
+626|East Timor;Timor Lorosa'e;Timor-Leste
+218|Ecuador
+818|Egypt;Misr or Masr;مصر
+222|El Salvador
+226|Equatorial Guinea;Guinea Ecuatorial
+232|Eritrea;Iritriya;إرتريا;Erta;ኤርትራ
+233|Estonia;Eesti
+231|Ethiopia;Ityop'ia;ኢትዮጵያ
+238|Falkland Islands
+234|Faroe Islands;Føroyar;Færøerne
+583|Federated States of Micronesia
+242|Fiji;Fiji;Viti;फ़िजी
+246|Finland;Suomi
+250|France
+254|French Guiana;Guyane
+258|French Polynesia;Polynésie française
+260|French Southern Territories;Terres australes et antarctiques françaises;TAAF
+266|Gabon
+270|Gambia
+268|Georgia;Sak'art'velo;საქართველო
+276|Germany;Deutschland
+288|Ghana
+292|Gibraltar
+300|Greece;Hellas;Ελλάς or  Ellada;Ελλάδα
+304|Greenland;Kalaallit Nunaat;Grønland
+308|Grenada
+312|Guadeloupe
+316|Guam;Guåhån
+320|Guatemala;Guatemala
+831|Guernsey
+324|Guinea;Guinée;Gine;Gine
+624|Guinea-Bissau;Guiné-Bissau
+328|Guyana
+332|Haiti;Haïti;Ayiti
+334|Heard and McDonald Islands;HIMI
+336|Vatican City;Città del Vaticano;Holy See
+340|Honduras
+344|Hong Kong;Heung Gong;香港
+348|Hungary;Magyarország
+352|Iceland;Ísland
+356|India;Bharôt;ভাৰত;Bharot;ভারত;India, Hindustan;Bhārat;ભારત;Bhārat;भारत;Bhārata;ಭಾರತ;Bhārat;भारत;Inḍya, Bhāratam;ഇന്ത്യ, ഭാരതം;Bhārat;भारत;Bhārat;भारत;Bharôtô;ଭାରତ;Bhārat;ਭਾਰਤ;Bhāratam;भारतम्;Bhāratu;Indiyā, Bārata;இந்தியா, பாரத;Bhāratadēsham;భారత దేశం;Bhārat
+360|Indonesia
+364|Iran;Īrān;ایران
+368|Iraq;Al-'Iraq;العراق;Îraq
+372|Ireland;Éire
+833|Isle of Man;Ellan Vannin
+376|Israel;yisrael;ישראל;Isrā'īl;إسرائيل
+380|Italia;Italia
+388|Jamaica
+392|Japan;Nihon;Nippon;日本
+832|Jersey;Jersey;Jersey;Jèrri
+400|Jordan;Al-’Urdun;الأردن
+398|Kazakhstan;Qazaqstan;Қазақстан;قازاقستان;Kazakhstán;Казахстан
+404|Kenya
+296|Kiribati
+408|North Korea;Chosŏn;조선;朝鮮;Buk-han
+410|South Korea;Hanguk;한국;韓國;Nam-josŏn
+1002|Kosovo;Kosova, Косово
+414|Kuwait;Al-Kuwayt;الكويت
+417|Kyrgyzstan;Kyrgyzstan;Кыргызстан;Kirgizija;Киргизия
+418|Laos;Lao;ປະເທດລາວ;Lao People's Democratic Republic
+428|Latvia;Latvija
+422|Lebanon;Lubnān;لبنان
+426|Lesotho
+430|Liberia
+434|Libya;Libya;ⵍⵉⴱⵢⴰ;Lībiyā;ليبيا
+438|Liechtenstein;Liechtenstein
+440|Lithuania;Lietuva
+442|Luxembourg;Lëtzebuerg;Luxemburg;Luxembourg
+446|Macao;澳門;Macao
+807|Macedonia;Makedonija;Македонија
+450|Madagascar;Madagasikara;Madagascar
+454|Malawi
+458|Malaysia;Malaysia
+462|Maldives;Dhivehi Raajje;ދިވެހިރާއްޖެ
+466|Mali
+470|Malta
+584|Marshall Islands
+474|Martinique
+478|Mauritania;Muritan / Agawec;ⵎⵓⵔⵉⵜⴰⵏ / ⴰⴳⴰⵡⵛ;Mūrītānyā;موريتانيا
+480|Mauritius;Maurice
+175|Mayotte;Mayotte
+484|México;Mēxihco
+498|Moldova
+492|Monaco
+496|Mongolia;Mongol Uls;Монгол Улс
+499|Montenegro;Crna Gora;Црна Гора
+500|Montserrat
+504|Morocco;Amerruk / Elmeɣrib;ⴰⵎⵔⵔⵓⴽ / ⵍⵎⵖⵔⵉⴱ;Al-maɣréb;المغرب
+508|Mozambique;Moçambique
+516|Namibia;Namibia
+520|Nauru;Nauru;Naoero
+524|Nepal;Nepāla;नेपाल
+528|Netherlands;Nederland;Nederlân
+540|New Caledonia;Nouvelle-Calédonie
+554|New Zealand;Aotearoa
+558|Nicaragua
+562|Niger
+566|Nigeria
+570|Niue;Niuē;Niue
+574|Norfolk Island
+580|Northern Mariana Islands
+1003|Northern Cyprus;Kuzey Kıbrıs
+578|Norway;Norge;Noreg
+512|Oman;‘Umān;عُمان
+586|Pakistan;Pākistān;پاکستان
+585|Palau;Belau
+275|Palestine;Palestinian National Authority;Filastīn;فلسطين
+591|Panama
+598|Papua New Guinea;Papua New Guinea;Papua Niugini;Papua Niugini
+600|Paraguay;Paraguay;Paraguái
+604|Peru;Perú
+608|Philippines;Pilipinas;Filipinas;pilipins;Filipinas;Pilipinas;Pilipinas;Filipinas;Pilipinas;Filipinas;Filipinas;Pilipinas
+612|Pitcairn Islands;Pitcairn
+616|Poland;Polska
+620|Portugal
+630|Puerto Rico
+634|Qatar;Qaṭar;قطر
+638|Réunion;Réunion
+642|Romania;România
+643|Russia;Rossiya or Rossiâ;Россия
+646|Rwanda
+652|Saint Barthélemy;Saint-Barthélemy
+654|St. Helena, Ascension und Tristan da Cunha
+659|St. Kitts und Nevis
+662|St. Lucia
+663|Sankt Martin;Saint-Martin
+666|Saint-Pierre and Miquelon;Saint-Pierre et Miquelon
+670|St. Vincent and the Grenadines
+882|Samoa
+674|San Marino
+678|São Tomé und Príncipe;São Tomé e Príncipe
+682|Saudi Arabia;Al-Mamlaka Al-‘Arabiyyah as Sa‘ūdiyyah;المملكة العربية السعودية
+686|Senegal;Sénégal
+688|Serbia;Србија
+690|Seychelles;Sesel;Seychelles;Seychelles
+694|Sierra Leone
+702|Singapore;Singapura;Singapore;Xīnjiāpō;新加坡;Singapur;சிங்கப்பூர்
+534|Sint Maarten;Sint Maarten;Sint Maarten
+703|Slovakia;Slovensko
+705|Slovenia;Slovenija
+90|Solomon Islands;Solomon Islands;Solomon Aelan
+706|Somalia;Soomaaliya;aş-Şūmāl;الصومال
+710|South Africa;South Africa;Suid-Afrika;iNingizimu Afrika;uMzantsi Afrika;Afrika-Borwa;Afrika Borwa;Aforika Borwa;Afurika Tshipembe;Afrika Dzonga;iNingizimu Afrika;iSewula Afrika
+239|South Georgia and the South Sandwich Islands;SGSSI
+1004|South Ossetia;Khussar Iryston;Хуссар Ирыстон;Samkhret Oseti<br /> სამხრეთი ოსეთი;Южная Осетия;Yuzhnaya Osetiya
+728|South Sudan
+724|Spain;España;Espanya;Espainia;Espanha
+144|Sri Lanka;Sri Lankā;ශ්�රී ලංකාව;இலங்கை
+729|Sudan;As-Sudan;السودان
+740|Suriname
+744|Svalbard;Svalbard and Jan Mayen
+748|Swaziland
+752|Sweden;Sverige
+756|Switzerland;Schweiz;Suisse;Svizzera;Svizra
+760|Syria;Suriyah;سورية;Syrian Arab Republic
+158|Taiwan;Zhōnghuá Mínguó or Táiwan;中華民國;臺灣/台灣
+762|Tajikistan;Tojikistan;Тоҷикистон
+834|Tanzania
+764|Thailand;Mueang Thai, Prathet Thai, Ratcha-anachak Thai;เมืองไทย, ประเทศไทย, ราชอาณาจักรไทย
+768|Togo
+772|Tokelau
+776|Tonga;Tonga
+780|Trinidad and Tobago
+788|Tunesia;Tunes;ⵜⵓⵏⵙ;Tūns;تونس
+792|Turkey;Türkiye
+795|Turkmenistan;Türkmenistan
+796|Turks and Caicos Islands
+798|Tuvalu
+800|Uganda
+804|Ukraine;Ukraїna;Україна
+784|United Arab Emirates;Al-’Imārat Al-‘Arabiyyah Al-Muttaḥidah;الإمارات العربيّة المتّحدة
+826|United Kingdom;Y Deyrnas Unedig;Unitit Kinrick;Rìoghachd Aonaichte;Ríocht Aontaithe;An Rywvaneth Unys;UK;England
+840|United States;USA;États-Unis;'Amelika-hui-pu-'ia
+581|United States Minor Outlying Islands
+858|Uruguay;República Oriental del Uruguay
+860|Uzbekistan;O‘zbekiston;Ўзбекистон
+548|Vanuatu;Vanuatu
+862|Venezuela
+704|Vietnam;Việt Nam
+850|United States Virgin Islands
+876|Wallis und Futuna;Wallis-et-Futuna
+732|Western Sahara
+887|Yemen;Al-Yaman;اليمن
+894|Zambia
+716|Zimbabwe]]>
+</attr>
+<attr id="restrictions.valid">yes</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Ort (PLZ)</description>
+<class>float</class>
+<title>What are the first two digits of your postal code?</title>
+<explanation>If you're not from Germany, please specify your international license plate country code.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="scale.label_align">outside</attr>
+<attr id="scale.label_items">no</attr>
+<attr id="metrics.padding">20</attr>
+</attributes.specific>
+<item>
+<text>My zip code starts with the digits</text>
+<suffix>***</suffix>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="newline">yes</attr>
+<attr id="width">2</attr>
+<attr id="restrictions.charset">number</attr>
+<attr id="restrictions.pattern">(\d{2})|([A-Za-z]{1,3})</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Formale Bildung</description>
+<class>select</class>
+<title>What is the highest level of education you have completed?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+<item>
+<text>Still in school</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Finished school with no qualifications</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Secondary school-leaving certificate/Junior High Diploma</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>General Certificate of Secondary Education (GCSEs)</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>~</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Vocational secondary certification (completion of specialized secondary school/college)</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>A-levels/International Baccalaureate, subject-related higher education entrance qualification</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>University degree</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other school-leaving qualification:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="width">200</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Formale Bildung (einfach)</description>
+<class>select</class>
+<title>Education</title>
+<explanation>Please select the highest level of qualification you have obtained.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+</attributes.specific>
+<item>
+<text>Finished school with no qualifications</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Still in school</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Secondary school-leaving certificate/Junior High Diploma</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>High school diploma/Intermediate/General Certificate of Secondary Education, secondary school-leaving certificate or equivalent</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Completed apprenticeship</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Vocational baccalaureate diploma, vocational secondary certification</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>A-levels/International Baccalaureate/Higher education entrance qualification</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Vocational university/university of applied sciences/university degree</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other degree:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">9</attr>
+<attr id="width">240</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Beruflicher Bildungsabschluss</description>
+<class>select</class>
+<title>What professional qualifications do you have?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+</attributes.specific>
+<item>
+<text>No professional qualifications</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Vocational training period with diploma</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>(Compact) vocational training program/course</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Completed industrial or agricultural apprenticeship</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Completed commerical traineeship</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Internship, practical training</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Specialized vocational qualification</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>General vocational qualification</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Master/technical certification or equivalent vocational qualification</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Vocational university/university of applied sciences degree</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+<item>
+<text>University degree</text>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other degree:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+<attr id="width">200</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Erwerbstätigkeit</description>
+<class>select</class>
+<title>Are you currently employed?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">13</attr>
+<attr id="pos">13</attr>
+</attributes.specific>
+<item>
+<text>Yes, I am employed.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No, I am unemployed.</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No, I am retired.</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No, I am a homemaker.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>No, none of the above.</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Beschäftigung</description>
+<class>select</class>
+<title>What do you do professionally?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">14</attr>
+<attr id="pos">14</attr>
+</attributes.specific>
+<item>
+<text>Pupil/in school</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Training/apprenticeship</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="width">160</attr>
+</attributes.specific>
+</item>
+<item>
+<text>University student</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="width">160</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Employee</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Civil servant</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Self-employed</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Unemployed/seeking employment</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Other:</text>
+<textinput>yes</textinput>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="width">200</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Beschäftigung (offen)</description>
+<class>text</class>
+<title>What are you working?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I am still in school or training</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">15</attr>
+<attr id="pos">15</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Einkommen I</description>
+<class>dropdown</class>
+<title>What is your monthly net income?</title>
+<explanation>Net income is defined as your total income after tax and social security deductions.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">16</attr>
+<attr id="pos">16</attr>
+<attr id="scale.label_align">outside</attr>
+<attr id="metrics.padding">20</attr>
+</attributes.specific>
+<item>
+<text>I do not have a personal income</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>less than 250 €</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>250 € up to 500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>500 € up to 1000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>1000 € up to 1500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>1500 € up to 2000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2000 € up to 2500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2500 € up to 3000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3000 € up to 3500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3500 € up to 4000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4000 € or more</text>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I do not wish to answer</text>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Einkommen II</description>
+<class>dropdown</class>
+<title>What is your monthly net income?</title>
+<explanation>Net income is defined as your total income after tax and social security deductions.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">17</attr>
+<attr id="pos">17</attr>
+<attr id="scale.label_align">outside</attr>
+<attr id="metrics.padding">20</attr>
+</attributes.specific>
+<item>
+<text>less than 250 €</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>250 € up to 500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>500 € up to 1000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>1000 € up to 1500 €</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>1500 € up to 2000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2000 € up to 3000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3000 € up to 4000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4000 € up to 5000 €</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>5000 € or more</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I do not wish to answer</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Anmerkungen (offen)</description>
+<class>text</class>
+<title>Would you like to comment this questionnaire, or would you like to add information for us to better understand your answers?</title>
+<explanation>Do you think, this questionnaire needs improvement? Did you feel some question were unclear, or did you feel unpleasent answering specific questions? Please leave us notes.</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">18</attr>
+<attr id="pos">18</attr>
+<attr id="scale.label_align">outside</attr>
+<attr id="metrics.padding">20</attr>
+</attributes.specific>
+<item>
+<text />
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">80</attr>
+<attr id="height.auto">yes</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Prolific ID</description>
+<class>text</class>
+<title>Prolific ID</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">19</attr>
+<attr id="pos">19</attr>
+<attr id="restrictions.answered">probe</attr>
+</attributes.specific>
+<item>
+<text>Prolific ID:</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Domain Introduction</title>
+<attributes.specific program="ofb">
+<attr id="id">DI</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+<question>
+<description>Component Description</description>
+<class>TextContent</class>
+<title>Domain Introduction: Identifying Faults in Circuits</title>
+<explanation>Please take your time to familiarize yourself with the domain. Make sure you understand all the components before you continue to the next page.</explanation>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Your task is to perform tests to detect faults at connections in electrical circuits. Each circuit has one or more sources of energy (battery), lightbulbs (which should always be <b>on</b>), and gates (which are connections between cables). If a gate is faulty, it does not transfer energy, and the lightbulbs connected to it turn off. To find the faulty gate, you can add an additional power source at a test point, which potentially makes the lightbulb turn on again, giving you information about the location of the fault in the circuit. Here is a simple illustration:</p>
+
+<div style="text-align: center; margin: 1em 0"><img src="pro://intro_1_with_labels.png" alt="first introductory example" style="max-width: 100%" /></div>
+
+<p>These are simplified circuits in that we can always assume that the circuit is closed after the lightbulb and the fault lies "on the path to the lightbulb". Here is a summary of the components of the circuits:</p>
+
+<ul><li>Battery: The battery is the "source" of the current going through the circuit.</li><li>Cable: The arrows are cables which transfer current. <b>Note that current is only transfered in the direction of the arrows!</b></li><li>Gate: The shapes labeled with numbers (in the example above "<b>1</b>") are gates which connect the current from the incoming arrow to the outgoing arrow. They may be faulty, in that they do not output the current, although they receive current from all input cables.</li><li>Lightbulb: The lightbulb turns on if it receives power from all input cables.</li><li>Test point: Test points are cables labeled with letters (in the example above "<b>A</b>"). You can perform a test by supplying power to such a cable, effectively ignoring all prior gates.</li></ul>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">1</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>AND Rule</description>
+<class>TextContent</class>
+<title>Domain Introduction (ctd.)</title>
+<explanation>Please take your time to familiarize yourself with the domain. Make sure you understand all the components before you continue to the test items.</explanation>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Both the gate and the lightbulb only work if they receive current from <b>all connected input cables</b> (similar to an AND gate). Consider these examples:</p>
+
+<div style="text-align: center; margin: 1em 0"><img src="pro://intro_2.png" alt="second introductory example" style="max-width: 48%; margin: 0 1em" /><img src="pro://intro_3.png" alt="third introductory example" style="max-width:48%; margin: 0 1em"/></div>
+
+<p>Gate <b>1</b>&nbsp;in the left example is only active if it receives current from both input cables. Similarly, the lightbulb in the right example must receive current from both input cables to turn on.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">2</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Circuits Worked Example</description>
+<class>TextContent</class>
+<title>Worked Example</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Each circuit you will see in this study has <b>exactly one faulty gate</b>. Your task is to choose the first test to perform so that the fault can be found with the least tests possible, <b>regardless of the result of the test</b>. Here is a worked out example:</p>
+
+<div style="text-align:center;"><img alt="fourth introductory example" src="pro://intro_4.png" /></div>
+
+<p>In this scenario, two tests would be equally viable: <b>C</b> and <b>D</b>. Consider this for test <b>C</b>: If the lightbulb turns on, the fault must be in the top part, otherwise the bottom part. In either case, the next test will certainly reveal the fault, as there are only two options left. For test <b>D</b> the same principle applies, but with the top and bottom switched.</p>
+
+<p class="sceditor-nlf"><br /></p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">3</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Random Order</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>The circuits you will see in this study are more complex than this one and are randomly ordered. This means that some early circuits may be much more complex than ones you will encounter later. To keep the study short, we only ask for the <b>first test to perform</b> for each given circuit. In total, there are 14 circuits in this study.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">4</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Fixed Order</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>The circuits you will see in this study are more complex than this one and increase in complexity towards the end. To keep the study short, we only ask for the <b>first test to perform</b> for each given circuit. In total, there are 14 circuits in this study.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">5</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Circuits Re-Intro</description>
+<class>TextContent</class>
+<title>Electrical Circuits Refresher</title>
+<explanation>The first section on this page is a refresher and contains only information which has been presented previously in this study. The second section, however, shows a worked example of the tasks on the following pages</explanation>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Your task is to perform tests to detect faults at connections in electrical circuits. Each circuit has one or more sources of energy (battery), lightbulbs (which should always be <b>on</b>), and gates (which are connections between cables). If a gate is faulty, it does not transfer energy, and the lightbulbs connected to it turn off. To find the faulty gate, you can add an additional power source at a test point, which potentially makes the lightbulb turn on again, giving you information about the location of the fault in the circuit. Here is a simple illustration:</p>
+
+<div style="text-align: center; margin: 1em 0"><img src="pro://intro_1_with_labels.png" alt="first introductory example" style="max-width: 100%" /></div>
+
+<p>These are simplified circuits in that we can always assume that the circuit is closed after the lightbulb and the fault lies "on the path to the lightbulb". Here is a summary of the components of the circuits:</p>
+
+<ul><li>Battery: The battery is the "source" of the current going through the circuit.</li><li>Cable: The arrows are cables which transfer current. <b>Note that current is only transfered in the direction of the arrows!</b></li><li>Gate: The shapes labeled with numbers (in the example above "<b>1</b>") are gates which connect the current from the incoming arrow to the outgoing arrow. They may be faulty, in that they do not output the current, although they receive current from all input cables.</li><li>Lightbulb: The lightbulb turns on if it receives power from all input cables.</li><li>Test point: Test points are cables labeled with letters (in the example above "<b>A</b>"). You can perform a test by supplying power to such a cable, effectively ignoring all prior gates.</li></ul>
+
+<p>Both the gate and the lightbulb only work if they receive current from <b>all connected input cables</b> (similar to an AND gate). Consider these examples:</p>
+
+<div style="text-align: center; margin: 1em 0"><img src="pro://intro_2.png" alt="second introductory example" style="max-width: 48%; margin: 0 1em" /><img src="pro://intro_3.png" alt="third introductory example" style="max-width:48%; margin: 0 1em"/></div>
+
+<p>Gate <b>1</b>&nbsp;in the left example is only active if it receives current from both input cables. Similarly, the lightbulb in the right example must receive current from both input cables to turn on.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">6</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Confirmation (C)</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">7</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>I have seen the worked example and know what I have to do in the next task.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Confirmation (W)</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">13</attr>
+<attr id="pos">8</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>I have seen the worked example and know what I have to do in the next task.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Confirmation (L)</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">14</attr>
+<attr id="pos">9</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>I have seen the worked example and know what I have to do in the next task.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Waterflow Introduction</description>
+<class>TextContent</class>
+<title>Pipe Networks Introduction</title>
+<explanation>Please familiarize yourself with this new problem scenario. The first section explains the notation and rules, the second is a worked out example.</explanation>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>The goal of this task is to find a clogged pipe segment in a pipe network. Each network has one or more sources of water (water tower), faucets (which should always have running water), and clog risks (labeled pipe segments). If a pipe segment is clogged, no water can flow through it, and the faucets connected to it no longer have running water. To find the clogged pipe segment, you can read out the water pressure at valves in the network, which gives you information about the location of the clogged pipe segment. Here is a simple illustration:</p>
+
+<img src="pro://waterflow_intro.png" style="max-width: 100%">
+
+<p>Pipe networks can have the following components:</p>
+
+<ul><li>Water Tower: The water tower is the source of water pressure in the network.</li>
+<li>Pipe: Pipes transport water.</li>
+<li>Clog Risks: Labeled wide sections of the pipes are clog risks.</li>
+<li>Faucet: If there is enough incoming pressure, the faucet will provide water.</li>
+<li>Valve: The valves can be used to check the incoming water pressure in the pipe below.</li></ul>
+
+<p>Note that wherever two pipes are joint together, both of them must be pressurized for the outgoing pressure to be considered sufficient, like this:</p>
+
+<img src="pro://waterflow_combination.png" style="max-width: 100%">]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">10</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Waterflow Worked Example</description>
+<class>TextContent</class>
+<title>Worked Example</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Each pipe network in this study has <b>exactly one clogged pipe segment</b>. Your task is to choose the first test to perform so that the clogged segment can be found with the least tests possible, <b>regardless of the result of the test</b>. Here is a worked out example:</p>
+
+<img src="pro://waterflow_example.png" style="max-width: 100%">
+
+<p>In this scenario, two tests would be equally viable: <b>F</b> and <b>G</b>. Consider this for test <b>G</b>: If <b>G</b> shows sufficient pressure, the clogged segment must be somewhere in the bottom part of the network. Otherwise, it must be in the top part, or vice versa when choosing <b>F</b> instead. Depending on the result, the clog can be located with a maximum of either two (bottom) or three (top) more tests.</p>
+]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">11</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>BS Introduction</description>
+<class>TextContent</class>
+<title>Search in Ordered Lists Introduction</title>
+<explanation>Please familiarize yourself with this new problem scenario. The first section explains the notation and rules, the second is a worked out example.</explanation>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>The goal of this task is to find a number in an <b>ordered</b> list of numbers. Numbers at positions marked with "?" are unknown, but must always be less than or equal to known numbers on their right, and greater than or equal to known numbers on their left. To find the number in question, you can check the number at a position marked with "?", giving you more information about the position of the number you are looking for. Here is an example of such a list:</p>
+
+<img src="pro://lists_intro.svg" style="max-width: 100%">
+
+<p>Lists can have the following components:</p>
+
+<ul>
+    <li>Known Numbers: Circles with a number in them are known to you, so you can use them as orientation.</li>
+    <li>Unknown Numbers: Circles with a questionmark have there content hidden. They also <b>always</b> contain a number, but you don't know which one, except that they are <b>always greater than or equal to</b> every known number to their left, and <b>always less than or equal to</b> every known number to their right.</li>
+</ul>
+
+<p>You can always assume that the number you are looking for is contained in the list.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">12</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>BS Worked Example</description>
+<class>TextContent</class>
+<title>Worked Example</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<img src="pro://lists_example.svg" style="max-width: 100%">
+
+<p>The goal is to find the number 9.</p>
+
+<p>In this scenario, two checks would be equally viable: <b>C</b> and <b>D</b>. We know that the number 9 must be to the right of the known number 2. As an example, consider option <b>C</b>: If it shows either 9 or a number greater than 9, the problem is solved because the goal is either found, or there is only one possible position left. If it instead shows a number less than 9, then the next check will reveal the position by the same principle.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">13</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Trials</title>
+<attributes.specific program="ofb">
+<attr id="id">TR</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+<question>
+<description>Circuit Instruction</description>
+<class>TextContent</class>
+<title>Faulty Circuit</title>
+<explanation>Which test should you perform first to find the fault with the least tests possible?</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">1</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>EX1</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX2</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX3</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX4</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX5</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX6</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>H</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX7</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>H</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>I</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+<item>
+<text>J</text>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX8</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX9</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX10</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX11</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX12</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">13</attr>
+<attr id="pos">13</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX13</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">14</attr>
+<attr id="pos">14</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>EX14</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">15</attr>
+<attr id="pos">15</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>G</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>H</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Waterflow Instruction</description>
+<class>TextContent</class>
+<title>Clogged Pipes</title>
+<explanation>Which valve should you check to find the clogged pipe segment with the least checks possible?</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">16</attr>
+<attr id="pos">16</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Lists Instruction</description>
+<class>TextContent</class>
+<title>Ordered Lists</title>
+<explanation>Which unknown number should you check first to find the target with the least checks possible?</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">17</attr>
+<attr id="pos">17</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>List 01</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[Find the number <em>4</em>.]]>
+</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">18</attr>
+<attr id="pos">18</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>List 02</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[Find the number <em>12</em>.]]>
+</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">19</attr>
+<attr id="pos">19</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>List 03</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[Find the number <em>7</em>.]]>
+</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">20</attr>
+<attr id="pos">20</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>List 04</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[Find the number <em>15</em>.]]>
+</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">21</attr>
+<attr id="pos">21</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>List 05</description>
+<class>select</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[Find the number <em>6</em>.]]>
+</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">I don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">22</attr>
+<attr id="pos">22</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>D</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>E</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>F</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Learning Phase</title>
+<attributes.specific program="ofb">
+<attr id="id">LP</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<question>
+<description>Phase 1-1</description>
+<class>checkbox</class>
+<title>Trace the Forward Path of Power</title>
+<explanation>
+<![CDATA[Which gates and lightbulbs is battery "A" connected to?
+
+<img src="pro://phase-1.png" alt="image of a circuit schematic." style="max-width: 100%">]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>5</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>6</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>X</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Y</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Z</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Phase 1-2</description>
+<class>checkbox</class>
+<title>Determine Power Sources</title>
+<explanation>
+<![CDATA[Find all gates and batteries which are exclusively a source of power for lightbulb Y, that is they don't supply current to any other lightbulb than Y.
+
+<img src="pro://phase-1.png" alt="image of a circuit schematic." style="max-width: 100%">]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>5</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>6</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>A</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+<item>
+<text>B</text>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+</item>
+<item>
+<text>C</text>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Phase 2-1</description>
+<class>scale</class>
+<title>Divide the Gates Into Groups</title>
+<explanation>
+<![CDATA[The goal of performing a test is to divide the gates in the network into two groups: The ones which may be faulty, and the ones which we can be certain work fine. Remember: Test Points are cables labeled with capital letters. To perform a test, consider the following:
+
+When you perform a test, you add a power supply to the selected cable. If the lightbulb turns on after supplying power, the fault must be somewhere <b>before</b> the test cable, as the network seems to work fine with power supplied at a point in the middle. If the lightbulb still doesn't turn on after supplying power, the fault must be <b>after</b> the test point. Since we also know that there is only one fault, this means all previous nodes work fine.
+
+<img src="pro://phase-2-1_instr.png" style="max-width: 100%">]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">certainly working</li>
+<li i="2">potentially faulty</li>
+</labels>
+<lead>Based on a test at point C, divide the gates into two groups: the ones which may be faulty and the ones which we can be certain work fine.</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="scale.display">complete</attr>
+<attr id="scale.niveau">2</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="alignment">center</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>5</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Phase 2-2</description>
+<class>scale</class>
+<title>Divide the Gates Into Groups</title>
+<explanation>
+<![CDATA[<em>These are the same instructions as on the previous page, in case you need to double check them.</em>
+
+The goal of performing a test is to divide the gates in the network into two groups: The ones which may be faulty, and the ones which we can be certain work fine. Remember: Test Points are cables labeled with capital letters. To perform a test, consider the following:
+
+When you perform a test, you add a power supply to the selected cable. If the lightbulb turns on after supplying power, the fault must be somewhere <b>before</b> the test cable, as the network seems to work fine with power supplied at a point in the middle. If the lightbulb still doesn't turn on after supplying power, the fault must be <b>after</b> the test point. Since we also know that there is only one fault, this means all previous nodes work fine.
+
+<img src="pro://phase-2-2_instr.png" style="max-width: 100%">]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">certainly working</li>
+<li i="2">potentially faulty</li>
+</labels>
+<lead>Based on a test at point C, divide the gates into two groups: the ones which may be faulty and the ones which we can be certain work fine.</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">don't know</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="scale.display">complete</attr>
+<attr id="scale.niveau">2</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="composition">default</attr>
+</attributes.specific>
+<item>
+<text>1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Phase 3 Control</description>
+<class>TextContent</class>
+<title>Decide which test is most appropriate to find the fault quickly and reliably.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Consider the following approaches to finding the fault in the same simple circuit. Familiarise yourself with the two strategies and think about which of the two is better suited for finding faults quickly and reliably.</p>
+
+<p><b>Option 1:</b></p>
+
+<img src="pro://phase-3-1_cntrl.png" style="max-width: 100%">
+
+<p><b>Option 2:</b></p>
+
+<img src="pro://phase-3-2_cntrl.png" style="max-width: 100%">]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Phase 3 Explanation</description>
+<class>TextContent</class>
+<title>Decide which test is most appropriate to find the fault quickly and reliably.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>Consider the following approaches to finding the fault in the same simple circuit. Familiarise yourself with the two strategies and think about which of the two is better suited for finding faults quickly and reliably.</p>
+
+<p><b>Option 1:</b></p>
+
+<img src="pro://phase-3-1_expl.png" style="max-width: 100%">
+
+<p><b>Option 2:</b></p>
+
+<img src="pro://phase-3-2_expl.png" style="max-width: 100%">
+
+<h2><b>Choosing the Most Appropriate Test to Find a Fault</b></h2>
+
+<p>To decide which test is most appropriate for finding a fault quickly and reliably in an electrical circuit, we need to use several strategies:</p>
+
+<h3><b>Relevant Strategies</b></h3>
+
+<ol>
+    <li><b>Test Point Evaluator</b>: Assesses different test points to determine which one provides the most useful information.</li>
+    <li><b>Circuit Divider</b>: Splits the circuit into sections based on where test points are located.</li>
+    <li><b>Group Size Calculator</b>: Counts how many gates fall into each group when a particular test is applied.</li>
+    <li><b>Optimal Test Finder</b>: Identifies which test creates the most balanced division of gates into groups.</li>
+</ol>
+
+<h3><b>How to Apply These Strategies</b></h3>
+
+<ol>
+    <li>First, identify all possible test points in the circuit (these are usually labeled with letters).</li>
+    <li>For each test point, use the Circuit Divider to determine how it would split the gates into two groups:<ul>
+        <li>Gates that might be faulty if this test point is used</li>
+        <li>Gates that would be confirmed as working properly</li>
+    </ul></li>
+    <li>Use the Group Size Calculator to count how many gates would be in each group for each potential test point.</li>
+    <li>Apply the Optimal Test Finder to compare all possible test points and find the one that:<ul>
+        <li>Creates the most balanced division (where the smaller group is as large as possible)</li>
+        <li>Minimizes the number of gates you would need to check after the test</li>
+        <li>Provides the clearest information about where the fault might be</li>
+    </ul></li>
+    <li>The test point that creates the most balanced division is usually the best choice because:<ul>
+        <li>It eliminates the maximum number of possibilities with a single test</li>
+        <li>It divides the remaining possibilities into manageable groups</li>
+        <li>It helps you find the fault with the fewest additional tests</li>
+    </ul></li>
+</ol>
+
+<p>This approach is similar to a binary search strategy, where you try to eliminate half of the possibilities with each test. By choosing the test point that creates the most balanced division, you can find the fault in the circuit with the minimum number of tests, saving time and effort.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>1-1 Expl</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<div style="display: flex; align-itemns: center; justify-content: center">
+<div style="flex: 1 1 0px">
+
+<p>To solve this task, we use two main strategies:</p>
+<ol>
+    <li><b>Path Checker (has_path)</b>: This checks if a gate can send power to a specific lightbulb's connection point. It works by:
+        <ul>
+            <li>Directly matching if the gate is the lightbulb's connection point itself</li>
+            <li>Following each outgoing arrow from the gate to see if any path leads to the lightbulb's connection point</li>
+        </ul>
+    </li>
+    <li><b>Exclusive Source Verifier (exclusive_source)</b>: This confirms a gate only powers one specific lightbulb (Y) by:
+        <ul>
+            <li>Using the Path Checker to verify it powers lightbulb Y</li>
+            <li>Checking it doesn't power any other lightbulb (using the Path Checker for all other lightbulbs)</li>
+        </ul>
+    </li>
+</ol>
+
+<p>The solution involves:</p>
+<ol>
+    <li>Finding all gates that power lightbulb Y using the Path Checker</li>
+    <li>For each candidate gate, using the Exclusive Source Verifier to confirm it doesn't power any other lightbulb</li>
+    <li>Keeping only gates that pass both checks</li>
+</ol>
+
+<p>This ensures we find gates that exclusively send power to lightbulb Y and nowhere else.</p>
+
+</div>
+<div style="flex: 1 1 0px">
+    <img src="pro://phase-1-2.png" style="max-width: 100%; max-heigth: 100%">
+</div>
+</div>
+
+]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>2-1 Expl</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<div style="display: flex; align-itemns: center; justify-content: center">
+<div style="flex: 1 1 0px">
+
+<p>To solve the task of dividing gates into two groups based on a test at point C (one group that may be faulty and one that is certainly working), follow these steps:</p>
+
+<h3><b>Relevant Strategies</b></h3>
+<ol>
+    <li><b>Same circuit check</b>:<br>
+    Confirm if a gate is in the same circuit as point C. This ensures we only consider gates affected by the test.
+    </li>
+    <li><b>Exclusively powers check</b>:<br>
+    Determine if point C exclusively powers a gate. If true, the gate relies solely on C for power.
+    </li>
+    <li><b>Not exclusively powers check</b>:<br>
+    Determine if point C does not exclusively power a gate. This means the gate gets power from other sources besides C.
+    </li>
+    <li><b>Partition operation</b>:<br>
+    Split the list of gates into two groups using the above checks:
+    <ul>
+        <li>Group 1: Gates in the same circuit as C and exclusively powered by C.</li>
+        <li>Group 2: Gates in the same circuit as C but not exclusively powered by C.</li>
+    </ul>
+    </li>
+</ol>
+
+<h3><b>Step-by-Step Application</b></h3>
+<ol>
+    <li><b>Identify relevant gates</b>:<br>
+    Use the "same circuit check" to collect all gates in the same circuit as point C. Ignore gates outside this circuit.
+    </li>
+    <li><b>Apply the partition operation</b>:<br>
+    <ul>
+        <li>For Group 1 (certainly working if C passes the test):<br>
+        Use the "exclusively powers check" to find gates powered only by C. If C works correctly, these gates cannot be faulty.</li>
+        <li>For Group 2 (may be faulty):<br>
+        Use the "not exclusively powers check" to find gates powered by C and other sources. These gates could still be faulty even if C works.</li>
+    </ul>
+    <li><b>Result</b>:<br>
+    The partition operation directly outputs the two groups:
+    <ul>
+        <li>Group 1: Gates that are certainly working (if C passes the test).</li>
+        <li>Group 2: Gates that may be faulty (regardless of C’s test outcome).</li>
+    </ul>
+    </li>
+</ol>
+
+<h3><b>Key Insight</b></h3>
+<p>The test at point C helps isolate responsibility:</p>
+<ul>
+    <li>Gates exclusively powered by C depend entirely on C’s functionality.  </li>
+    <li>Gates with multiple power sources might have issues beyond C.</li>
+</ul>
+<p>This division pinpoints where faults could exist based on the test results.</p>
+
+</div>
+<div style="flex: 1 1 0px">
+    <img src="pro://phase-2-1_expl.png" style="max-width: 100%; max-height: 100%">
+</div>
+</div>
+]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+<question>
+<description>2-2 Expl</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<div style="display: flex; align-itemns: center; justify-content: center">
+<div style="flex: 1 1 0px">
+
+<p>To solve the task of dividing gates into two groups based on a test at point C (one group that may be faulty and one that is certainly working), follow these steps:</p>
+
+<h3><b>Relevant Strategies</b></h3>
+<ol>
+    <li><b>Same circuit check</b>:<br>
+    Confirm if a gate is in the same circuit as point C. This ensures we only consider gates affected by the test.
+    </li>
+    <li><b>Exclusively powers check</b>:<br>
+    Determine if point C exclusively powers a gate. If true, the gate relies solely on C for power.
+    </li>
+    <li><b>Not exclusively powers check</b>:<br>
+    Determine if point C does not exclusively power a gate. This means the gate gets power from other sources besides C.
+    </li>
+    <li><b>Partition operation</b>:<br>
+    Split the list of gates into two groups using the above checks:
+    <ul>
+        <li>Group 1: Gates in the same circuit as C and exclusively powered by C.</li>
+        <li>Group 2: Gates in the same circuit as C but not exclusively powered by C.</li>
+    </ul>
+    </li>
+</ol>
+
+<h3><b>Step-by-Step Application</b></h3>
+<ol>
+    <li><b>Identify relevant gates</b>:<br>
+    Use the "same circuit check" to collect all gates in the same circuit as point C. Ignore gates outside this circuit.
+    </li>
+    <li><b>Apply the partition operation</b>:<br>
+    <ul>
+        <li>For Group 1 (certainly working if C passes the test):<br>
+        Use the "exclusively powers check" to find gates powered only by C. If C works correctly, these gates cannot be faulty.</li>
+        <li>For Group 2 (may be faulty):<br>
+        Use the "not exclusively powers check" to find gates powered by C and other sources. These gates could still be faulty even if C works.</li>
+    </ul>
+    <li><b>Result</b>:<br>
+    The partition operation directly outputs the two groups:
+    <ul>
+        <li>Group 1: Gates that are certainly working (if C passes the test).</li>
+        <li>Group 2: Gates that may be faulty (regardless of C’s test outcome).</li>
+    </ul>
+    </li>
+</ol>
+
+<h3><b>Key Insight</b></h3>
+<p>The test at point C helps isolate responsibility:</p>
+<ul>
+    <li>Gates exclusively powered by C depend entirely on C’s functionality.  </li>
+    <li>Gates with multiple power sources might have issues beyond C.</li>
+</ul>
+<p>This division pinpoints where faults could exist based on the test results.</p>
+
+</div>
+<div style="flex: 1 1 0px">
+    <img src="pro://phase-2-2_expl.png" style="max-width: 100%; max-height: 100%">
+</div>
+</div>
+]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Test Phase</title>
+<attributes.specific program="ofb">
+<attr id="id">TP</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+<question>
+<description>Test Phase Instruction</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<headerText>Task Introduction: Application</headerText>
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[<p>In the following, you will be asked to apply the knowledge you gained on the previous pages. If needed, take a break here.</p>
+
+<p>For networks as seen on the previous pages, you will be asked to select only <b>the first test</b> to perform to find the fault in the network with the least tests possible.</p>
+
+<p>Afterwards, you will see two different groups of tasks, which share some similarities with the network tasks handled so far. Detailed instructions and symbol explanations will be given before each of the tasks.</p>]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="alignment">default</attr>
+<attr id="character">html</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Random Generator</title>
+<attributes.specific program="ofb">
+<attr id="id">RD</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+<question>
+<description>Expl. Yes/No</description>
+<class>random</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="character">finished</attr>
+<attr id="data">
+<![CDATA[1 Explanation
+2 Control]]>
+</attr>
+</attributes.specific>
+</question>
+<question>
+<description>Domain Order</description>
+<class>random</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="character">finished</attr>
+<attr id="data">
+<![CDATA[1 Water first
+2 Lists first]]>
+</attr>
+</attributes.specific>
+</question>
+</section>
+<section>
+<title>Internal Variables</title>
+<attributes.specific program="ofb">
+<attr id="id">IV</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+<question>
+<description>Condition</description>
+<class>internal</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+<item>
+<text>condition</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Order</description>
+<class>internal</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+<item>
+<text>order</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<section>
+<title>Sanity Checks</title>
+<attributes.specific program="ofb">
+<attr id="id">SN</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+<question>
+<description>Sanity 1</description>
+<class>select</class>
+<title>Please answer the following question.</title>
+<explanation>
+<![CDATA[<img src="pro://sanity-check-1.png" style="max-width: 100%">
+
+Which Gate is <b>NOT</b> connected to lightbulb "X"?]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>3</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>4</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>All of them are connected to lightbulb "X"</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Sanity 2</description>
+<class>select</class>
+<title>Please answer the following question.</title>
+<explanation>
+<![CDATA[Consider the following network. Given the performed test (at point "A") and outcome (lightbulb turns on), are the gates <b>1</b> and <b>3</b> in the <b>same</b> group (i.e. both nodes are either known working or potentially faulty), or in different groups?
+
+<img src="pro://sanity-check-2.png" style="max-width: 100%">]]>
+</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>
+<![CDATA[Yes, they are both in the <b>same</b> group.]]>
+</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>
+<![CDATA[No, they are in <b>different</b> groups.]]>
+</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Sanity 3</description>
+<class>select</class>
+<title>Which of the two approaches required fewer tests to find the fault?</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>Option 1</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Option 2</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+<surveyLayout version="2.4" program="oFb" progversion="3.7.06 1391">
+<name>sosci24</name>
+<title>SoSci Survey Standard 2024</title>
+<template>
+<![CDATA[<!DOCTYPE html>
+<html class="%html.css.class%">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+body {
+    padding: 0;
+    margin: 0;
+    background-color: %color.0%;
+    background-color: var(--s2color0);
+}
+html {
+    -webkit-text-size-adjust: 100%;
+}
+hr {
+    margin: 42px 0;
+}
+div.s2t-inner {
+    max-width: %width%;
+    box-sizing: border-box;
+    padding: 0 0.8em;
+    margin: 0 auto;
+}
+div#S2Progress {
+    background-color: %color.4%;
+    background-color: var(--s2color4);
+    padding: 6px 0;
+}
+div.progressbar div.progress {
+    border-color: %color.7%;
+    border-color: var(--s2color.7);
+}
+div.progressbar div.progress {
+    background-color: %color.5%;
+    border-color: var(--s2color.5);
+}
+div.progressbar {
+    height: 20px;
+    border-radius: 0.25em;
+}
+div.progressbar div.progresstext {
+    font-size: 16px;
+}
+div#s2t-progress {
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 0.25em;
+    background-color: %color.0%;
+    background-color: var(--s2color0);
+}
+div#S2Logos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+div#S2Logos img {
+    max-width: 200px;
+    max-height: 100px;
+}
+img.s2headerImage {
+    width: 100%;
+}
+div#S2Outer {
+    margin: 16px 0;
+}
+div.s2t-questionary { 
+  position: relative;
+  min-width: 300px;
+  margin: 0 auto 0px auto;
+  min-height: 65vh;
+}
+div#s2t-controls {
+    margin: 42px 0;
+    display: flex;
+    align-items: center;
+    gap: 1em 2em;
+    flex-wrap: wrap;
+}
+div#s2t-footer{
+    background-color: #585858;
+    color: white;
+    padding: 60px 0;
+}
+div#s2t-footer a {
+    color: white;
+}
+div#s2t-imprint {
+}
+
+/* Center header and footer on smartphone */
+@media (max-width: 450px) {
+	div#s2t-controls { text-align: center }
+	div#s2t-imprint { text-align: center }
+}
+@media (min-width: 576px) {
+    div.s2t-inner {
+        padding-left: 1.6em;
+        padding-right: 1.6em;
+    }
+    div#s2t-progress {
+      margin-right: 0;
+    }
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+h1 {
+	font-size: 42px;
+	margin: 42px 0 22px;
+}
+td > h1:first-child {
+	margin-top: 0;
+}
+h2 {
+	font-size: 32px;
+	margin: 42px 0 18px;
+}
+h3 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 32px 0 16px;
+}
+
+button,
+input.button {
+    border-radius: 0.3em;
+}
+input.button:hover,
+button:hover,
+button.s2buttonInverse {
+    background-color: %color.6%;
+    background-color: var(--s2color6);
+    color: %color.1%;
+    color: var(--s2color1);
+}
+input.button.s2buttonNext:hover,
+button.s2buttonNext:hover {
+    background-color: #66CC66;
+    color: white;
+}
+div.buttonControl {
+    justify-content: center;
+}
+div.buttonControl input.button {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 0.3em;
+}
+
+input[type="radio"] {
+  box-sizing: border-box;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px %color.8% solid;
+  border-color: var(--s2color8);
+  border-radius: 50%;
+  background-color: %color.0%;
+  background-color: var(--s2color0);
+  appearance: none;
+}
+input[type="radio"]::before {
+  box-sizing: border-box;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 0 none;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em %color.5%;
+  box-shadow: inset 1em 1em var(--s2color5);
+}
+input[type="radio"]:checked::before {
+  content: "";
+  transform: scale(0.8);
+  box-shadow: inset 1em 1em %color.4%;
+  box-shadow: inset 1em 1em var(--s2color4);
+}
+
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  width: 1.25em;
+  height: 1.25em;
+  color: %color.4%;
+  color: var(--s2color4);
+  appearance: none;
+  border: 2px %color.8% solid;
+  border-color: var(--s2color8);
+  border-radius: 0;
+  background-color: %color.0%;
+  background-color: var(--s2color0);
+}
+
+input[type="checkbox"]:before {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    content: "✓";
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    box-shadow: inset 1em 1em %color.4%;
+    box-shadow: inset 1em 1em var(--s2color4);
+    line-height: 1;
+}
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    transform: scale(1.1);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+input[type="file"],
+textarea,
+div.textinput textarea,
+table.question td.textinput textarea,
+div.textinput input,
+table.question td.textinput input {
+    appearance: none;
+    padding: 0.15em 0.4em;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border: 1px solid %color.7%;
+    border-color: var(--s2color7);
+    border-radius: 0.3em;
+    transition: ease-in-out 0.15s;
+}
+select {
+    background-color: white;
+    padding: 0.15em 0.6em;
+    border: 1px solid %color.7%;
+    border-color: var(--s2color7);
+    border-radius: 0.3em;
+}
+
+div.s2fail input[type="radio"],
+div.s2fail input[type="checkbox"] {
+    outline: 1px solid %color.2%;
+    outline-color: var(--s2color2);
+}
+input[type="radio"]:focus,
+div.s2fail input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+div.s2fail input[type="checkbox"]:focus,
+input[type="text"]:focus,
+div.s2fail input[type="text"]:focus,
+select:focus,
+div.s2fail select:focus,
+textarea:focus,
+div.s2fail textarea:focus,
+input.button:focus,
+button:focus,
+.s2iSelection.cards div.option.focus {
+    /* box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6); */
+    outline: 2px solid %color.6%;
+    outline-color: var(--s2color6);
+}
+
+
+table.question th.separateB,
+table.question td.separateB,
+table.question div.separateB,
+div.separateB, div.s2sepH {
+  border-top: 1px solid #C8C8C8;
+}
+
+div.feedback,
+div.content.box,
+div.items.box {
+  border-radius: 0.3em;
+}
+div.info div.title {
+  border-radius: 0.3em 0.3em 0 0;
+}
+div.info div.symbol div.content {
+  border-radius: 0 0 0.3em 0.3em;
+}
+div.spacingV {
+  margin: 0.4em 0;
+}
+div.question div.opener {
+    margin-bottom: 0.25em;
+}
+</style>
+
+%head%
+
+<style>
+/* Accessibility */
+html.s2display-inverse {
+    --s2color0: #000000;
+    --s2color1: #FFFFFF;
+    --s2color2: #CC3300;
+    --s2color3: #333333;
+    --s2color4: #6688CC;
+    --s2color5: #3366AA;
+    --s2color6: #FF9900;
+    --s2color7: #666666;
+    --s2color8: #E0E0E0;
+}
+html.s2display-inverse input[type="radio"]:checked::before {
+    box-shadow: inset 1em 1em #EEEEFF;
+}
+html.s2display-inverse input[type="checkbox"]:checked::before {
+    color: #000000;
+    box-shadow: inset 1em 1em #CCCCFF;
+}
+html.s2display-inverse span.Text2SpeechButton,
+html.s2display-inverse img.s2accessButton {
+    background-color: #FFFFFF;
+}
+html.s2display-inverse button.s2accessButton {
+    background-color: %color.4%;
+}
+
+/*
+ * Dark Mode disabled due to unexpected results with some texts
+ * and a lack of user control on Chrome
+@media (prefers-color-scheme: dark) {
+    :root {
+        --s2color0: #000000;
+        --s2color1: #FFFFFF;
+        --s2color2: #CC3300;
+        --s2color3: #333333;
+        --s2color4: #6688CC;
+        --s2color5: #3366AA;
+        --s2color6: #FF9900;
+        --s2color7: #666666;
+        --s2color8: #E0E0E0;
+    }
+    html.s2display-inverse {
+        --s2color0: %color.0%;
+        --s2color1: %color.1%;
+        --s2color2: %color.2%;
+        --s2color3: %color.3%;
+        --s2color4: %color.4%;
+        --s2color5: %color.5%;
+        --s2color6: %color.6%;
+        --s2color7: %color.7%;
+        --s2color8: %color.8%;
+    }
+
+    input[type="radio"]:checked::before {
+      box-shadow: inset 1em 1em #CCCCFF;
+    }
+    html.s2display-inverse input[type="radio"]:checked::before {
+      box-shadow: inset 1em 1em %color.4%;
+    }
+
+    input[type="checkbox"]:checked::before {
+        color: #000000;
+        box-shadow: inset 1em 1em #CCCCFF;
+    }
+    html.s2display-inverse input[type="checkbox"]:checked::before {
+        color: #FFFFFF;
+        box-shadow: inset 1em 1em %color.4%;
+    }
+
+    span.Text2SpeechButton,
+    img.s2accessButton  {
+        background-color: #FFFFFF;
+    }
+    button.s2accessButton {
+        background-color: %color.4%;
+    }
+    html.s2display-inverse button.s2accessButton {
+        background-color: transparent;
+    }
+}
+*/
+
+div.progressbar {
+    border-color: %color.8%;
+    border-color: var(--s2color.8);
+}
+
+html.s2display-zoom {
+    font-size: 1.25em;
+}
+html.s2display-zoom body,
+html.s2display-zoom button,
+html.s2display-zoom input {
+    font-size: 24px;
+    line-height: 1.5;
+}
+</style>
+
+</head>
+
+<body>
+<div id="S2Outer">
+<div id="S2Logos" class="s2t-inner">
+%logo%
+<!-- add <img> Tags for additional logos here -->
+</div>
+<div class="s2t-inner">
+    %header.image.img%
+</div>
+<div id="S2Progress">
+    <div class="s2t-inner">
+	<div id="s2t-progress">%progress%<span><!-- empty span required for IE --></span></div>
+    </div>
+</div>
+<div class="s2t-questionary s2t-inner">
+%form.open%
+<div id="s2t-content">
+<div style="margin-top: 60px; margin-bottom: 32px;"></div>
+%questionnaire%
+</div>
+<div id="s2t-controls">
+%button.speak%
+%button.inverse%
+%button.zoom%
+%button.easy%
+%button.language%
+%button.break%
+%button.leave%
+%button.control%
+</div>
+%form.close%
+</div>
+</div>
+<div id="s2t-footer">
+<div class="s2t-inner s2t-imprint">
+%imprint%
+</div>
+</div>
+
+</body>
+</html>]]>
+</template>
+<defaultStatus>yes</defaultStatus>
+<copyright>
+<![CDATA[(c) 2024 SoSci Survey
+Standard-Layout für SoSci Survey v3.6.00b
+Freigegeben zur Veränderung und Weitergabe]]>
+</copyright>
+<attributes.specific program="ofb">
+<attr id="body.font-family">"Atkinson Hyperlegible", Verdana, Arial,sans-serif</attr>
+<attr id="body.font-size">18px</attr>
+<attr id="input.font-family">"Atkinson Hyperlegible", Verdana, Arial,sans-serif</attr>
+<attr id="button.style">color: white; border: 1px solid %color.8%; background-color: %color.4%; padding: 10px 20px; font-weight: 700;</attr>
+<attr id="color.3">F9F9FC</attr>
+<attr id="color.4">6688CC</attr>
+<attr id="color.5">DDE6FF</attr>
+<attr id="color.6">FF9900</attr>
+<attr id="color.7">E0E0E0</attr>
+<attr id="color.8">666666</attr>
+<attr id="width">1200</attr>
+<attr id="spacing.items">1.6em</attr>
+<attr id="spacing.item">0.5em</attr>
+<attr id="spacing.option">0.35em</attr>
+<attr id="spacing.cards">1em</attr>
+<attr id="spacing.question">3.2em</attr>
+<attr id="anchor.font_size">100%</attr>
+<attr id="input.size">30</attr>
+<attr id="selectable.borderWidth">2px</attr>
+<attr id="selectable.backgroundSelected">color.4</attr>
+<attr id="selectable.borderAvailable">color.4</attr>
+<attr id="selectable.textSelected">FFFFFF</attr>
+</attributes.specific>
+</surveyLayout>
+<questionnaire>
+<title>Demo Questionnaire</title>
+<attributes.specific program="ofb">
+<attr id="id">DEMO</attr>
+<attr id="content">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;questionnaire&gt;
+
+&lt;!-- Seite 1 --&gt;
+&lt;page ident=&quot;INTRO&quot; intID=&quot;1&quot;&gt;
+&lt;question id=&quot;SC01&quot; intID=&quot;2&quot; /&gt;
+&lt;postprocessing intID=&quot;91&quot;&gt;
+
+&lt;/postprocessing&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 2 --&gt;
+&lt;page ident=&quot;RD&quot; intID=&quot;15&quot;&gt;
+&lt;info&gt;Condition Randomizer&lt;/info&gt;
+&lt;question id=&quot;RD01&quot; intID=&quot;16&quot; /&gt;
+&lt;question id=&quot;RD02&quot; intID=&quot;116&quot; /&gt;
+&lt;php intID=&quot;17&quot;&gt;&lt;![CDATA[
+put(&#039;IV01_01&#039;, value(&#039;RD01&#039;));
+put(&#039;IV02_01&#039;, value(&#039;RD02&#039;));
+]]&gt;&lt;/php&gt;
+&lt;php intID=&quot;117&quot;&gt;&lt;![CDATA[
+if(value(&#039;IV02_01&#039;) == 2){
+    setPageOrder(&#039;SD-C5&#039;, &#039;LI-L5&#039;, &#039;WFI-W5&#039;, &#039;end&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 3 --&gt;
+&lt;page ident=&quot;SD&quot; intID=&quot;18&quot;&gt;
+&lt;info&gt;Sociodemographics&lt;/info&gt;
+&lt;question id=&quot;SD01&quot; intID=&quot;20&quot; /&gt;
+&lt;question id=&quot;SD02&quot; intID=&quot;19&quot; /&gt;
+&lt;question id=&quot;SD11&quot; intID=&quot;22&quot; /&gt;
+&lt;question id=&quot;SD19&quot; intID=&quot;21&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 4 --&gt;
+&lt;page ident=&quot;CRCT D1&quot; intID=&quot;3&quot;&gt;
+&lt;question id=&quot;DI02&quot; intID=&quot;4&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 5 --&gt;
+&lt;page ident=&quot;CRCT D2&quot; intID=&quot;5&quot;&gt;
+&lt;question id=&quot;DI03&quot; intID=&quot;6&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 6 --&gt;
+&lt;page ident=&quot;LPINTR&quot; intID=&quot;7&quot;&gt;
+&lt;info&gt;Learning Phase Intro&lt;/info&gt;
+&lt;html intID=&quot;8&quot;&gt;&lt;![CDATA[
+&lt;h2&gt;&lt;b&gt;Practice Part: Find Faults in Circuits&lt;/b&gt;&lt;/h2&gt;
+&lt;p&gt;On next 9 pages the task of finding the fault in the circuit will be &lt;b&gt;broken down
+into smaller parts&lt;/b&gt;. For each task, you will be presented with a specific circuit and task,
+which builds up to eventually deciding on the best test to perform.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;9&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown.&quot;);
+} else {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown together with an explanation.&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;23&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Please work through the practice tasks carefully. In case your answer has been incorrect, please pay special attention to the correct solution with the aim of understanding &lt;b&gt;why&lt;/b&gt; the answer is correct. You always have the option to go back to previous pages if you want to look at your solution.&lt;/p&gt;
+&lt;p&gt;After the practice part, you will see additional tasks, where you have to &lt;b&gt;decide which test to perform&lt;/b&gt; on your own.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 7 --&gt;
+&lt;page ident=&quot;LP 02&quot; intID=&quot;11&quot;&gt;
+&lt;question id=&quot;LP02&quot; intID=&quot;12&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 8 --&gt;
+&lt;page ident=&quot;EXPL2&quot; intID=&quot;13&quot;&gt;
+&lt;info&gt;Explanation 1-2&lt;/info&gt;
+&lt;html intID=&quot;113&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Lightbulb &lt;b&gt;Y&lt;/b&gt; is connected to gates &lt;b&gt;2&lt;/b&gt;, &lt;b&gt;3&lt;/b&gt;, &lt;b&gt;5&lt;/b&gt;, and &lt;b&gt;6&lt;/b&gt; as well as the batteries &lt;b&gt;B&lt;/b&gt; and &lt;b&gt;C&lt;/b&gt;.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;10&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-1-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP07&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 9 --&gt;
+&lt;page ident=&quot;SNT1&quot; intID=&quot;14&quot;&gt;
+&lt;question id=&quot;SN01&quot; intID=&quot;24&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 10 --&gt;
+&lt;page ident=&quot;LP 03&quot; intID=&quot;25&quot;&gt;
+&lt;info&gt;Phase 2-1&lt;/info&gt;
+&lt;question id=&quot;LP03&quot; intID=&quot;26&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 11 --&gt;
+&lt;page ident=&quot;EXPL3&quot; intID=&quot;27&quot;&gt;
+&lt;info&gt;Explanation 2-1&lt;/info&gt;
+&lt;html intID=&quot;115&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;28&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-1_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP08&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 12 --&gt;
+&lt;page ident=&quot;LP 04&quot; intID=&quot;29&quot;&gt;
+&lt;info&gt;Phase 2-2&lt;/info&gt;
+&lt;question id=&quot;LP04&quot; intID=&quot;30&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 13 --&gt;
+&lt;page ident=&quot;EXPL4&quot; intID=&quot;31&quot;&gt;
+&lt;info&gt;Explanation 2-2&lt;/info&gt;
+&lt;html intID=&quot;114&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;32&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP09&quot;);}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 14 --&gt;
+&lt;page ident=&quot;SNT2&quot; intID=&quot;33&quot;&gt;
+&lt;info&gt;Sanity 2&lt;/info&gt;
+&lt;question id=&quot;SN02&quot; intID=&quot;34&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 15 --&gt;
+&lt;page ident=&quot;LP 05&quot; intID=&quot;35&quot;&gt;
+&lt;info&gt;Phase 3&lt;/info&gt;
+&lt;php intID=&quot;36&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    question(&#039;LP05&#039;);
+} else {
+    question(&#039;LP06&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;SN03&quot; intID=&quot;37&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 16 --&gt;
+&lt;page ident=&quot;TI&quot; intID=&quot;38&quot;&gt;
+&lt;info&gt;Test Phase Introduction&lt;/info&gt;
+&lt;question id=&quot;TP01&quot; intID=&quot;39&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 17 --&gt;
+&lt;page ident=&quot;DI 01&quot; intID=&quot;40&quot;&gt;
+&lt;info&gt;Domain Refresh Circuits&lt;/info&gt;
+&lt;question id=&quot;DI07&quot; intID=&quot;41&quot; /&gt;
+&lt;question id=&quot;DI04&quot; intID=&quot;42&quot; /&gt;
+&lt;question id=&quot;DI08&quot; intID=&quot;43&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 18 --&gt;
+&lt;page ident=&quot;C1&quot; intID=&quot;44&quot;&gt;
+&lt;info&gt;Circuits Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;45&quot; /&gt;
+&lt;image src=&quot;pro://ex01.svg&quot; intID=&quot;46&quot; /&gt;
+&lt;question id=&quot;TR01&quot; intID=&quot;47&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 19 --&gt;
+&lt;page ident=&quot;C2&quot; intID=&quot;48&quot;&gt;
+&lt;info&gt;Circuits Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;49&quot; /&gt;
+&lt;image src=&quot;pro://ex03.svg&quot; intID=&quot;51&quot; /&gt;
+&lt;question id=&quot;TR04&quot; intID=&quot;50&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 20 --&gt;
+&lt;page ident=&quot;C3&quot; intID=&quot;52&quot;&gt;
+&lt;info&gt;Circuits Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;53&quot; /&gt;
+&lt;image src=&quot;pro://ex11.svg&quot; intID=&quot;55&quot; /&gt;
+&lt;question id=&quot;TR12&quot; intID=&quot;54&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 21 --&gt;
+&lt;page ident=&quot;C4&quot; intID=&quot;56&quot;&gt;
+&lt;info&gt;Circuits Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;57&quot; /&gt;
+&lt;image src=&quot;pro://ex12.svg&quot; intID=&quot;58&quot; /&gt;
+&lt;question id=&quot;TR13&quot; intID=&quot;59&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 22 --&gt;
+&lt;page ident=&quot;C5&quot; intID=&quot;60&quot;&gt;
+&lt;info&gt;Circuits Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;61&quot; /&gt;
+&lt;image src=&quot;pro://ex06.svg&quot; intID=&quot;63&quot; /&gt;
+&lt;question id=&quot;TR07&quot; intID=&quot;62&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 23 --&gt;
+&lt;page ident=&quot;WFI&quot; intID=&quot;84&quot;&gt;
+&lt;question id=&quot;DI09&quot; intID=&quot;85&quot; /&gt;
+&lt;question id=&quot;DI10&quot; intID=&quot;86&quot; /&gt;
+&lt;question id=&quot;DI13&quot; intID=&quot;87&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 24 --&gt;
+&lt;page ident=&quot;W1&quot; intID=&quot;64&quot;&gt;
+&lt;info&gt;Waterflow Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;65&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_01.png&quot; intID=&quot;66&quot; /&gt;
+&lt;question id=&quot;TR03&quot; intID=&quot;67&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 25 --&gt;
+&lt;page ident=&quot;W2&quot; intID=&quot;68&quot;&gt;
+&lt;info&gt;Waterflow Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;69&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_02.png&quot; intID=&quot;71&quot; /&gt;
+&lt;question id=&quot;TR06&quot; intID=&quot;70&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 26 --&gt;
+&lt;page ident=&quot;W3&quot; intID=&quot;72&quot;&gt;
+&lt;info&gt;Waterflow Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;73&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_03.png&quot; intID=&quot;75&quot; /&gt;
+&lt;question id=&quot;TR09&quot; intID=&quot;74&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 27 --&gt;
+&lt;page ident=&quot;W4&quot; intID=&quot;76&quot;&gt;
+&lt;info&gt;Waterflow Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;77&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_04.png&quot; intID=&quot;79&quot; /&gt;
+&lt;question id=&quot;TR10&quot; intID=&quot;78&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 28 --&gt;
+&lt;page ident=&quot;W5&quot; intID=&quot;80&quot;&gt;
+&lt;info&gt;Waterflow Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;81&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_05.png&quot; intID=&quot;83&quot; /&gt;
+&lt;question id=&quot;TR11&quot; intID=&quot;82&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 29 --&gt;
+&lt;page ident=&quot;LI&quot; intID=&quot;88&quot;&gt;
+&lt;info&gt;Lists Introduction&lt;/info&gt;
+&lt;question id=&quot;DI11&quot; intID=&quot;89&quot; /&gt;
+&lt;question id=&quot;DI12&quot; intID=&quot;90&quot; /&gt;
+&lt;question id=&quot;DI14&quot; intID=&quot;112&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 30 --&gt;
+&lt;page ident=&quot;L1&quot; intID=&quot;92&quot;&gt;
+&lt;info&gt;Lists 1&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;93&quot; /&gt;
+&lt;image src=&quot;pro://lists_1.svg&quot; intID=&quot;95&quot; /&gt;
+&lt;question id=&quot;TR18&quot; intID=&quot;94&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 31 --&gt;
+&lt;page ident=&quot;L2&quot; intID=&quot;96&quot;&gt;
+&lt;info&gt;Lists 2&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;97&quot; /&gt;
+&lt;image src=&quot;pro://lists_2.svg&quot; intID=&quot;98&quot; /&gt;
+&lt;question id=&quot;TR19&quot; intID=&quot;99&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 32 --&gt;
+&lt;page ident=&quot;L3&quot; intID=&quot;100&quot;&gt;
+&lt;info&gt;Lists 3&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;101&quot; /&gt;
+&lt;image src=&quot;pro://lists_3.svg&quot; intID=&quot;102&quot; /&gt;
+&lt;question id=&quot;TR20&quot; intID=&quot;103&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 33 --&gt;
+&lt;page ident=&quot;L4&quot; intID=&quot;104&quot;&gt;
+&lt;info&gt;Lists 4&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;105&quot; /&gt;
+&lt;image src=&quot;pro://lists_4.svg&quot; intID=&quot;106&quot; /&gt;
+&lt;question id=&quot;TR21&quot; intID=&quot;107&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 34 --&gt;
+&lt;page ident=&quot;L5&quot; intID=&quot;108&quot;&gt;
+&lt;info&gt;Lists 5&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;109&quot; /&gt;
+&lt;image src=&quot;pro://lists_5.svg&quot; intID=&quot;111&quot; /&gt;
+&lt;question id=&quot;TR22&quot; intID=&quot;110&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;/questionnaire&gt;</attr>
+<attr id="goodbye">
+<![CDATA[<h1>Thank you for completing this questionnaire!</h1>
+
+<p>We would like to thank you very much for taking the time to participate in our study. Your contribution is a great help to our research. If you want to receive information about the results of this study, you may contact [anonymised]</p>
+
+<!-- Insert information on the study or a contact option here -->
+
+<p>Your answers were transmitted, you may close the browser window or tab now.</p>
+
+<!-- Additional spacing (remove or adjust as required)  -->
+<div style="padding-bottom: 120px"></div>]]>
+</attr>
+<attr id="screenReader">disable</attr>
+<attr id="selection">0</attr>
+<attr id="backbutton">yes</attr>
+<attr id="probePreset">no</attr>
+</attributes.specific>
+</questionnaire>
+<questionnaire>
+<title>Demo Questionnaire (Explanation only)</title>
+<attributes.specific program="ofb">
+<attr id="id">ExplOnly</attr>
+<attr id="content">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;questionnaire&gt;
+
+&lt;!-- Seite 1 --&gt;
+&lt;page ident=&quot;INTRO&quot; intID=&quot;1&quot;&gt;
+&lt;question id=&quot;SC01&quot; intID=&quot;2&quot; /&gt;
+&lt;postprocessing intID=&quot;91&quot;&gt;
+
+&lt;/postprocessing&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 2 --&gt;
+&lt;page ident=&quot;RD&quot; intID=&quot;15&quot;&gt;
+&lt;info&gt;Condition Randomizer&lt;/info&gt;
+&lt;question id=&quot;RD02&quot; intID=&quot;116&quot; /&gt;
+&lt;php intID=&quot;17&quot;&gt;&lt;![CDATA[
+put(&#039;IV01_01&#039;, 1);
+put(&#039;IV02_01&#039;, value(&#039;RD02&#039;));
+]]&gt;&lt;/php&gt;
+&lt;php intID=&quot;117&quot;&gt;&lt;![CDATA[
+if(value(&#039;IV02_01&#039;) == 2){
+    setPageOrder(&#039;SD-C5&#039;, &#039;LI-L5&#039;, &#039;WFI-W5&#039;, &#039;end&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 3 --&gt;
+&lt;page ident=&quot;SD&quot; intID=&quot;18&quot;&gt;
+&lt;info&gt;Sociodemographics&lt;/info&gt;
+&lt;question id=&quot;SD01&quot; intID=&quot;20&quot; /&gt;
+&lt;question id=&quot;SD02&quot; intID=&quot;19&quot; /&gt;
+&lt;question id=&quot;SD11&quot; intID=&quot;22&quot; /&gt;
+&lt;question id=&quot;SD19&quot; intID=&quot;21&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 4 --&gt;
+&lt;page ident=&quot;CRCT D1&quot; intID=&quot;3&quot;&gt;
+&lt;question id=&quot;DI02&quot; intID=&quot;4&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 5 --&gt;
+&lt;page ident=&quot;CRCT D2&quot; intID=&quot;5&quot;&gt;
+&lt;question id=&quot;DI03&quot; intID=&quot;6&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 6 --&gt;
+&lt;page ident=&quot;LPINTR&quot; intID=&quot;7&quot;&gt;
+&lt;info&gt;Learning Phase Intro&lt;/info&gt;
+&lt;html intID=&quot;8&quot;&gt;&lt;![CDATA[
+&lt;h2&gt;&lt;b&gt;Practice Part: Find Faults in Circuits&lt;/b&gt;&lt;/h2&gt;
+&lt;p&gt;On next 9 pages the task of finding the fault in the circuit will be &lt;b&gt;broken down
+into smaller parts&lt;/b&gt;. For each task, you will be presented with a specific circuit and task,
+which builds up to eventually deciding on the best test to perform.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;9&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown.&quot;);
+} else {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown together with an explanation.&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;23&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Please work through the practice tasks carefully. In case your answer has been incorrect, please pay special attention to the correct solution with the aim of understanding &lt;b&gt;why&lt;/b&gt; the answer is correct. You always have the option to go back to previous pages if you want to look at your solution.&lt;/p&gt;
+&lt;p&gt;After the practice part, you will see additional tasks, where you have to &lt;b&gt;decide which test to perform&lt;/b&gt; on your own.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 7 --&gt;
+&lt;page ident=&quot;LP 02&quot; intID=&quot;11&quot;&gt;
+&lt;question id=&quot;LP02&quot; intID=&quot;12&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 8 --&gt;
+&lt;page ident=&quot;EXPL2&quot; intID=&quot;13&quot;&gt;
+&lt;info&gt;Explanation 1-2&lt;/info&gt;
+&lt;html intID=&quot;113&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Lightbulb &lt;b&gt;Y&lt;/b&gt; is connected to gates &lt;b&gt;2&lt;/b&gt;, &lt;b&gt;3&lt;/b&gt;, &lt;b&gt;5&lt;/b&gt;, and &lt;b&gt;6&lt;/b&gt; as well as the batteries &lt;b&gt;B&lt;/b&gt; and &lt;b&gt;C&lt;/b&gt;.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;10&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-1-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP07&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 9 --&gt;
+&lt;page ident=&quot;SNT1&quot; intID=&quot;14&quot;&gt;
+&lt;question id=&quot;SN01&quot; intID=&quot;24&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 10 --&gt;
+&lt;page ident=&quot;LP 03&quot; intID=&quot;25&quot;&gt;
+&lt;info&gt;Phase 2-1&lt;/info&gt;
+&lt;question id=&quot;LP03&quot; intID=&quot;26&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 11 --&gt;
+&lt;page ident=&quot;EXPL3&quot; intID=&quot;27&quot;&gt;
+&lt;info&gt;Explanation 2-1&lt;/info&gt;
+&lt;html intID=&quot;115&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;28&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-1_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP08&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 12 --&gt;
+&lt;page ident=&quot;LP 04&quot; intID=&quot;29&quot;&gt;
+&lt;info&gt;Phase 2-2&lt;/info&gt;
+&lt;question id=&quot;LP04&quot; intID=&quot;30&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 13 --&gt;
+&lt;page ident=&quot;EXPL4&quot; intID=&quot;31&quot;&gt;
+&lt;info&gt;Explanation 2-2&lt;/info&gt;
+&lt;html intID=&quot;114&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;32&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP09&quot;);}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 14 --&gt;
+&lt;page ident=&quot;SNT2&quot; intID=&quot;33&quot;&gt;
+&lt;info&gt;Sanity 2&lt;/info&gt;
+&lt;question id=&quot;SN02&quot; intID=&quot;34&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 15 --&gt;
+&lt;page ident=&quot;LP 05&quot; intID=&quot;35&quot;&gt;
+&lt;info&gt;Phase 3&lt;/info&gt;
+&lt;php intID=&quot;36&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    question(&#039;LP05&#039;);
+} else {
+    question(&#039;LP06&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;SN03&quot; intID=&quot;37&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 16 --&gt;
+&lt;page ident=&quot;TI&quot; intID=&quot;38&quot;&gt;
+&lt;info&gt;Test Phase Introduction&lt;/info&gt;
+&lt;question id=&quot;TP01&quot; intID=&quot;39&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 17 --&gt;
+&lt;page ident=&quot;DI 01&quot; intID=&quot;40&quot;&gt;
+&lt;info&gt;Domain Refresh Circuits&lt;/info&gt;
+&lt;question id=&quot;DI07&quot; intID=&quot;41&quot; /&gt;
+&lt;question id=&quot;DI04&quot; intID=&quot;42&quot; /&gt;
+&lt;question id=&quot;DI08&quot; intID=&quot;43&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 18 --&gt;
+&lt;page ident=&quot;C1&quot; intID=&quot;44&quot;&gt;
+&lt;info&gt;Circuits Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;45&quot; /&gt;
+&lt;image src=&quot;pro://ex01.svg&quot; intID=&quot;46&quot; /&gt;
+&lt;question id=&quot;TR01&quot; intID=&quot;47&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 19 --&gt;
+&lt;page ident=&quot;C2&quot; intID=&quot;48&quot;&gt;
+&lt;info&gt;Circuits Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;49&quot; /&gt;
+&lt;image src=&quot;pro://ex03.svg&quot; intID=&quot;51&quot; /&gt;
+&lt;question id=&quot;TR04&quot; intID=&quot;50&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 20 --&gt;
+&lt;page ident=&quot;C3&quot; intID=&quot;52&quot;&gt;
+&lt;info&gt;Circuits Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;53&quot; /&gt;
+&lt;image src=&quot;pro://ex11.svg&quot; intID=&quot;55&quot; /&gt;
+&lt;question id=&quot;TR12&quot; intID=&quot;54&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 21 --&gt;
+&lt;page ident=&quot;C4&quot; intID=&quot;56&quot;&gt;
+&lt;info&gt;Circuits Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;57&quot; /&gt;
+&lt;image src=&quot;pro://ex12.svg&quot; intID=&quot;58&quot; /&gt;
+&lt;question id=&quot;TR13&quot; intID=&quot;59&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 22 --&gt;
+&lt;page ident=&quot;C5&quot; intID=&quot;60&quot;&gt;
+&lt;info&gt;Circuits Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;61&quot; /&gt;
+&lt;image src=&quot;pro://ex06.svg&quot; intID=&quot;63&quot; /&gt;
+&lt;question id=&quot;TR07&quot; intID=&quot;62&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 23 --&gt;
+&lt;page ident=&quot;WFI&quot; intID=&quot;84&quot;&gt;
+&lt;question id=&quot;DI09&quot; intID=&quot;85&quot; /&gt;
+&lt;question id=&quot;DI10&quot; intID=&quot;86&quot; /&gt;
+&lt;question id=&quot;DI13&quot; intID=&quot;87&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 24 --&gt;
+&lt;page ident=&quot;W1&quot; intID=&quot;64&quot;&gt;
+&lt;info&gt;Waterflow Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;65&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_01.png&quot; intID=&quot;66&quot; /&gt;
+&lt;question id=&quot;TR03&quot; intID=&quot;67&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 25 --&gt;
+&lt;page ident=&quot;W2&quot; intID=&quot;68&quot;&gt;
+&lt;info&gt;Waterflow Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;69&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_02.png&quot; intID=&quot;71&quot; /&gt;
+&lt;question id=&quot;TR06&quot; intID=&quot;70&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 26 --&gt;
+&lt;page ident=&quot;W3&quot; intID=&quot;72&quot;&gt;
+&lt;info&gt;Waterflow Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;73&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_03.png&quot; intID=&quot;75&quot; /&gt;
+&lt;question id=&quot;TR09&quot; intID=&quot;74&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 27 --&gt;
+&lt;page ident=&quot;W4&quot; intID=&quot;76&quot;&gt;
+&lt;info&gt;Waterflow Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;77&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_04.png&quot; intID=&quot;79&quot; /&gt;
+&lt;question id=&quot;TR10&quot; intID=&quot;78&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 28 --&gt;
+&lt;page ident=&quot;W5&quot; intID=&quot;80&quot;&gt;
+&lt;info&gt;Waterflow Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;81&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_05.png&quot; intID=&quot;83&quot; /&gt;
+&lt;question id=&quot;TR11&quot; intID=&quot;82&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 29 --&gt;
+&lt;page ident=&quot;LI&quot; intID=&quot;88&quot;&gt;
+&lt;info&gt;Lists Introduction&lt;/info&gt;
+&lt;question id=&quot;DI11&quot; intID=&quot;89&quot; /&gt;
+&lt;question id=&quot;DI12&quot; intID=&quot;90&quot; /&gt;
+&lt;question id=&quot;DI14&quot; intID=&quot;112&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 30 --&gt;
+&lt;page ident=&quot;L1&quot; intID=&quot;92&quot;&gt;
+&lt;info&gt;Lists 1&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;93&quot; /&gt;
+&lt;image src=&quot;pro://lists_1.svg&quot; intID=&quot;95&quot; /&gt;
+&lt;question id=&quot;TR18&quot; intID=&quot;94&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 31 --&gt;
+&lt;page ident=&quot;L2&quot; intID=&quot;96&quot;&gt;
+&lt;info&gt;Lists 2&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;97&quot; /&gt;
+&lt;image src=&quot;pro://lists_2.svg&quot; intID=&quot;98&quot; /&gt;
+&lt;question id=&quot;TR19&quot; intID=&quot;99&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 32 --&gt;
+&lt;page ident=&quot;L3&quot; intID=&quot;100&quot;&gt;
+&lt;info&gt;Lists 3&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;101&quot; /&gt;
+&lt;image src=&quot;pro://lists_3.svg&quot; intID=&quot;102&quot; /&gt;
+&lt;question id=&quot;TR20&quot; intID=&quot;103&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 33 --&gt;
+&lt;page ident=&quot;L4&quot; intID=&quot;104&quot;&gt;
+&lt;info&gt;Lists 4&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;105&quot; /&gt;
+&lt;image src=&quot;pro://lists_4.svg&quot; intID=&quot;106&quot; /&gt;
+&lt;question id=&quot;TR21&quot; intID=&quot;107&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 34 --&gt;
+&lt;page ident=&quot;L5&quot; intID=&quot;108&quot;&gt;
+&lt;info&gt;Lists 5&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;109&quot; /&gt;
+&lt;image src=&quot;pro://lists_5.svg&quot; intID=&quot;111&quot; /&gt;
+&lt;question id=&quot;TR22&quot; intID=&quot;110&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;/questionnaire&gt;</attr>
+<attr id="goodbye">
+<![CDATA[<h1>Thank you for completing this questionnaire!</h1>
+
+<p>We would like to thank you very much for taking the time to participate in our study. Your contribution is a great help to our research. If you want to receive information about the results of this study, you may contact [anonymised]</p>
+
+<!-- Insert information on the study or a contact option here -->
+
+<p>Your answers were transmitted, you may close the browser window or tab now.</p>
+
+<!-- Additional spacing (remove or adjust as required)  -->
+<div style="padding-bottom: 120px"></div>]]>
+</attr>
+<attr id="screenReader">disable</attr>
+<attr id="selection">0</attr>
+<attr id="backbutton">yes</attr>
+<attr id="probePreset">no</attr>
+</attributes.specific>
+</questionnaire>
+<questionnaire>
+<title>Questionnaire</title>
+<attributes.specific program="ofb">
+<attr id="id">Full</attr>
+<attr id="content">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;questionnaire&gt;
+
+&lt;!-- Seite 1 --&gt;
+&lt;page ident=&quot;INTRO&quot; intID=&quot;1&quot;&gt;
+&lt;question id=&quot;SC01&quot; intID=&quot;2&quot; /&gt;
+&lt;postprocessing intID=&quot;91&quot;&gt;
+
+&lt;/postprocessing&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 2 --&gt;
+&lt;page ident=&quot;RD&quot; intID=&quot;15&quot;&gt;
+&lt;info&gt;Condition Randomizer&lt;/info&gt;
+&lt;question id=&quot;RD01&quot; intID=&quot;16&quot; /&gt;
+&lt;question id=&quot;RD02&quot; intID=&quot;116&quot; /&gt;
+&lt;php intID=&quot;17&quot;&gt;&lt;![CDATA[
+put(&#039;IV01_01&#039;, value(&#039;RD01&#039;));
+put(&#039;IV02_01&#039;, value(&#039;RD02&#039;));
+]]&gt;&lt;/php&gt;
+&lt;php intID=&quot;117&quot;&gt;&lt;![CDATA[
+if(value(&#039;IV02_01&#039;) == 2){
+    setPageOrder(&#039;SD-C5&#039;, &#039;LI-L5&#039;, &#039;WFI-W5&#039;, &#039;end&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 3 --&gt;
+&lt;page ident=&quot;SD&quot; intID=&quot;18&quot;&gt;
+&lt;info&gt;Sociodemographics&lt;/info&gt;
+&lt;question id=&quot;SD01&quot; intID=&quot;20&quot; /&gt;
+&lt;question id=&quot;SD02&quot; intID=&quot;19&quot; /&gt;
+&lt;question id=&quot;SD11&quot; intID=&quot;22&quot; /&gt;
+&lt;question id=&quot;SD19&quot; intID=&quot;21&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 4 --&gt;
+&lt;page ident=&quot;CRCT D1&quot; intID=&quot;3&quot;&gt;
+&lt;question id=&quot;DI02&quot; intID=&quot;4&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 5 --&gt;
+&lt;page ident=&quot;CRCT D2&quot; intID=&quot;5&quot;&gt;
+&lt;question id=&quot;DI03&quot; intID=&quot;6&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 6 --&gt;
+&lt;page ident=&quot;LPINTR&quot; intID=&quot;7&quot;&gt;
+&lt;info&gt;Learning Phase Intro&lt;/info&gt;
+&lt;html intID=&quot;8&quot;&gt;&lt;![CDATA[
+&lt;h2&gt;&lt;b&gt;Practice Part: Find Faults in Circuits&lt;/b&gt;&lt;/h2&gt;
+&lt;p&gt;On the next 9 pages the task of finding the fault in the circuit will be &lt;b&gt;broken down
+into smaller parts&lt;/b&gt;. For each part, you will be presented with a specific circuit and task,
+which builds up to eventually deciding on the best test to perform.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;9&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown.&quot;);
+} else {
+    html(&quot;After submitting your solution to a task, the correct solution will be shown together with an explanation.&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;23&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Please work through the practice tasks carefully. In case your answer has been incorrect, please pay special attention to the correct solution with the aim of understanding &lt;b&gt;why&lt;/b&gt; it is correct. You always have the option to go back to previous pages if you want to look at your solution.&lt;/p&gt;
+&lt;p&gt;After the practice part, you will see additional tasks, where you have to &lt;b&gt;decide which test to perform&lt;/b&gt; on your own.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 7 --&gt;
+&lt;page ident=&quot;LP 02&quot; intID=&quot;11&quot;&gt;
+&lt;question id=&quot;LP02&quot; intID=&quot;12&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 8 --&gt;
+&lt;page ident=&quot;EXPL2&quot; intID=&quot;13&quot;&gt;
+&lt;info&gt;Explanation 1-2&lt;/info&gt;
+&lt;php intID=&quot;118&quot;&gt;&lt;![CDATA[
+if ((value(&#039;LP02_01&#039;) == 1) and
+    (value(&#039;LP02_02&#039;) == 2) and
+    (value(&#039;LP02_03&#039;) == 2) and
+    (value(&#039;LP02_04&#039;) == 1) and
+    (value(&#039;LP02_05&#039;) == 2) and
+    (value(&#039;LP02_06&#039;) == 2) and
+    (value(&#039;LP02_07&#039;) == 1) and
+    (value(&#039;LP02_08&#039;) == 2) and
+    (value(&#039;LP02_09&#039;) == 2)) {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;correct&lt;/b&gt;.&lt;/p&gt;&quot;);
+} else {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;incorrect&lt;/b&gt;.&lt;/p&gt;&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;113&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Lightbulb &lt;b&gt;Y&lt;/b&gt; is connected to gates &lt;b&gt;2&lt;/b&gt;, &lt;b&gt;3&lt;/b&gt;, &lt;b&gt;5&lt;/b&gt;, and &lt;b&gt;6&lt;/b&gt; as well as the batteries &lt;b&gt;B&lt;/b&gt; and &lt;b&gt;C&lt;/b&gt;.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;10&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-1-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP07&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 9 --&gt;
+&lt;page ident=&quot;SNT1&quot; intID=&quot;14&quot;&gt;
+&lt;question id=&quot;SN01&quot; intID=&quot;24&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 10 --&gt;
+&lt;page intID=&quot;121&quot;&gt;
+&lt;php intID=&quot;122&quot;&gt;&lt;![CDATA[
+if (value(&#039;SN01&#039;) == 3) {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;correct&lt;/b&gt;, gate &quot;3&quot; is not connected to the lightbulb.&lt;/p&gt;&lt;img src=&quot;pro://sanity-check-1.png&quot; style=&quot;max-width:100%&quot;&gt;&#039;);
+} else {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;incorrect&lt;/b&gt;, gate &quot;3&quot; is not connected to the lightbulb.&lt;/p&gt;&lt;img src=&quot;pro://sanity-check-1.png&quot; style=&quot;max-width:100%&quot;&gt;&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 11 --&gt;
+&lt;page ident=&quot;LP 03&quot; intID=&quot;25&quot;&gt;
+&lt;info&gt;Phase 2-1&lt;/info&gt;
+&lt;question id=&quot;LP03&quot; intID=&quot;26&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 12 --&gt;
+&lt;page ident=&quot;EXPL3&quot; intID=&quot;27&quot;&gt;
+&lt;info&gt;Explanation 2-1&lt;/info&gt;
+&lt;php intID=&quot;119&quot;&gt;&lt;![CDATA[
+if ((value(&#039;LP03_01&#039;) == 1) and
+    (value(&#039;LP03_02&#039;) == 1) and
+    (value(&#039;LP03_03&#039;) == 1) and
+    (value(&#039;LP03_04&#039;) == 2) and
+    (value(&#039;LP03_05&#039;) == 2)) {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;correct&lt;/b&gt;.&lt;/p&gt;&quot;);
+} else {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;incorrect&lt;/b&gt;.&lt;/p&gt;&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;115&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;28&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-1_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP08&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 13 --&gt;
+&lt;page ident=&quot;LP 04&quot; intID=&quot;29&quot;&gt;
+&lt;info&gt;Phase 2-2&lt;/info&gt;
+&lt;question id=&quot;LP04&quot; intID=&quot;30&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 14 --&gt;
+&lt;page ident=&quot;EXPL4&quot; intID=&quot;31&quot;&gt;
+&lt;info&gt;Explanation 2-2&lt;/info&gt;
+&lt;php intID=&quot;120&quot;&gt;&lt;![CDATA[
+if ((value(&#039;LP04_01&#039;) == 2) and
+    (value(&#039;LP04_02&#039;) == 2) and
+    (value(&#039;LP04_03&#039;) == 1) and
+    (value(&#039;LP04_04&#039;) == 2)) {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;correct&lt;/b&gt;.&lt;/p&gt;&quot;);
+} else {
+    html(&quot;&lt;p&gt;Your answer was &lt;b&gt;incorrect&lt;/b&gt;.&lt;/p&gt;&quot;);
+}
+]]&gt;&lt;/php&gt;
+&lt;html intID=&quot;114&quot;&gt;&lt;![CDATA[
+&lt;p&gt;Gates which are certainly working are marked in blue, those which may be faulty are marked in red.&lt;/p&gt;
+]]&gt;&lt;/html&gt;
+&lt;php intID=&quot;32&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    html(&quot;&lt;img src=&#039;pro://phase-2-2_cntrl.png&#039; style=&#039;max-width: 100%&#039;&gt;&quot;);
+} else {
+    question(&quot;LP09&quot;);}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 15 --&gt;
+&lt;page ident=&quot;SNT2&quot; intID=&quot;33&quot;&gt;
+&lt;info&gt;Sanity 2&lt;/info&gt;
+&lt;question id=&quot;SN02&quot; intID=&quot;34&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 16 --&gt;
+&lt;page intID=&quot;123&quot;&gt;
+&lt;php intID=&quot;124&quot;&gt;&lt;![CDATA[
+if (value(&#039;SN02&#039;) == 2) {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;correct&lt;/b&gt;. Gates 1 and 3 are in different groups.&lt;/p&gt;&lt;img src=&quot;pro://sanity-check-2.png&quot; style=&quot;max-width:100%&quot;&gt;&#039;);
+} else {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;incorrect&lt;/b&gt;. Gates 1 and 3 are in different groups.&lt;/p&gt;&lt;img src=&quot;pro://sanity-check-2.png&quot; style=&quot;max-width:100%&quot;&gt;&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 17 --&gt;
+&lt;page ident=&quot;LP 05&quot; intID=&quot;35&quot;&gt;
+&lt;info&gt;Phase 3&lt;/info&gt;
+&lt;php intID=&quot;36&quot;&gt;&lt;![CDATA[
+if (value(&#039;IV01_01&#039;) == 2) {
+    question(&#039;LP05&#039;);
+} else {
+    question(&#039;LP06&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;question id=&quot;SN03&quot; intID=&quot;37&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 18 --&gt;
+&lt;page intID=&quot;125&quot;&gt;
+&lt;php intID=&quot;126&quot;&gt;&lt;![CDATA[
+if (value(&#039;SN03&#039;) == 2) {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;correct&lt;/b&gt;. Option 2 required 2 tests, while option 1 required 4.&lt;/p&gt;&#039;);
+} else {
+    html(&#039;&lt;p&gt;Your answer is &lt;b&gt;incorrect&lt;/b&gt;. Option 2 required 2 tests, while option 1 required 4.&lt;/p&gt;&#039;);
+}
+]]&gt;&lt;/php&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 19 --&gt;
+&lt;page ident=&quot;TI&quot; intID=&quot;38&quot;&gt;
+&lt;info&gt;Test Phase Introduction&lt;/info&gt;
+&lt;question id=&quot;TP01&quot; intID=&quot;39&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 20 --&gt;
+&lt;page ident=&quot;DI 01&quot; intID=&quot;40&quot;&gt;
+&lt;info&gt;Domain Refresh Circuits&lt;/info&gt;
+&lt;question id=&quot;DI07&quot; intID=&quot;41&quot; /&gt;
+&lt;question id=&quot;DI04&quot; intID=&quot;42&quot; /&gt;
+&lt;question id=&quot;DI08&quot; intID=&quot;43&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 21 --&gt;
+&lt;page ident=&quot;C1&quot; intID=&quot;44&quot;&gt;
+&lt;info&gt;Circuits Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;45&quot; /&gt;
+&lt;image src=&quot;pro://ex01.svg&quot; intID=&quot;46&quot; /&gt;
+&lt;question id=&quot;TR01&quot; intID=&quot;47&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 22 --&gt;
+&lt;page ident=&quot;C2&quot; intID=&quot;48&quot;&gt;
+&lt;info&gt;Circuits Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;49&quot; /&gt;
+&lt;image src=&quot;pro://ex03.svg&quot; intID=&quot;51&quot; /&gt;
+&lt;question id=&quot;TR04&quot; intID=&quot;50&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 23 --&gt;
+&lt;page ident=&quot;C3&quot; intID=&quot;52&quot;&gt;
+&lt;info&gt;Circuits Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;53&quot; /&gt;
+&lt;image src=&quot;pro://ex11.svg&quot; intID=&quot;55&quot; /&gt;
+&lt;question id=&quot;TR12&quot; intID=&quot;54&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 24 --&gt;
+&lt;page ident=&quot;C4&quot; intID=&quot;56&quot;&gt;
+&lt;info&gt;Circuits Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;57&quot; /&gt;
+&lt;image src=&quot;pro://ex12.svg&quot; intID=&quot;58&quot; /&gt;
+&lt;question id=&quot;TR13&quot; intID=&quot;59&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 25 --&gt;
+&lt;page ident=&quot;C5&quot; intID=&quot;60&quot;&gt;
+&lt;info&gt;Circuits Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR02&quot; intID=&quot;61&quot; /&gt;
+&lt;image src=&quot;pro://ex06.svg&quot; intID=&quot;63&quot; /&gt;
+&lt;question id=&quot;TR07&quot; intID=&quot;62&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 26 --&gt;
+&lt;page ident=&quot;WFI&quot; intID=&quot;84&quot;&gt;
+&lt;question id=&quot;DI09&quot; intID=&quot;85&quot; /&gt;
+&lt;question id=&quot;DI10&quot; intID=&quot;86&quot; /&gt;
+&lt;question id=&quot;DI13&quot; intID=&quot;87&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 27 --&gt;
+&lt;page ident=&quot;W1&quot; intID=&quot;64&quot;&gt;
+&lt;info&gt;Waterflow Trial 1&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;65&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_01.png&quot; intID=&quot;66&quot; /&gt;
+&lt;question id=&quot;TR03&quot; intID=&quot;67&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 28 --&gt;
+&lt;page ident=&quot;W2&quot; intID=&quot;68&quot;&gt;
+&lt;info&gt;Waterflow Trial 2&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;69&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_02.png&quot; intID=&quot;71&quot; /&gt;
+&lt;question id=&quot;TR06&quot; intID=&quot;70&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 29 --&gt;
+&lt;page ident=&quot;W3&quot; intID=&quot;72&quot;&gt;
+&lt;info&gt;Waterflow Trial 3&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;73&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_03.png&quot; intID=&quot;75&quot; /&gt;
+&lt;question id=&quot;TR09&quot; intID=&quot;74&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 30 --&gt;
+&lt;page ident=&quot;W4&quot; intID=&quot;76&quot;&gt;
+&lt;info&gt;Waterflow Trial 4&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;77&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_04.png&quot; intID=&quot;79&quot; /&gt;
+&lt;question id=&quot;TR10&quot; intID=&quot;78&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 31 --&gt;
+&lt;page ident=&quot;W5&quot; intID=&quot;80&quot;&gt;
+&lt;info&gt;Waterflow Trial 5&lt;/info&gt;
+&lt;question id=&quot;TR16&quot; intID=&quot;81&quot; /&gt;
+&lt;image src=&quot;pro://waterflow_05.png&quot; intID=&quot;83&quot; /&gt;
+&lt;question id=&quot;TR11&quot; intID=&quot;82&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 32 --&gt;
+&lt;page ident=&quot;LI&quot; intID=&quot;88&quot;&gt;
+&lt;info&gt;Lists Introduction&lt;/info&gt;
+&lt;question id=&quot;DI11&quot; intID=&quot;89&quot; /&gt;
+&lt;question id=&quot;DI12&quot; intID=&quot;90&quot; /&gt;
+&lt;question id=&quot;DI14&quot; intID=&quot;112&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 33 --&gt;
+&lt;page ident=&quot;L1&quot; intID=&quot;92&quot;&gt;
+&lt;info&gt;Lists 1&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;93&quot; /&gt;
+&lt;image src=&quot;pro://lists_1.svg&quot; intID=&quot;95&quot; /&gt;
+&lt;question id=&quot;TR18&quot; intID=&quot;94&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 34 --&gt;
+&lt;page ident=&quot;L2&quot; intID=&quot;96&quot;&gt;
+&lt;info&gt;Lists 2&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;97&quot; /&gt;
+&lt;image src=&quot;pro://lists_2.svg&quot; intID=&quot;98&quot; /&gt;
+&lt;question id=&quot;TR19&quot; intID=&quot;99&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 35 --&gt;
+&lt;page ident=&quot;L3&quot; intID=&quot;100&quot;&gt;
+&lt;info&gt;Lists 3&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;101&quot; /&gt;
+&lt;image src=&quot;pro://lists_3.svg&quot; intID=&quot;102&quot; /&gt;
+&lt;question id=&quot;TR20&quot; intID=&quot;103&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 36 --&gt;
+&lt;page ident=&quot;L4&quot; intID=&quot;104&quot;&gt;
+&lt;info&gt;Lists 4&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;105&quot; /&gt;
+&lt;image src=&quot;pro://lists_4.svg&quot; intID=&quot;106&quot; /&gt;
+&lt;question id=&quot;TR21&quot; intID=&quot;107&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;!-- Seite 37 --&gt;
+&lt;page ident=&quot;L5&quot; intID=&quot;108&quot;&gt;
+&lt;info&gt;Lists 5&lt;/info&gt;
+&lt;question id=&quot;TR17&quot; intID=&quot;109&quot; /&gt;
+&lt;image src=&quot;pro://lists_5.svg&quot; intID=&quot;111&quot; /&gt;
+&lt;question id=&quot;TR22&quot; intID=&quot;110&quot; /&gt;
+&lt;/page&gt;
+
+
+&lt;/questionnaire&gt;</attr>
+<attr id="goodbye">
+<![CDATA[<h1>Thank you for completing this questionnaire!</h1>
+
+<p>We would like to thank you very much for taking the time to participate in our study. Your contribution is a great help to our research. If you want to receive information about the results of this study, you may contact [anonymised]</p>
+
+<!-- Insert information on the study or a contact option here -->
+
+<p>Your answers were transmitted, you may return to Prolific using the following link:</br>
+<a href="https://app.prolific.com/submissions/complete?cc=C4UDEY03">https://app.prolific.com/submissions/complete?cc=C4UDEY03</a></br>
+Otherwise, you can close the browser window or tab now.</p>
+
+<!-- Additional spacing (remove or adjust as required)  -->
+<div style="padding-bottom: 120px"></div>]]>
+</attr>
+<attr id="screenReader">disable</attr>
+<attr id="selection">1</attr>
+<attr id="backbutton">yes</attr>
+<attr id="probePreset">no</attr>
+</attributes.specific>
+</questionnaire>
+</surveyProject>

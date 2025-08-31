@@ -1,0 +1,5 @@
+Below is a Prolog program. Explain it to someone with no programming background. Avoid jargon and use simple language.
+
+```prolog
+{prolog}
+```

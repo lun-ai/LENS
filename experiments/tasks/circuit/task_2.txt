@@ -1,0 +1,1 @@
+Based on a test at point C, divide the gates into two groups: the ones which may be faulty and the ones which we can be certain work fine.

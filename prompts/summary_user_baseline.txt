@@ -1,0 +1,6 @@
+You are given a task description. Identify and summarise relevant strategies. Explain how these strategies can be applied in solving the task below. Use the same names for the same strategy components as established earlier. Avoid jargon and use simple language.
+
+[Task Description]
+{description}
+
+[The End of Task Description]

@@ -1,0 +1,14 @@
+<Positive Example Move Island 2 Territory 2>
+You select this territory and obtain 1 pair (Water). 
+
+<Positive Example Opponent's Move>
+Opponent conquers and prevents you from getting a triplet (Water). 
+
+<Positive Example Next Move Island 1 Territory 3>
+You obtain 2 pairs (Corn, Fish) and opponent has no pair.
+
+<Negative Example Other Moves>
+This is a wrong move. Contrast: Not enough pair(s). 
+
+<Negative Example Next Moves>
+This is a wrong move. Contrast: Not enough pair(s). 

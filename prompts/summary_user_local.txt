@@ -1,0 +1,14 @@
+You are given a task description and an example that illustrates the context for solving it. Identify the relevant predicates and summarise the strategies they represent. Explain how these strategies can be applied in solving the task below. Use the same names for the same predicates as established earlier. Avoid jargon and use simple language.
+
+[Task Description]
+{description}
+
+[The End of Task Description]
+
+[Example Type]
+{example_type}
+
+[Example]
+{example}
+
+[The End of Example]

@@ -1,0 +1,147 @@
+{
+  "domain_name": "island",
+  "domain_context": "experiments/tasks/island/domain.txt",
+  "program_registry": {
+    "anonymised_programs": "experiments/programs/island/anonymous_invent.pl",
+    "named_programs": "experiments/programs/island/target.pl"
+  },
+  "use_ilp_learning": false,
+  "interpretation_apis": [
+    {
+      "model": "ollama/starcoder2:instruct",
+      "api_base": "http://localhost:11434",
+      "temperature": 0.8
+    },
+    {
+      "model": "ollama/qwen2.5-coder:14b-instruct",
+      "api_base": "http://localhost:11434",
+      "temperature": 0.8
+    }
+  ],
+  "summary_apis": [
+    {
+      "model": "deepseek/deepseek-reasoner",
+      "temperature": 0.0
+    },
+    {
+      "model": "anthropic/claude-3-7-sonnet-20250219",
+      "temperature": 0.0
+    }
+  ],
+  "scoring_apis": [
+    {
+      "model": "anthropic/claude-3-7-sonnet-20250219",
+      "temperature": 0.0
+    },
+    {
+      "model": "deepseek/deepseek-reasoner",
+      "temperature": 0.0
+    },
+    {
+      "model": "openai/o3-mini-2025-01-31",
+      "reasoning_effort": "medium"
+    }
+  ],
+  "conditions": {
+    "lens_two_cm": {
+      "name": "Reasoning model with code interpretation from two coding models",
+      "use_code_interpretation": true,
+      "program_ref": "named_programs",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    },
+    "lens_ap": {
+      "name": "Anonymised program without global nor local context",
+      "use_code_interpretation": true,
+      "program_ref": "anonymised_programs",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    },
+    "lens_ap_local": {
+      "name": "Anonymised program with local prolog context",
+      "use_code_interpretation": true,
+      "program_ref": "anonymised_programs",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_local.txt"
+      }
+    },
+    "lens_ap_global": {
+      "name": "Anonymised program with global context",
+      "use_code_interpretation": true,
+      "program_ref": "anonymised_programs",
+      "prompts": {
+        "system": "summary_system.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    },
+    "lens_ap_global_local": {
+      "name": "Anonymised program with global and local prolog context",
+      "use_code_interpretation": true,
+      "program_ref": "anonymised_programs",
+      "prompts": {
+        "system": "summary_system.txt",
+        "user": "summary_user_local.txt"
+      }
+    },
+    "lens_np": {
+      "name": "Non-anonymised program without global nor local context",
+      "use_code_interpretation": true,
+      "program_ref": "named_programs",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    },
+    "lens_np_local": {
+      "name": "Non-anonymised program with local prolog context",
+      "use_code_interpretation": true,
+      "program_ref": "named_programs",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_local.txt"
+      }
+    },
+    "lens_np_global": {
+      "name": "Non-anonymised program with global domain context",
+      "use_code_interpretation": true,
+      "program_ref": "named_programs",
+      "prompts": {
+        "system": "summary_system.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    },
+    "lens_np_global_local": {
+      "name": "Non-anonymised program with global domain context",
+      "use_code_interpretation": true,
+      "program_ref": "named_programs",
+      "prompts": {
+        "system": "summary_system.txt",
+        "user": "summary_user_local.txt"
+      }
+    }
+  },
+  "task_descriptions": [
+    "experiments/tasks/island/task_1.txt",
+    "experiments/tasks/island/task_2.txt",
+    "experiments/tasks/island/task_3.txt"
+  ],
+  "task_examples": [
+    "experiments/data/island/task_1/prim.pl",
+    "experiments/data/island/task_2/prim.pl",
+    "experiments/data/island/task_3/prim.pl"
+  ],
+  "reference_answers": [
+    "experiments/references/island/reference_task_1.txt",
+    "experiments/references/island/reference_task_2.txt",
+    "experiments/references/island/reference_task_3.txt"
+  ],
+  "debug_mode": false,
+  "verbose": false,
+  "scoring_repeats": 3,
+  "num_interpretation_samples": 3
+}

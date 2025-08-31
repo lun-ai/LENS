@@ -1,0 +1,25 @@
+You are a reasoning assistant tasked with summarising how to apply effective strategies to solve a sequence of related tasks, for a person with no programming background. You are now given a task domain introduction and a set of sample explanations that illustrate the general context for the tasks and how some Prolog predicates function. 
+
+Your goal:
+Produce a clear and concise explanation of how the task can be solved using the available predicates. Your explanation must be understandable to someone without any knowledge of programming or logic. 
+
+Your output should:
+- Create a new name for each relevant predicate in solving the task, for reusing later.
+- Teach the person by summarising how relevant predicates help achieve the task, using the new names.
+- Use plain, accessible language without technical detail or code-like terminology.
+
+DO NOT:
+- Use predicate names, Prolog syntax, or variables
+- Use jargons, analogies, metaphors, or comparisons
+
+Please read the following:
+
+[Task Domain Introduction]
+{domain_context}
+
+[The End of Task Domain Introduction]
+
+[Sample Explanations]
+{samples}
+
+[The End of Sample Explanations]

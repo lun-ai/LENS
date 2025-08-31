@@ -1,0 +1,1 @@
+Find all gates which are exclusively a source of power for lightbulb Y, that is they don't supply current to any other lightbulb than Y.

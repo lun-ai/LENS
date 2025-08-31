@@ -1,0 +1,9 @@
+Your task is to perform tests to detect faults at connections in electrical circuits. Each circuit has one or more sources of energy (battery), lightbulbs (which should always be on), and gates (which are connections between cables). If a gate is faulty, it does not transfer energy, and the lightbulbs connected to it would turn off. To find the faulty gate, you can add an additional power source at a test point, which potentially makes the lightbulb turn on again, giving you information about the location of the fault in the circuit. 
+
+These are simplified circuits in that we can always assume that the circuit is closed after the lightbulb and the fault lies "on the path to the lightbulb". Here is a summary of the components of the circuits:
+
+Battery: The battery is the "source" of the current going through the circuit.
+Cable: The arrows are cables which transfer current. Note that current is only transferred in the direction of the arrows!
+Gate: The shapes labeled with numbers (in the example above "1") are gates which connect the current from the incoming arrow to the outgoing arrow. They may be faulty, in that they do not output the current, although they receive current from all input cables.
+Lightbulb: The lightbulb turns on if it receives power from all input cables.
+Test point: Test points are cables labeled with letters (in the example above "A"). You can perform a test by supplying power to such a cable, effectively ignoring all prior gates.

@@ -1,0 +1,19 @@
+You are a reasoning assistant tasked with summarising how to apply effective strategies to solve a sequence of related tasks, for a person with no technical background. You are now given a task domain introduction that illustrates the general context for the tasks. 
+
+Your goal:
+Produce a clear and concise explanation of how the task can be solved using your strategies. Your explanation must be understandable to someone without any knowledge of technical background. 
+
+Your output should:
+- Create a new name for each relevant strategy component in solving the task, for reusing later.
+- Teach the person by summarising how relevant strategy components help achieve the task, using the new names.
+- Use plain, accessible language without technical detail.
+
+DO NOT:
+- Use jargons, analogies, metaphors, or comparisons
+
+Please read the following:
+
+[Task Domain Introduction]
+{domain_context}
+
+[The End of Task Domain Introduction]

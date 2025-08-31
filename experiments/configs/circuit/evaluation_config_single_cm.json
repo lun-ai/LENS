@@ -1,0 +1,114 @@
+{
+  "domain_name": "circuit",
+  "domain_context": "experiments/tasks/circuit/domain.txt",
+  "use_ilp_learning": true,
+  "ilp_hopper_path": "experiments/programs/hopper/popper.py",
+  "ilp_learning_episodes": [
+    {
+      "name": "exclusively_powers",
+      "kb_path": "experiments/programs/circuit/exclusively_powers",
+      "prim_path": "experiments/programs/circuit/exclusively_powers/prim.pl",
+      "depends_on": null,
+      "max_ho": 3,
+      "max_rules": 3
+    },
+    {
+      "name": "partition",
+      "kb_path": "experiments/programs/circuit/partition",
+      "prim_path": "experiments/programs/circuit/partition/prim.pl",
+      "depends_on": "exclusively_powers",
+      "max_ho": 3,
+      "max_rules": 3,
+      "negation": true
+    },
+    {
+      "name": "partition_sizes",
+      "kb_path": "experiments/programs/circuit/partition_sizes",
+      "prim_path": "experiments/programs/circuit/partition_sizes/prim.pl",
+      "depends_on": ["exclusively_powers", "partition"],
+      "max_ho": 3,
+      "max_rules": 3
+    },
+    {
+      "name": "optimal_partition_sizes",
+      "kb_path": "experiments/programs/circuit/optimal_partition_sizes",
+      "prim_path": "experiments/programs/circuit/optimal_partition_sizes/prim.pl",
+      "depends_on": ["exclusively_powers", "partition", "partition_sizes"],
+      "max_ho": 3,
+      "max_rules": 3
+    },
+    {
+      "name": "optimal_test",
+      "kb_path": "experiments/programs/circuit/optimal_test",
+      "prim_path": "experiments/programs/circuit/optimal_test/prim.pl",
+      "depends_on": ["exclusively_powers", "partition", "partition_sizes", "optimal_partition_sizes"],
+      "max_ho": 3,
+      "max_rules": 3,
+      "max_body": 4
+    }
+  ],
+  "interpretation_apis": [
+    {
+      "model": "ollama/starcoder2:instruct",
+      "api_base": "http://localhost:11434",
+      "temperature": 0.8
+    }
+  ],
+  "summary_apis": [
+    {
+      "model": "deepseek/deepseek-reasoner",
+      "temperature": 0.0
+    },
+    {
+      "model": "anthropic/claude-3-7-sonnet-20250219",
+      "temperature": 0.0
+    }
+  ],
+  "scoring_apis": [
+    {
+      "model": "anthropic/claude-3-7-sonnet-20250219",
+      "temperature": 0.0
+    },
+    {
+      "model": "deepseek/deepseek-reasoner",
+      "temperature": 0.0
+    },
+    {
+      "model": "openai/o3-mini-2025-01-31",
+      "reasoning_effort": "medium"
+    }
+  ],
+  "conditions": {
+    "lens_single_cm": {
+      "name": "Reasoning model with code interpretation from a single coding model",
+      "use_code_interpretation": true,
+      "program_ref": "optimal_test",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    }
+  },
+  "task_descriptions": [
+    "experiments/tasks/circuit/task_1.txt",
+    "experiments/tasks/circuit/task_2.txt",
+    "experiments/tasks/circuit/task_2.txt",
+    "experiments/tasks/circuit/task_3.txt"
+  ],
+  "task_examples": [
+    "experiments/data/circuit/ex_phase_1/prim.pl",
+    "experiments/data/circuit/ex_phase_2/prim_1.pl",
+    "experiments/data/circuit/ex_phase_2/prim_2.pl",
+    "experiments/data/circuit/ex_phase_3/prim.pl"
+  ],
+  "reference_answers": [
+    "experiments/references/circuit/reference_task_1.txt",
+    "experiments/references/circuit/reference_task_2_1.txt",
+    "experiments/references/circuit/reference_task_2_2.txt",
+    "experiments/references/circuit/reference_task_1.txt"
+  ],
+  "debug_mode": false,
+  "verbose": false,
+  "scoring_repeats": 3,
+  "num_interpretation_samples": 3
+}

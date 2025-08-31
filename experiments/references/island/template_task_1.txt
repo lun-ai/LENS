@@ -1,0 +1,5 @@
+<Positive Example Move Island 1 Territory 1>
+This is a right move. You select this territory and obtain 1 triplet (Water).
+
+<Negative Example Other Moves>
+This is a wrong move. Contrast: No triplet.

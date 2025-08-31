@@ -1,0 +1,1 @@
+You play Blue, and your opponent plays Orange. Your opponent now plays OPTIMALLY and and it always chooses the BEST possible move. Please press a WHITE cell to capture resources that you think can lead to WIN.

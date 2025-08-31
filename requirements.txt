@@ -1,0 +1,36 @@
+# Core LENS framework dependencies
+pydantic
+litellm
+typing-extensions
+
+# API client libraries for LLM providers
+anthropic
+openai
+
+# ILP and Logic Programming
+bitarray
+janus-swi
+pyswip
+clingo
+pysat
+
+# LangChain ecosystem for local models
+langchain
+langchain-community
+langchain-ollama
+
+# Data analysis and visualization
+numpy
+scipy
+pandas
+seaborn
+matplotlib
+
+# Statistical analysis
+scikit-learn
+statsmodels
+
+# Utilities and configuration
+python-dotenv
+setuptools
+pathlib2

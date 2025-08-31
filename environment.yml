@@ -1,0 +1,42 @@
+name: lens-env
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - seaborn
+  - matplotlib
+  - ipykernel
+  - pip:
+      # Core LENS framework dependencies
+      - pydantic
+      - litellm
+      - typing-extensions
+      
+      # API client libraries for LLM providers
+      - anthropic
+      - openai
+      
+      # ILP and Logic Programming
+      - bitarray
+      - janus-swi
+      - pyswip
+      - clingo
+      - pysat
+      
+      # LangChain ecosystem for local models
+      - langchain
+      - langchain-community
+      - langchain-ollama
+      
+      # Utilities and configuration
+      - python-dotenv
+      - setuptools
+      - pathlib2
+      
+      # Statistical analysis
+      - scikit-learn
+      - statsmodels

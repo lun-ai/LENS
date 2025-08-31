@@ -1,0 +1,7 @@
+Remaining Items are F and A.
+
+<Positive Example Move F then A>
+Item F is lighter than item A; append item F. Append remaning item(s): A.
+
+<Negative Example Other Moves>
+Item F is lighter than item A SO item F should be appended.

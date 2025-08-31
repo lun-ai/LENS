@@ -1,0 +1,5 @@
+ALICE: BIZZ ... Now is time to apply the knowledge you learned about the BLUE STAR
+1. The fruits in EACH ORANGE box INCREASE in weight from LEFT to RIGHT
+2. The BLUE STAR puts fruits from two ORANGE boxes on the CONVEYOR BELT in INCREASING weights from LEFT to RIGHT
+
+Please SELECT the CONVEYOR BELT that has the correct fruit(s) ordering. Use the scale on the left to COMPARE weights of TWO fruits by entering the alphabetic CAPITAL labels. 

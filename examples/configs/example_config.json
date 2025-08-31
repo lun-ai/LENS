@@ -1,0 +1,47 @@
+{
+  "domain_name": "even_numbers",
+  "domain_context": "The even numbers domain involves identifying and working with even numbers. Even numbers are integers that are divisible by 2 (like 2, 4, 6, 8, 10...).",
+  "use_ilp_learning": true,
+  "ilp_learning_episodes": [{
+      "name": "even_numbers",
+      "kb_path": "examples/programs/even",
+      "depends_on": null
+    }],
+  "interpretation_apis": [{
+    "model": "LLM Mock",
+    "api_key": "demo-key",
+    "max_tokens": 8192,
+    "temperature": 1
+  }],
+  "summary_apis": [{
+    "model": "LLM Mock", 
+    "api_key": "demo-key",
+    "max_tokens": 8192,
+    "temperature": 1
+  }],
+  "scoring_apis": [{
+      "model": "LLM Mock",
+      "api_key": "demo-key",
+      "max_tokens": 8192,
+      "temperature": 1
+  }],
+  "conditions": {
+    "lens_np": {
+      "name": "LENS with Code Interpretation",
+      "use_code_interpretation": true,
+      "program_ref": "even_numbers",
+      "prompts": {
+        "system": "summary_system_no_global.txt",
+        "user": "summary_user_no_local.txt"
+      }
+    }
+  },
+  "task_descriptions": [
+    "Explain how to identify even numbers"
+  ],
+  "reference_answers": [
+    "To identify even numbers, look for numbers that can be divided by 2 with no remainder. For example: 2, 4, 6, 8, 10 are all even numbers. You can test if a number is even by dividing it by 2 - if there's no remainder, it's even."
+  ],
+  "debug_mode": false,
+  "verbose": false
+}

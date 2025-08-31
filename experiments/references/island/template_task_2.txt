@@ -1,0 +1,11 @@
+<Positive Example Move Island 3 Territory 3>
+You select this territory and obtain 2 pairs (Corn, Water). 
+
+<Positive Example Opponent's Move>
+Opponent has no pair.
+
+<Negative Example Other Moves Case 1>
+This is a wrong move. Contrast: Not enough pair(s). 
+
+<Negative Example Other Moves Case 2>
+This is a wrong move. Contrast: opponent has 1 pair. 

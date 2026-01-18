@@ -170,3 +170,4 @@ results/**/*.db
 
 *_api_key.json
 *.env
+empirical_study/data_analysis/data

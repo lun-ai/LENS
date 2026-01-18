@@ -14,6 +14,42 @@ LENS (Logic Programming Explanation via Neural Summarisation) is a neuro-symboli
 - **Automated Workflows**: Automated pipelines with learning and explaining logic programs
 - **Domain Generalisability**: Tested across circuit analysis, and two other domains
 
+## Experimental Domains
+
+- **Circuit Analysis**: Logic circuit fault detection and component analysis
+- **Island Navigation**: Spatial reasoning and path finding
+- **MS Domain**: Additional reasoning tasks
+
+Each domain includes task descriptions, Prolog programs, training data, and reference solutions in the `experiments/` directory.
+
+### Result Analysis
+
+Results are automatically saved and organized:
+
+```bash
+results/
+├── circuit/
+│   ├── lens_multi_sample_analysis.csv  # Complete results with all responses
+│   ├── condition_analysis.csv          # Average scores by condition
+│   └── scorer_analysis.csv             # Inter-rater reliability analysis
+└── your_domain/
+    └── ...                             # Your domain results
+```
+
+## Empirical Study
+The empirical_study directory contains materials for the human learning experiment evaluating LENS-generated explanations.
+
+```bash
+empirical_study/
+├── data_analysis/
+│   ├── analysis.ipynb          # Main statistical analysis notebook
+│   ├── figures/                # Generated result plots
+│   └── graphs/                 # Task structure definitions (JSON)
+└── study_interface/
+    ├── survey.*.xml            # Survey configuration
+    └── resources/       
+```
+
 ## Framework Architecture
 
 LENS follows a systematic three main pipelines:
@@ -230,28 +266,3 @@ for condition in config.conditions.keys():
     print(f"{condition}: {avg_score:.1f}/10 average score")
 ```
 </details>
-
-## Experimental Domains
-
-- **Circuit Analysis**: Logic circuit fault detection and component analysis
-- **Island Navigation**: Spatial reasoning and path finding
-- **MS Domain**: Additional reasoning tasks
-
-Each domain includes task descriptions, Prolog programs, training data, and reference solutions in the `experiments/` directory.
-
-### Result Analysis
-
-Results are automatically saved and organized:
-
-```bash
-results/
-├── circuit/
-│   ├── lens_multi_sample_analysis.csv  # Complete results with all responses
-│   ├── condition_analysis.csv          # Average scores by condition
-│   └── scorer_analysis.csv             # Inter-rater reliability analysis
-└── your_domain/
-    └── ...                             # Your domain results
-```
-
-## Contact
-lun.ai.public@gmail.com

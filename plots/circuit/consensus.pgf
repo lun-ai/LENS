@@ -30,9 +30,9 @@
 %%   \usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}
 %%   \ifdefined\pdftexversion\else  % non-pdftex case.
 %%     \usepackage{fontspec}
-%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/usml/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/usml/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/usml/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/lens-env/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/lens-env/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/home/lun/anaconda3/envs/lens-env/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
 %%   \fi
 %%   \makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
 %%

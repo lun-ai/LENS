@@ -1,6 +1,6 @@
 # LENS: Logic Programming Explanation via Neural Summarisation
 
-This is the repository for the paper "Ultra Strong Machine Learning: Teaching Humans Active Learning Strategies via Automated AI Explanations".
+This repository holds the experimental pipeline for the paper "Ultra Strong Machine Learning: LLM-Generated Explanations Do Not Yet Suffice for Teaching Humans Active Learning Strategy".
 
 ## Overview
 
